@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Composite Types &mdash; COGS 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="COGS 1.0 documentation" href="../../"/>
+        <link rel="up" title="Modeler’s Guide" href="../"/>
+        <link rel="next" title="Settings" href="../settings/"/>
+        <link rel="prev" title="Item Types" href="../item-types/"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../" class="icon icon-home"> COGS
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quick-start/">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../quick-start/windows-quick-start/">Windows Quick Start</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../quick-start/windows-quick-start/#download-cogs">1. Download COGS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../quick-start/windows-quick-start/#initialize-a-model">2. Initialize a Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../quick-start/windows-quick-start/#generate-a-schema-and-documentation">3. Generate a Schema and Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../quick-start/windows-quick-start/#make-the-model-yours">4. Make the Model Yours</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../quick-start/linux-quick-start/">Linux Quick Start</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../quick-start/linux-quick-start/#download-cogs">1. Download COGS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../quick-start/linux-quick-start/#initialize-a-model">2. Initialize a Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../quick-start/linux-quick-start/#generate-a-schema-and-documentation">3. Generate a Schema and Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../quick-start/linux-quick-start/#make-the-model-yours">4. Make the Model Yours</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../quick-start/macos-quick-start/">MacOS Quick Start</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../quick-start/macos-quick-start/#download-cogs">1. Download COGS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../quick-start/macos-quick-start/#initialize-a-model">2. Initialize a Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../quick-start/macos-quick-start/#generate-a-schema-and-documentation">3. Generate a Schema and Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../quick-start/macos-quick-start/#make-the-model-yours">4. Make the Model Yours</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">Modeler&#8217;s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../item-types/">Item Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../item-types/#readme-markdown">readme.markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../item-types/#itemtypename-csv"><em>ItemTypeName</em>.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../item-types/#extends">Extends.*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../item-types/#identification">Identification</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Composite Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#readme-markdown">readme.markdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#typename-csv"><em>TypeName</em>.csv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extends">Extends.*</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../settings/">Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../settings/#well-known-settings">Well-known Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../settings/#additional-settings">Additional Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/">Topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../topics/#topic-index">Topic Index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../topics/#individual-topics-definitions">Individual Topics Definitions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../topics/#items-txt">items.txt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../topics/#readme-markdown">readme.markdown</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../articles/">Articles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../articles/#toc-txt">toc.txt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../articles/#example-layout">Example Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../primitive-types/">Primitive Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../primitive-types/#simple-types">Simple Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#boolean">boolean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#string">string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#id1">boolean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#decimal">decimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#float">float</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#double">double</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#duration">duration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#datetime">dateTime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#time">time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#date">date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#gyearmonth">gYearMonth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#gyear">gYear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#gmonthday">gMonthDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#gday">gDay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#gmonth">gMonth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#anyuri">anyURI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../primitive-types/#derived-types">Derived Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#langstring">langString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#language">language</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#int">int</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#nonpositiveinteger">nonPositiveInteger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#negativeinteger">negativeInteger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#long">long</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#id2">int</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#nonnegativeinteger">nonNegativeInteger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#unsignedlong">unsignedLong</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#positiveinteger">positiveInteger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../primitive-types/#cogsdate">cogsDate</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../identification/">Identification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical-guide/">Technical Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../technical-guide/installation/">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/installation/dotnet/">Installing dotnet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/installation/dotnet/#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/installation/dotnet/#download">Download</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/installation/graphviz/">Installing Graphviz</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/installation/graphviz/#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/installation/graphviz/#download">Download</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/installation/sphinx/">Installing Sphinx</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/installation/sphinx/#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/installation/sphinx/#download">Download</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical-guide/command-line/">Command Line</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/command-line/cogs-new/">cogs-new</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/cogs-new/#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/cogs-new/#command-line-arguments">Command Line Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/cogs-new/#command-line-flags">Command Line Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/cogs-new/#command-line-usage">Command Line Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/command-line/publish-cs/">publish-cs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-cs/#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-cs/#command-line-arguments">Command Line Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-cs/#command-line-flags">Command Line Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-cs/#command-line-usage">Command Line Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-cs/#primitive-type-mappings-to-c">Primitive Type Mappings to C#</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-cs/#custom-primitive-types-in-c">Custom Primitive Types in C#</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/command-line/publish-dot/">publish-dot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-dot/#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-dot/#command-line-arguments">Command Line Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-dot/#command-line-flags">Command Line Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-dot/#command-line-usage">Command Line Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/command-line/publish-graphql/">publish-GraphQL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-graphql/#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-graphql/#command-line-arguments">Command Line Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-graphql/#command-line-flags">Command Line Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-graphql/#command-line-usage">Command Line Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/command-line/publish-json/">publish-json</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-json/#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-json/#command-line-arguments">Command Line Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-json/#command-line-flags">Command Line Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-json/#command-line-usage">Command Line Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/command-line/publish-owl/">publish-owl</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-owl/#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-owl/#command-line-arguments">Command Line Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-owl/#command-line-flags">Command Line Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-owl/#command-line-usage">Command Line Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/command-line/publish-sphinx/">publish-sphinx</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-sphinx/#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-sphinx/#command-line-arguments">Command Line Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-sphinx/#command-line-flags">Command Line Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-sphinx/#command-line-usage">Command Line Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/command-line/publish-uml/">publish-uml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-uml/#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-uml/#command-line-arguments">Command Line Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-uml/#command-line-flags">Command Line Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-uml/#command-line-usage">Command Line Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/command-line/publish-xsd/">publish-xsd</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-xsd/#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-xsd/#command-line-arguments">Command Line Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-xsd/#command-line-flags">Command Line Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-xsd/#command-line-usage">Command Line Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/publish-xsd/#primitive-type-mappings-to-xml">Primitive Type Mappings to XML</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/command-line/validate/">validate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/validate/#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/validate/#command-line-arguments">Command Line Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/validate/#command-line-flags">Command Line Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/validate/#command-line-usage">Command Line Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/command-line/validate/#validation-tests">Validation Tests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../technical-guide/continuous-integration/">Continuous Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/continuous-integration/#scenario">Scenario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../technical-guide/continuous-integration/#gitlab-and-appveyor-example">GitLab and AppVeyor Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/continuous-integration/#appveyor-configuration-and-initialization">AppVeyor Configuration and Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/continuous-integration/#build-script">Build Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../technical-guide/continuous-integration/#deployment-to-staging">Deployment to Staging</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../">COGS</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../">Docs</a> &raquo;</li>
+      
+          <li><a href="../">Modeler&#8217;s Guide</a> &raquo;</li>
+      
+    <li>Composite Types</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/modeler-guide/composite-types.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="composite-types">
+<h1>Composite Types<a class="headerlink" href="#composite-types" title="Permalink to this headline">¶</a></h1>
+<p>Composite types are complex types used as data types, but they are not identified.</p>
+<p>Besides their lack of identification, composite types are much like item types.
+They consist of definitions and properties. Properties can be simple types,
+complex composite types, or relationships to item types.</p>
+<p>Each composite type is defined in a folder located at
+<code class="file docutils literal"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em></code>. Within this folder, several
+files provide information about the type.</p>
+<div class="section" id="readme-markdown">
+<h2>readme.markdown<a class="headerlink" href="#readme-markdown" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="file docutils literal"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em><span class="pre">/readme.markdown</span></code> file contains text
+to describe your type.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">See <a class="reference external" href="https://daringfireball.net/projects/markdown/basics">https://daringfireball.net/projects/markdown/basics</a> for a primer on using markdown to format text.</p>
+</div>
+</div>
+<div class="section" id="typename-csv">
+<h2><em>TypeName</em>.csv<a class="headerlink" href="#typename-csv" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="file docutils literal"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em><span class="pre">/</span><em><span class="pre">TypeName</span></em><span class="pre">.csv</span></code> file
+describes the properties of the type. Be sure to replace
+<em>TypeName</em> with the name of the type.</p>
+<p>The CSV file contains the following columns.</p>
+<dl class="docutils">
+<dt>Name</dt>
+<dd><p class="first">The name of the property.</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">An type can include a property with the same name as a property in another type.
+However, the data types of the properties must be the same.</p>
+</div>
+</dd>
+<dt>DataType</dt>
+<dd><p class="first">The data type of the property. The data type can be one of:</p>
+<ul class="last simple">
+<li>The name of a simple, primitive type as listed in <a class="reference internal" href="../primitive-types/"><em>Primitive Types</em></a></li>
+<li>The name of a complex type defined as a <a class="reference internal" href=""><em>composite type</em></a></li>
+<li>The name of an item type</li>
+</ul>
+</dd>
+<dt>MinCardinality</dt>
+<dd>The minimum number of occurrences of the property that an instance can include. Use <cite>0</cite>
+to mark the property as optional. Use <cite>1</cite> to mark the property as required.</dd>
+<dt>MaxCardinality</dt>
+<dd>The maximum number of occurrences of the property that an instance can include. Use <cite>1</cite>
+if the property can only appear a single time. Use <cite>n</cite> to allow an unlimited number of
+occurrences.</dd>
+<dt>Description</dt>
+<dd>The description of the property. This is included in the generated documentation, and as
+comments or annotations in many of the other publishers.</dd>
+<dt>MinLength, MaxLength, Enumeration, Pattern, MinInclusive, MinExclusive, MaxInclusive, MaxExclusive</dt>
+<dd>Used to restrict the allowed values of properties of simple, primitive types as described
+in <a class="reference internal" href="../primitive-types/"><em>Primitive Types</em></a>.</dd>
+<dt>DeprecatedNamespace, DeprecatedElementOrAttribute, DeprecatedChoiceGroup</dt>
+<dd>Deprecated. Used only for DDI 3.x backward compatibility.</dd>
+</dl>
+</div>
+<div class="section" id="extends">
+<h2>Extends.*<a class="headerlink" href="#extends" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="file docutils literal"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em><span class="pre">/Extends.</span><em><span class="pre">BaseTypeName</span></em></code> file acts as
+a marker to indicate that the type derives from another type. Derived
+types inherit all properties from their parent type. Be sure to replace
+<em>BaseTypeName</em> with the name of another type.</p>
+<p>This file is optional; it is only needed if the type derives from another type.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../settings/" class="btn btn-neutral float-right" title="Settings" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../item-types/" class="btn btn-neutral" title="Item Types" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
