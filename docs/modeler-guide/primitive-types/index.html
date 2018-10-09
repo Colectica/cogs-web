@@ -24,28 +24,20 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex/"/>
-        <link rel="search" title="Search" href="../../search/"/>
-    <link rel="top" title="COGS 1.0 documentation" href="../../"/>
-        <link rel="up" title="Modeler’s Guide" href="../"/>
-        <link rel="next" title="Identification" href="../identification/"/>
-        <link rel="prev" title="Articles" href="../articles/"/> 
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Identification" href="../identification/" />
+    <link rel="prev" title="Articles" href="../articles/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -124,12 +116,11 @@
 <li class="toctree-l4"><a class="reference internal" href="#langstring">langString</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#language">language</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#int">int</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#long">long</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unsignedlong">unsignedLong</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nonnegativeinteger">nonNegativeInteger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#nonpositiveinteger">nonPositiveInteger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#negativeinteger">negativeInteger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#long">long</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">int</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#nonnegativeinteger">nonNegativeInteger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#unsignedlong">unsignedLong</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#positiveinteger">positiveInteger</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cogsdate">cogsDate</a></li>
 </ul>
@@ -151,7 +142,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../">COGS</a>
@@ -159,9 +150,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -378,6 +370,30 @@ both hours and minutes must be present.</p>
 <dd>minInclusive, minExclusive, maxInclusive, maxExclusive</dd>
 </dl>
 </div>
+<div class="section" id="long">
+<h3>long<a class="headerlink" href="#long" title="Permalink to this headline">¶</a></h3>
+<p>Represents an integer with a minimum value of -9223372036854775808 and maximum of 9223372036854775807. This data type is derived from integer.</p>
+<dl class="docutils">
+<dt>Facets</dt>
+<dd>minInclusive, minExclusive, maxInclusive, maxExclusive</dd>
+</dl>
+</div>
+<div class="section" id="unsignedlong">
+<h3>unsignedLong<a class="headerlink" href="#unsignedlong" title="Permalink to this headline">¶</a></h3>
+<p>Represents an integer with a minimum of zero and maximum of 18446744073709551615. This data type is derived from nonNegativeInteger.</p>
+<dl class="docutils">
+<dt>Facets</dt>
+<dd>minInclusive, minExclusive, maxInclusive, maxExclusive</dd>
+</dl>
+</div>
+<div class="section" id="nonnegativeinteger">
+<h3>nonNegativeInteger<a class="headerlink" href="#nonnegativeinteger" title="Permalink to this headline">¶</a></h3>
+<p>Represents an integer that is greater than or equal to zero. This data type is derived from integer.</p>
+<dl class="docutils">
+<dt>Facets</dt>
+<dd>minInclusive, minExclusive, maxInclusive, maxExclusive</dd>
+</dl>
+</div>
 <div class="section" id="nonpositiveinteger">
 <h3>nonPositiveInteger<a class="headerlink" href="#nonpositiveinteger" title="Permalink to this headline">¶</a></h3>
 <p>Represents an integer that is less than or equal to zero. A
@@ -393,38 +409,6 @@ digits. This data type is derived from integer.</p>
 <p>Represents an integer that is less than zero. Consists of a negative sign (-)
 and sequence of decimal digits. This data type is derived from
 nonPositiveInteger.</p>
-<dl class="docutils">
-<dt>Facets</dt>
-<dd>minInclusive, minExclusive, maxInclusive, maxExclusive</dd>
-</dl>
-</div>
-<div class="section" id="long">
-<h3>long<a class="headerlink" href="#long" title="Permalink to this headline">¶</a></h3>
-<p>Represents an integer with a minimum value of -9223372036854775808 and maximum of 9223372036854775807. This data type is derived from integer.</p>
-<dl class="docutils">
-<dt>Facets</dt>
-<dd>minInclusive, minExclusive, maxInclusive, maxExclusive</dd>
-</dl>
-</div>
-<div class="section" id="id2">
-<h3>int<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>Represents an integer with a minimum value of -2147483648 and maximum of 2147483647. This data type is derived from long.</p>
-<dl class="docutils">
-<dt>Facets</dt>
-<dd>minInclusive, minExclusive, maxInclusive, maxExclusive</dd>
-</dl>
-</div>
-<div class="section" id="nonnegativeinteger">
-<h3>nonNegativeInteger<a class="headerlink" href="#nonnegativeinteger" title="Permalink to this headline">¶</a></h3>
-<p>Represents an integer that is greater than or equal to zero. This data type is derived from integer.</p>
-<dl class="docutils">
-<dt>Facets</dt>
-<dd>minInclusive, minExclusive, maxInclusive, maxExclusive</dd>
-</dl>
-</div>
-<div class="section" id="unsignedlong">
-<h3>unsignedLong<a class="headerlink" href="#unsignedlong" title="Permalink to this headline">¶</a></h3>
-<p>Represents an integer with a minimum of zero and maximum of 18446744073709551615. This data type is derived from nonNegativeInteger.</p>
 <dl class="docutils">
 <dt>Facets</dt>
 <dd>minInclusive, minExclusive, maxInclusive, maxExclusive</dd>
@@ -455,9 +439,7 @@ values.</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -475,11 +457,11 @@ values.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+        &copy; Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -494,35 +476,24 @@ values.</p>
 
   
 
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
 
   
 
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

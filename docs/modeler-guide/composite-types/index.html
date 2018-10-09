@@ -24,28 +24,20 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex/"/>
-        <link rel="search" title="Search" href="../../search/"/>
-    <link rel="top" title="COGS 1.0 documentation" href="../../"/>
-        <link rel="up" title="Modeler’s Guide" href="../"/>
-        <link rel="next" title="Settings" href="../settings/"/>
-        <link rel="prev" title="Item Types" href="../item-types/"/> 
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Settings" href="../settings/" />
+    <link rel="prev" title="Item Types" href="../item-types/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -121,7 +113,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../">COGS</a>
@@ -129,9 +121,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -182,11 +175,11 @@
 They consist of definitions and properties. Properties can be simple types,
 complex composite types, or relationships to item types.</p>
 <p>Each composite type is defined in a folder located at
-<code class="file docutils literal"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em></code>. Within this folder, several
+<code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em></code>. Within this folder, several
 files provide information about the type.</p>
 <div class="section" id="readme-markdown">
 <h2>readme.markdown<a class="headerlink" href="#readme-markdown" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="file docutils literal"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em><span class="pre">/readme.markdown</span></code> file contains text
+<p>The <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em><span class="pre">/readme.markdown</span></code> file contains text
 to describe your type.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
@@ -195,7 +188,7 @@ to describe your type.</p>
 </div>
 <div class="section" id="typename-csv">
 <h2><em>TypeName</em>.csv<a class="headerlink" href="#typename-csv" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="file docutils literal"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em><span class="pre">/</span><em><span class="pre">TypeName</span></em><span class="pre">.csv</span></code> file
+<p>The <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em><span class="pre">/</span><em><span class="pre">TypeName</span></em><span class="pre">.csv</span></code> file
 describes the properties of the type. Be sure to replace
 <em>TypeName</em> with the name of the type.</p>
 <p>The CSV file contains the following columns.</p>
@@ -235,7 +228,7 @@ in <a class="reference internal" href="../primitive-types/"><span class="doc">Pr
 </div>
 <div class="section" id="extends">
 <h2>Extends.*<a class="headerlink" href="#extends" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="file docutils literal"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em><span class="pre">/Extends.</span><em><span class="pre">BaseTypeName</span></em></code> file acts as
+<p>The <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em><span class="pre">/Extends.</span><em><span class="pre">BaseTypeName</span></em></code> file acts as
 a marker to indicate that the type derives from another type. Derived
 types inherit all properties from their parent type. Be sure to replace
 <em>BaseTypeName</em> with the name of another type.</p>
@@ -245,9 +238,7 @@ types inherit all properties from their parent type. Be sure to replace
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -265,11 +256,11 @@ types inherit all properties from their parent type. Be sure to replace
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+        &copy; Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -284,35 +275,24 @@ types inherit all properties from their parent type. Be sure to replace
 
   
 
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/doctools.js"></script>
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
 
   
 
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>
