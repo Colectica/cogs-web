@@ -1,158 +1,85 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>COGS &mdash; COGS 1.0 documentation</title>
-  
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  
-  
-
-  
-
-  
-  
-    
-
-  
-
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=94e0f085"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex/" />
     <link rel="search" title="Search" href="search/" />
     <link rel="next" title="Quick Start" href="quick-start/" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+        <div class="wy-side-nav-search" >
 
           
-            <a href="#" class="icon icon-home"> COGS
           
-
-          
+          <a href="#" class="icon icon-home">
+            COGS
           </a>
-
-          
-            
-            
               <div class="version">
                 1.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search/" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="quick-start/">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modeler-guide/">Modeler’s Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technical-guide/">Technical Guide</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="#">COGS</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="#">Docs</a> &raquo;</li>
-        
-      <li>COGS</li>
-    
-    
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">COGS</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="cogs">
-<h1>COGS<a class="headerlink" href="#cogs" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="cogs">
+<h1>COGS<a class="headerlink" href="#cogs" title="Link to this heading"></a></h1>
 <p>COGS lets you specify your information model in plain text.
 From this model, COGS generates rich documentation and multiple representations.
 Plain text specifications allow using industry-standard tools like git
@@ -164,126 +91,95 @@ development. COGS includes many features that enable fast, test-driven
 development, allowing you to publish sophisticated models in a variety of formats.</p>
 <p>COGS is a production framework for domain experts and groups who value
 <strong>ease of collaboration</strong> and <strong>low technical barriers</strong> for participation.</p>
-<div class="section" id="output-formats">
-<h2>Output Formats<a class="headerlink" href="#output-formats" title="Permalink to this headline">¶</a></h2>
+<section id="output-formats">
+<h2>Output Formats<a class="headerlink" href="#output-formats" title="Link to this heading"></a></h2>
 <p>Publishable formats include:</p>
 <ul class="simple">
-<li>XML Schema</li>
-<li>OWL 2 (RDF Schema)</li>
-<li>OMG’s UML Normative XMI 2.4.2</li>
-<li>OMG’s UML XMI 2.5 with Diagrams and Diagram Exchange</li>
-<li>Sphinx HTML documentation and visualizations</li>
-<li>JSON Schema</li>
-<li>C# class library</li>
-<li>SVG and dot visualizations</li>
-<li>GraphQL schema language</li>
+<li><p>XML Schema</p></li>
+<li><p>OWL 2 (RDF Schema)</p></li>
+<li><p>OMG’s UML Normative XMI 2.4.2</p></li>
+<li><p>OMG’s UML XMI 2.5 with Diagrams and Diagram Exchange</p></li>
+<li><p>Sphinx HTML documentation and visualizations</p></li>
+<li><p>JSON Schema</p></li>
+<li><p>C# class library</p></li>
+<li><p>SVG and dot visualizations</p></li>
+<li><p>GraphQL schema language</p></li>
 </ul>
 <p>Upcoming formats include:</p>
 <ul class="simple">
-<li>Class libraries for other languages</li>
+<li><p>Class libraries for other languages</p></li>
 </ul>
-</div>
-<div class="section" id="quick-start">
-<h2>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
 <p>Get started quickly with the Quick Start guide for your platform.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Platform</th>
-<th class="head">Quick Start</th>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Platform</p></th>
+<th class="head"><p>Quick Start</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Windows</td>
-<td><a class="reference internal" href="quick-start/windows-quick-start/"><span class="doc">COGS Quick Start for Windows</span></a></td>
+<tbody>
+<tr class="row-even"><td><p>Windows</p></td>
+<td><p><a class="reference internal" href="quick-start/windows-quick-start/"><span class="doc">COGS Quick Start for Windows</span></a></p></td>
 </tr>
-<tr class="row-odd"><td>Linux</td>
-<td><a class="reference internal" href="quick-start/linux-quick-start/"><span class="doc">COGS Quick Start for Linux</span></a></td>
+<tr class="row-odd"><td><p>Linux</p></td>
+<td><p><a class="reference internal" href="quick-start/linux-quick-start/"><span class="doc">COGS Quick Start for Linux</span></a></p></td>
 </tr>
-<tr class="row-even"><td>macOS</td>
-<td><a class="reference internal" href="quick-start/macos-quick-start/"><span class="doc">COGS Quick Start for macOS</span></a></td>
+<tr class="row-even"><td><p>macOS</p></td>
+<td><p><a class="reference internal" href="quick-start/macos-quick-start/"><span class="doc">COGS Quick Start for macOS</span></a></p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="modeler-s-guide">
-<h2>Modeler’s Guide<a class="headerlink" href="#modeler-s-guide" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="modeler-s-guide">
+<h2>Modeler’s Guide<a class="headerlink" href="#modeler-s-guide" title="Link to this heading"></a></h2>
 <p>The <a class="reference internal" href="modeler-guide/"><span class="doc">Modeler’s Guide</span></a> describes the folders and files
 that allow you to define your information model.</p>
-</div>
-<div class="section" id="technical-guide">
-<h2>Technical Guide<a class="headerlink" href="#technical-guide" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="technical-guide">
+<h2>Technical Guide<a class="headerlink" href="#technical-guide" title="Link to this heading"></a></h2>
 <p>The <a class="reference internal" href="technical-guide/"><span class="doc">Technical Guide</span></a> describes the COGS
 command line application, the publishers, and the technical details
 of the system.</p>
-</div>
-<div class="section" id="platforms">
-<h2>Platforms<a class="headerlink" href="#platforms" title="Permalink to this headline">¶</a></h2>
-<p>COGS runs on Windows, Linux, and macOS on the .NET Core 2.1 platform.</p>
+</section>
+<section id="platforms">
+<h2>Platforms<a class="headerlink" href="#platforms" title="Link to this heading"></a></h2>
+<p>COGS runs on Windows, Linux, and macOS on the .NET Core platform.</p>
 <p><a class="reference external" href="https://www.microsoft.com/net/core">https://www.microsoft.com/net/core</a></p>
-</div>
-<div class="section" id="legal-and-licensing">
-<h2>Legal and Licensing<a class="headerlink" href="#legal-and-licensing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="legal-and-licensing">
+<h2>Legal and Licensing<a class="headerlink" href="#legal-and-licensing" title="Link to this heading"></a></h2>
 <p>COGS is licensed under the MIT license.</p>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="quick-start/" class="btn btn-neutral float-right" title="Quick Start" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quick-start/" class="btn btn-neutral float-right" title="Quick Start" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license.
-
-    </p>
+    <p>&#169; Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="#" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
