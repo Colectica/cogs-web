@@ -1,136 +1,346 @@
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../">
-<head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Primitive Types &mdash; COGS 1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
 
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Primitive Types &#8212; COGS 1.0 documentation</title>
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=94e0f085"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/js/theme.js"></script>
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modeler-guide/primitive-types';</script>
     <link rel="index" title="Index" href="../../genindex/" />
     <link rel="search" title="Search" href="../../search/" />
     <link rel="next" title="Identification" href="../identification/" />
-    <link rel="prev" title="Articles" href="../articles/" /> 
-</head>
+    <link rel="prev" title="Articles" href="../articles/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="1.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-          
-          
-          <a href="../../" class="icon icon-home">
-            COGS
-          </a>
-              <div class="version">
-                1.0
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../quick-start/">Quick Start</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">Modeler’s Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../item-types/">Item Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../composite-types/">Composite Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../settings/">Settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/">Topics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../articles/">Articles</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Primitive Types</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#simple-types">Simple Types</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#boolean">boolean</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#string">string</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">boolean</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#decimal">decimal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#float">float</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#double">double</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#duration">duration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#datetime">dateTime</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#time">time</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#date">date</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gyearmonth">gYearMonth</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gyear">gYear</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gmonthday">gMonthDay</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gday">gDay</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gmonth">gMonth</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#anyuri">anyURI</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#derived-types">Derived Types</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#langstring">langString</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#language">language</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#int">int</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#long">long</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#unsignedlong">unsignedLong</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#nonnegativeinteger">nonNegativeInteger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#nonpositiveinteger">nonPositiveInteger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#negativeinteger">negativeInteger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#positiveinteger">positiveInteger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cogsdate">cogsDate</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../identification/">Identification</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../technical-guide/">Technical Guide</a></li>
-</ul>
 
-        </div>
-      </div>
-    </nav>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../">COGS</a>
-      </nav>
+  
+    
+  
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../../" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../">Modeler’s Guide</a></li>
-      <li class="breadcrumb-item active">Primitive Types</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/modeler-guide/primitive-types.rst.txt" rel="nofollow"> View page source</a>
-      </li>
+<a class="navbar-brand logo" href="../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">COGS 1.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical-guide/">
+    Technical Guide
+  </a>
+</li>
+
   </ul>
-  <hr/>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical-guide/">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../item-types/">Item Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../composite-types/">Composite Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../settings/">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/">Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../articles/">Articles</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Primitive Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../identification/">Identification</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../" class="nav-link">Modeler’s Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Primitive Types</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="primitive-types">
-<h1>Primitive Types<a class="headerlink" href="#primitive-types" title="Link to this heading"></a></h1>
+<h1>Primitive Types<a class="headerlink" href="#primitive-types" title="Link to this heading">#</a></h1>
 <p>COGS provides a number of built-in primitive types you can use to define properties on
 items in your model.</p>
 <section id="simple-types">
-<h2>Simple Types<a class="headerlink" href="#simple-types" title="Link to this heading"></a></h2>
+<h2>Simple Types<a class="headerlink" href="#simple-types" title="Link to this heading">#</a></h2>
 <section id="boolean">
-<h3>boolean<a class="headerlink" href="#boolean" title="Link to this heading"></a></h3>
+<h3>boolean<a class="headerlink" href="#boolean" title="Link to this heading">#</a></h3>
 <p>Represents Boolean values, which are either true or false.</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>none</p>
@@ -138,7 +348,7 @@ items in your model.</p>
 </dl>
 </section>
 <section id="string">
-<h3>string<a class="headerlink" href="#string" title="Link to this heading"></a></h3>
+<h3>string<a class="headerlink" href="#string" title="Link to this heading">#</a></h3>
 <p>Represents character strings.</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>maxLength, minLength, enumeration, pattern</p>
@@ -146,11 +356,11 @@ items in your model.</p>
 </dl>
 </section>
 <section id="id1">
-<h3>boolean<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<h3>boolean<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Represents Boolean values, which are either true or false.</p>
 </section>
 <section id="decimal">
-<h3>decimal<a class="headerlink" href="#decimal" title="Link to this heading"></a></h3>
+<h3>decimal<a class="headerlink" href="#decimal" title="Link to this heading">#</a></h3>
 <p>Represents arbitrary precision numbers.</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
@@ -158,7 +368,7 @@ items in your model.</p>
 </dl>
 </section>
 <section id="float">
-<h3>float<a class="headerlink" href="#float" title="Link to this heading"></a></h3>
+<h3>float<a class="headerlink" href="#float" title="Link to this heading">#</a></h3>
 <p>Represents single-precision 32-bit floating-point numbers.</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
@@ -166,7 +376,7 @@ items in your model.</p>
 </dl>
 </section>
 <section id="double">
-<h3>double<a class="headerlink" href="#double" title="Link to this heading"></a></h3>
+<h3>double<a class="headerlink" href="#double" title="Link to this heading">#</a></h3>
 <p>Represents double-precision 64-bit floating-point numbers.</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
@@ -174,7 +384,7 @@ items in your model.</p>
 </dl>
 </section>
 <section id="duration">
-<h3>duration<a class="headerlink" href="#duration" title="Link to this heading"></a></h3>
+<h3>duration<a class="headerlink" href="#duration" title="Link to this heading">#</a></h3>
 <p>Represents a duration of time. The pattern for duration is PnYnMnDTnHnMnS,
 where nY represents the number of years, nM the number of months, nD the number
 of days, T the date/time separator, nH the number of hours, nM the number of
@@ -185,7 +395,7 @@ minutes, and nS the number of seconds.</p>
 </dl>
 </section>
 <section id="datetime">
-<h3>dateTime<a class="headerlink" href="#datetime" title="Link to this heading"></a></h3>
+<h3>dateTime<a class="headerlink" href="#datetime" title="Link to this heading">#</a></h3>
 <p>Represents a specific instance of time. The pattern for dateTime is
 CCYY-MM-DDThh:mm:ss where CC represents the century, YY the year, MM the month,
 and DD the day, preceded by an optional leading negative (-) character to
@@ -206,7 +416,7 @@ both hours and minutes must be present.</p>
 </dl>
 </section>
 <section id="time">
-<h3>time<a class="headerlink" href="#time" title="Link to this heading"></a></h3>
+<h3>time<a class="headerlink" href="#time" title="Link to this heading">#</a></h3>
 <p>Represents an instance of time that recurs every day. The pattern for time is hh:mm:ss.sss with optional time zone indicator.</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
@@ -214,7 +424,7 @@ both hours and minutes must be present.</p>
 </dl>
 </section>
 <section id="date">
-<h3>date<a class="headerlink" href="#date" title="Link to this heading"></a></h3>
+<h3>date<a class="headerlink" href="#date" title="Link to this heading">#</a></h3>
 <p>Represents a calendar date. The pattern for date is CCYY-MM-DD with optional time zone indicator as allowed for dateTime</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
@@ -222,7 +432,7 @@ both hours and minutes must be present.</p>
 </dl>
 </section>
 <section id="gyearmonth">
-<h3>gYearMonth<a class="headerlink" href="#gyearmonth" title="Link to this heading"></a></h3>
+<h3>gYearMonth<a class="headerlink" href="#gyearmonth" title="Link to this heading">#</a></h3>
 <p>Represents a specific Gregorian month in a specific Gregorian year. A set of one-month long, nonperiodic instances. The pattern for gYearMonth is CCYY-MM with optional time zone indicator.</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
@@ -230,7 +440,7 @@ both hours and minutes must be present.</p>
 </dl>
 </section>
 <section id="gyear">
-<h3>gYear<a class="headerlink" href="#gyear" title="Link to this heading"></a></h3>
+<h3>gYear<a class="headerlink" href="#gyear" title="Link to this heading">#</a></h3>
 <p>Represents a Gregorian year. A set of one-year long, nonperiodic instances. The pattern for gYear is CCYY with optional time zone indicator as allowed for dateTime.</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
@@ -238,7 +448,7 @@ both hours and minutes must be present.</p>
 </dl>
 </section>
 <section id="gmonthday">
-<h3>gMonthDay<a class="headerlink" href="#gmonthday" title="Link to this heading"></a></h3>
+<h3>gMonthDay<a class="headerlink" href="#gmonthday" title="Link to this heading">#</a></h3>
 <p>Represents a specific Gregorian date that recurs, specifically a day of the year such as the third of May. A gMonthDay is the set of calendar dates. Specifically, it is a set of one-day long, annually periodic instances. The pattern for gMonthDay is –MM-DD with optional time zone indicator as allowed for date</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
@@ -246,7 +456,7 @@ both hours and minutes must be present.</p>
 </dl>
 </section>
 <section id="gday">
-<h3>gDay<a class="headerlink" href="#gday" title="Link to this heading"></a></h3>
+<h3>gDay<a class="headerlink" href="#gday" title="Link to this heading">#</a></h3>
 <p>Represents a Gregorian day that recurs, specifically a day of the month such as the fifth day of the month. A gDay is the space of a set of calendar dates. Specifically, it is a set of one-day long, monthly periodic instances. The pattern for gDay is —DD with optional time zone indicator as allowed for date</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
@@ -254,7 +464,7 @@ both hours and minutes must be present.</p>
 </dl>
 </section>
 <section id="gmonth">
-<h3>gMonth<a class="headerlink" href="#gmonth" title="Link to this heading"></a></h3>
+<h3>gMonth<a class="headerlink" href="#gmonth" title="Link to this heading">#</a></h3>
 <p>Represents a Gregorian month that recurs every year. A gMonth is the space of a set of calendar months. Specifically, it is a set of one-month long, yearly periodic instances. The pattern for gMonth is –MM– with optional time zone indicator as allowed for date.</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
@@ -262,7 +472,7 @@ both hours and minutes must be present.</p>
 </dl>
 </section>
 <section id="anyuri">
-<h3>anyURI<a class="headerlink" href="#anyuri" title="Link to this heading"></a></h3>
+<h3>anyURI<a class="headerlink" href="#anyuri" title="Link to this heading">#</a></h3>
 <p>Represents a URI as defined by RFC 2396. An anyURI value can be absolute or relative, and may have an optional fragment identifier.</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>maxLength, minLength</p>
@@ -271,9 +481,9 @@ both hours and minutes must be present.</p>
 </section>
 </section>
 <section id="derived-types">
-<h2>Derived Types<a class="headerlink" href="#derived-types" title="Link to this heading"></a></h2>
+<h2>Derived Types<a class="headerlink" href="#derived-types" title="Link to this heading">#</a></h2>
 <section id="langstring">
-<h3>langString<a class="headerlink" href="#langstring" title="Link to this heading"></a></h3>
+<h3>langString<a class="headerlink" href="#langstring" title="Link to this heading">#</a></h3>
 <p>Represents a character string and an associated language tag (defined by BCP 47).</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>maxLength, minLength, enumeration, pattern</p>
@@ -281,7 +491,7 @@ both hours and minutes must be present.</p>
 </dl>
 </section>
 <section id="language">
-<h3>language<a class="headerlink" href="#language" title="Link to this heading"></a></h3>
+<h3>language<a class="headerlink" href="#language" title="Link to this heading">#</a></h3>
 <p>Represents natural language identifiers (defined by BCP 47).</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>None</p>
@@ -289,7 +499,7 @@ both hours and minutes must be present.</p>
 </dl>
 </section>
 <section id="int">
-<h3>int<a class="headerlink" href="#int" title="Link to this heading"></a></h3>
+<h3>int<a class="headerlink" href="#int" title="Link to this heading">#</a></h3>
 <p>Represents an integer with a minimum value of -2147483648 and maximum of 2147483647. This data type is derived from long.</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
@@ -297,7 +507,7 @@ both hours and minutes must be present.</p>
 </dl>
 </section>
 <section id="long">
-<h3>long<a class="headerlink" href="#long" title="Link to this heading"></a></h3>
+<h3>long<a class="headerlink" href="#long" title="Link to this heading">#</a></h3>
 <p>Represents an integer with a minimum value of -9223372036854775808 and maximum of 9223372036854775807. This data type is derived from integer.</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
@@ -305,7 +515,7 @@ both hours and minutes must be present.</p>
 </dl>
 </section>
 <section id="unsignedlong">
-<h3>unsignedLong<a class="headerlink" href="#unsignedlong" title="Link to this heading"></a></h3>
+<h3>unsignedLong<a class="headerlink" href="#unsignedlong" title="Link to this heading">#</a></h3>
 <p>Represents an integer with a minimum of zero and maximum of 18446744073709551615. This data type is derived from nonNegativeInteger.</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
@@ -313,7 +523,7 @@ both hours and minutes must be present.</p>
 </dl>
 </section>
 <section id="nonnegativeinteger">
-<h3>nonNegativeInteger<a class="headerlink" href="#nonnegativeinteger" title="Link to this heading"></a></h3>
+<h3>nonNegativeInteger<a class="headerlink" href="#nonnegativeinteger" title="Link to this heading">#</a></h3>
 <p>Represents an integer that is greater than or equal to zero. This data type is derived from integer.</p>
 <dl class="simple">
 <dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
@@ -321,7 +531,7 @@ both hours and minutes must be present.</p>
 </dl>
 </section>
 <section id="nonpositiveinteger">
-<h3>nonPositiveInteger<a class="headerlink" href="#nonpositiveinteger" title="Link to this heading"></a></h3>
+<h3>nonPositiveInteger<a class="headerlink" href="#nonpositiveinteger" title="Link to this heading">#</a></h3>
 <p>Represents an integer that is less than or equal to zero. A
 nonPositiveIntegerconsists of a negative sign (-) and sequence of decimal
 digits. This data type is derived from integer.</p>
@@ -331,7 +541,7 @@ digits. This data type is derived from integer.</p>
 </dl>
 </section>
 <section id="negativeinteger">
-<h3>negativeInteger<a class="headerlink" href="#negativeinteger" title="Link to this heading"></a></h3>
+<h3>negativeInteger<a class="headerlink" href="#negativeinteger" title="Link to this heading">#</a></h3>
 <p>Represents an integer that is less than zero. Consists of a negative sign (-)
 and sequence of decimal digits. This data type is derived from
 nonPositiveInteger.</p>
@@ -341,7 +551,7 @@ nonPositiveInteger.</p>
 </dl>
 </section>
 <section id="positiveinteger">
-<h3>positiveInteger<a class="headerlink" href="#positiveinteger" title="Link to this heading"></a></h3>
+<h3>positiveInteger<a class="headerlink" href="#positiveinteger" title="Link to this heading">#</a></h3>
 <p>Represents an integer that is greater than zero. This data type is derived from
 nonNegativeInteger.</p>
 <dl class="simple">
@@ -350,7 +560,7 @@ nonNegativeInteger.</p>
 </dl>
 </section>
 <section id="cogsdate">
-<h3>cogsDate<a class="headerlink" href="#cogsdate" title="Link to this heading"></a></h3>
+<h3>cogsDate<a class="headerlink" href="#cogsdate" title="Link to this heading">#</a></h3>
 <p>A union of dateTime, date, gYearMonth, gYear, and duration which allows for the
 use of a date-time combination (YYYY-MM-DDTHH:MM:SS), date (YYYYY-MM-DD),
 year-month (YYYY-MM), year (YYYY), and duration (PnYnMnDnHnMnS) as valid
@@ -364,34 +574,151 @@ values.</p>
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../articles/" class="btn btn-neutral float-left" title="Articles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../identification/" class="btn btn-neutral float-right" title="Identification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../articles/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Articles</p>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class="right-next"
+       href="../identification/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Identification</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-</body>
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-types">Simple Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean">boolean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string">string</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">boolean</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal">decimal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#float">float</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double">double</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#duration">duration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datetime">dateTime</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time">time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date">date</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gyearmonth">gYearMonth</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gyear">gYear</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gmonthday">gMonthDay</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gday">gDay</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gmonth">gMonth</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anyuri">anyURI</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derived-types">Derived Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langstring">langString</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#language">language</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#int">int</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#long">long</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsignedlong">unsignedLong</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonnegativeinteger">nonNegativeInteger</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonpositiveinteger">nonPositiveInteger</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negativeinteger">negativeInteger</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positiveinteger">positiveInteger</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cogsdate">cogsDate</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/modeler-guide/primitive-types.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
 </html>
