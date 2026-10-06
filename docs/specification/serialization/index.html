@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>JSON and XML Serialization &#8212; COGS 2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=ee564b6a"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'specification/serialization';</script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Publisher Conformance and Projections" href="../publishers/" />
+    <link rel="prev" title="Model Format" href="../model-format/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">COGS 2.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../modeler-guide/">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical-guide/">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../modeler-guide/">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical-guide/">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../model-format/">Model Format</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">JSON and XML Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishers/">Publisher Conformance and Projections</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../" class="nav-link">COGS 2 Specification</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">JSON and XML Serialization</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="json-and-xml-serialization">
+<h1>JSON and XML Serialization<a class="headerlink" href="#json-and-xml-serialization" title="Link to this heading">#</a></h1>
+<p>The JSON and XML representations are two serializations of one semantic item
+container. A conforming round trip preserves values, concrete runtime types,
+list order, and logical reference identity. Textual byte-for-byte equality is
+not required.</p>
+<section id="json-contract">
+<h2>JSON contract<a class="headerlink" href="#json-contract" title="Link to this heading">#</a></h2>
+<p>The root is an object with required <code class="docutils literal notranslate"><span class="pre">items</span></code> and optional
+<code class="docutils literal notranslate"><span class="pre">topLevelReferences</span></code> arrays. No other root properties are allowed. Every
+full item contains:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$type</span></code> with its concrete, non-abstract COGS item type name;</p></li>
+<li><p>every identification property; and</p></li>
+<li><p>its modeled properties, using exact COGS names.</p></li>
+</ul>
+<p>An item-valued property and every top-level reference are flat references that
+contain only <code class="docutils literal notranslate"><span class="pre">$type</span></code> and all identification properties. With
+<code class="docutils literal notranslate"><span class="pre">AllowSubtypes=false</span></code>, a property’s reference type must equal its declared
+concrete item type. With <code class="docutils literal notranslate"><span class="pre">AllowSubtypes=true</span></code>, it may be any concrete type
+assignable to the declared item type. Abstract declarations are treated as
+subtype-enabled. Top-level references may name any concrete item type. Full
+definitions may occur after references. Repeated references to the same
+compound key resolve to the same object within one <code class="docutils literal notranslate"><span class="pre">ItemContainer</span></code>. A
+reference whose definition is outside the fragment remains an unresolved
+reference object with its identity intact.</p>
+<p>Composite values are embedded. They contain <code class="docutils literal notranslate"><span class="pre">$type</span></code> only when a property has
+<code class="docutils literal notranslate"><span class="pre">AllowSubtypes=true</span></code> and the concrete reusable type differs from, or must be
+disambiguated from, the declared type. The discriminator must name a concrete,
+assignable subtype permitted at that property.</p>
+<p>Unknown or duplicate object members, missing or empty identity members,
+duplicate full item definitions, abstract/incompatible discriminators,
+malformed primitive values, and non-finite JSON numbers are errors. JSON
+numbers obey the safe-integer and bounded exact-decimal interchange profile.
+Writers must not silently round an exact value into that domain.</p>
+<p>The generated schema prunes internal <code class="docutils literal notranslate"><span class="pre">$defs</span></code> while preserving this contract.
+All concrete item definitions, their required inheritance ancestors, and all
+built-in primitive definitions remain present. Model composites and the
+ancestors needed by their <code class="docutils literal notranslate"><span class="pre">allOf</span></code> chains are emitted only when recursively
+reachable from concrete-item effective properties. Each structural model
+definition declares only local properties; final item and composite value
+schemas use Draft 2020-12 <code class="docutils literal notranslate"><span class="pre">unevaluatedProperties:</span> <span class="pre">false</span></code> to close the object
+after inherited and local constraints have been evaluated. The global
+<code class="docutils literal notranslate"><span class="pre">Reference</span></code> definition remains available for <code class="docutils literal notranslate"><span class="pre">topLevelReferences</span></code>.
+Property-local reference and tagged-composite restrictions are inline, so the
+schema inventory contains only model types, built-in primitives, and the global
+reference shape.</p>
+<p><code class="docutils literal notranslate"><span class="pre">duration</span></code>, <code class="docutils literal notranslate"><span class="pre">dateTime</span></code>, <code class="docutils literal notranslate"><span class="pre">time</span></code>, and <code class="docutils literal notranslate"><span class="pre">date</span></code> are strings annotated with
+the standard Draft 2020-12 formats <code class="docutils literal notranslate"><span class="pre">duration</span></code>, <code class="docutils literal notranslate"><span class="pre">date-time</span></code>, <code class="docutils literal notranslate"><span class="pre">time</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">date</span></code>. Format assertion is deliberately disabled: the RFC format domains
+are not identical to the lossless XSD value spaces used by COGS. The
+authoritative COGS validator therefore applies the XSD lexical rules after
+structural schema evaluation.</p>
+<p><code class="docutils literal notranslate"><span class="pre">anyURI</span></code> is a string annotated with the standard <code class="docutils literal notranslate"><span class="pre">uri</span></code> format and no
+generated regex pattern. The authoritative COGS primitive domain remains an
+RFC 3986 URI reference, which may be relative or absolute. A third-party
+validator with optional format assertion enabled can therefore reject a valid
+relative COGS <code class="docutils literal notranslate"><span class="pre">anyURI</span></code> value.</p>
+<p>The five Gregorian partial-date types are closed component objects. Members
+use exact PascalCase names: <code class="docutils literal notranslate"><span class="pre">gYear</span></code> has <code class="docutils literal notranslate"><span class="pre">Year</span></code> and optional <code class="docutils literal notranslate"><span class="pre">Timezone</span></code>;
+<code class="docutils literal notranslate"><span class="pre">gYearMonth</span></code> also has <code class="docutils literal notranslate"><span class="pre">Month</span></code>; <code class="docutils literal notranslate"><span class="pre">gMonthDay</span></code> has <code class="docutils literal notranslate"><span class="pre">Month</span></code>, <code class="docutils literal notranslate"><span class="pre">Day</span></code>, and
+optional <code class="docutils literal notranslate"><span class="pre">Timezone</span></code>; and <code class="docutils literal notranslate"><span class="pre">gDay</span></code>/<code class="docutils literal notranslate"><span class="pre">gMonth</span></code> contain their component plus
+optional <code class="docutils literal notranslate"><span class="pre">Timezone</span></code>. Calendar years are nonzero signed 32-bit integers.</p>
+</section>
+<section id="xml-contract">
+<h2>XML contract<a class="headerlink" href="#xml-contract" title="Link to this heading">#</a></h2>
+<p>The root <code class="docutils literal notranslate"><span class="pre">ItemContainer</span></code> and all model elements are qualified by the model’s
+<code class="docutils literal notranslate"><span class="pre">NamespaceUrl</span></code>. The root sequence is all <code class="docutils literal notranslate"><span class="pre">TopLevelReference</span></code> elements
+followed by full item elements. Property elements follow the exact order of the
+effective model/XSD declaration; repeated elements remain in source order.</p>
+<p>An XML item reference contains every identification element in declaration
+order followed by <code class="docutils literal notranslate"><span class="pre">TypeOfObject</span></code>. In the generated XSD, the identification
+sequence is the public global <code class="docutils literal notranslate"><span class="pre">IdentificationGroup</span></code> and every reference type
+reuses it before declaring its property-local <code class="docutils literal notranslate"><span class="pre">TypeOfObject</span></code> restriction.
+This schema refactoring does not change reference child order.</p>
+<p>Every newly written item reference carries the optional unqualified attribute
+<code class="docutils literal notranslate"><span class="pre">isReference=&quot;true&quot;</span></code>. It is declared as <code class="docutils literal notranslate"><span class="pre">xs:boolean</span></code> with fixed value
+<code class="docutils literal notranslate"><span class="pre">true</span></code> so XPath and other XML tooling can find references without inferring
+them from their children. Readers accept an absent marker for compatibility
+with older XML and accept the equivalent true lexical form <code class="docutils literal notranslate"><span class="pre">1</span></code>. They reject
+<code class="docutils literal notranslate"><span class="pre">false</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code>, a qualified marker, unknown reference attributes, or a marker
+on a full item. The marker is serialization metadata and is not a COGS
+property.</p>
+<p>A reusable subtype is represented with a namespace-qualified <code class="docutils literal notranslate"><span class="pre">xsi:type</span></code>
+QName and is allowed only where the property has <code class="docutils literal notranslate"><span class="pre">AllowSubtypes=true</span></code>.
+<code class="docutils literal notranslate"><span class="pre">langString</span></code> is element text with a required <code class="docutils literal notranslate"><span class="pre">xml:lang</span></code> attribute.</p>
+<p>Readers reject a wrong root name or namespace, an unqualified model element,
+unknown attributes or elements, duplicate singleton elements, empty identity
+elements, invalid order, mixed text in element-only content, an unqualified or
+incompatible <code class="docutils literal notranslate"><span class="pre">xsi:type</span></code>, malformed primitive lexical values, DTDs, and
+external entities. Prefixes are aliases only; namespace URIs and local names
+determine identity.</p>
+</section>
+<section id="schema-and-runtime-responsibilities">
+<h2>Schema and runtime responsibilities<a class="headerlink" href="#schema-and-runtime-responsibilities" title="Link to this heading">#</a></h2>
+<p>Generated JSON Schema and XSD are both authoritative and must express the same
+cardinalities, facets, abstract restrictions, assignability, property-local
+substitution, and primitive domain. Generated runtimes reject structural and
+lexical errors and preserve lossless values; they may delegate a model-specific
+cardinality or facet violation to schema validation.</p>
+<p>Draft 2020-12 validators enforce standard JSON Schema keywords but treat
+<code class="docutils literal notranslate"><span class="pre">format</span></code> as an annotation by default and are allowed to ignore unknown
+vocabularies. Enabling optional format assertion can reject valid COGS values
+such as expanded XSD years, timezone-bearing XSD dates, or negative XSD
+durations, as well as relative COGS <code class="docutils literal notranslate"><span class="pre">anyURI</span></code> references, and does not replace
+COGS instance validation. Temporal and duration bounds that require the XSD
+partial order are carried in <code class="docutils literal notranslate"><span class="pre">x-cogs-minInclusive</span></code>,
+<code class="docutils literal notranslate"><span class="pre">x-cogs-minExclusive</span></code>, <code class="docutils literal notranslate"><span class="pre">x-cogs-maxInclusive</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">x-cogs-maxExclusive</span></code> metadata. <code class="docutils literal notranslate"><span class="pre">CogsInstanceValidator</span></code> (exposed by
+<code class="docutils literal notranslate"><span class="pre">validate-instance</span></code>) is authoritative for those extensions, temporal
+lexical values and year limits, duplicate JSON member names, exact decimal
+lexemes, and duplicate full definitions. XML validation uses the generated
+XSD plus the same primitive and duplicate-definition checks.</p>
+<p>See <a class="reference external" href="https://json-schema.org/draft/2020-12/json-schema-validation">JSON Schema Draft 2020-12 validation</a> for the
+format-annotation vocabulary and <a class="reference external" href="https://datatracker.ietf.org/doc/html/rfc3339">RFC 3339</a> for the narrower Internet
+date/time profile used by those standard format names.</p>
+<p>A conformance test validates every intermediate JSON document against JSON
+Schema and every XML document against XSD. It then compares a canonical
+semantic tree and asserts that repeated/forward references resolve to the same
+in-memory object. Testing only that a runtime can read its own output is not a
+cross-publisher conformance test.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../model-format/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Model Format</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../publishers/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Publisher Conformance and Projections</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-contract">JSON contract</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xml-contract">XML contract</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schema-and-runtime-responsibilities">Schema and runtime responsibilities</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/specification/serialization.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

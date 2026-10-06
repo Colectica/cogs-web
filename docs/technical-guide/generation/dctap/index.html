@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>DCTAP Generation &#8212; COGS 1.0 documentation</title>
+    <title>DCTAP Generation &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/generation/dctap';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="LinkML Generation" href="../linkml/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../command-line/">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/rewrite/">rewrite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-xsd/">publish-xsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../uml/">UML Generation</a></li>
@@ -369,19 +404,54 @@
 <h1>DCTAP Generation<a class="headerlink" href="#dctap-generation" title="Link to this heading">#</a></h1>
 <p>The <a class="reference internal" href="../../command-line/publish-dctap/"><span class="doc">publish-dctap</span></a> command generates a
 Dublin Core Tabular Application Profile (DCTAP) view of a COGS model.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>DCTAP is a flattened projection. Features that DCTAP cannot express must be
+reported as stable warnings and are not represented as equivalent
+constraints.</p>
+</div>
+<p>The canonical preserved/approximated list and diagnostic ranges are in
+<a class="reference internal" href="../../../specification/publishers/"><span class="doc">Publisher Conformance and Projections</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">DCT2010</span></code> discloses that native numeric/temporal restrictions require COGS
+validation; an XSD datatype IRI alone does not express those restrictions.</p>
 <section id="mapping">
 <h2>Mapping<a class="headerlink" href="#mapping" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>COGS properties become tabular application-profile rows</p></li>
-<li><p>datatype and relationship information is flattened into a table-oriented shape</p></li>
+<li><p>every item and composite type receives a shape whose local term retains the
+exact PascalCase COGS type name, including abstract bases so that PascalCase
+<code class="docutils literal notranslate"><span class="pre">valueShape</span></code> references always resolve</p></li>
+<li><p>effective inherited properties become tabular application-profile rows</p></li>
+<li><p>model <code class="docutils literal notranslate"><span class="pre">propertyID</span></code> terms use the shared word-aware camelCase RDF property
+name: <code class="docutils literal notranslate"><span class="pre">ID</span></code> becomes <code class="docutils literal notranslate"><span class="pre">id</span></code> and <code class="docutils literal notranslate"><span class="pre">URLValue</span></code> becomes <code class="docutils literal notranslate"><span class="pre">urlValue</span></code></p></li>
+<li><p>primitive values use <code class="docutils literal notranslate"><span class="pre">literal</span></code> plus one datatype; item references use
+<code class="docutils literal notranslate"><span class="pre">IRI</span></code> and composite values use <code class="docutils literal notranslate"><span class="pre">bnode</span></code> plus one declared/base shape</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">langString</span></code> maps to <code class="docutils literal notranslate"><span class="pre">rdf:langString</span></code></p></li>
+<li><p>expanded Dublin Core properties retain their explicit <code class="docutils literal notranslate"><span class="pre">dcterms:*</span></code> terms;
+they are not remapped into the model namespace</p></li>
+<li><p>DCTAP’s one constraint cell prefers enumeration, then pattern, then another
+supported facet; omitted competing constraints produce a warning</p></li>
+<li><p>type descriptions that have no conforming shape-row cell are omitted with
+<code class="docutils literal notranslate"><span class="pre">DCT2009</span></code> rather than written into a misleading note cell</p></li>
 <li><p>the generated output is intended for profile and constraint exchange rather
 than runtime serialization</p></li>
 </ul>
+<p>The model namespace prefix qualifies shape and property identifiers. Its
+expanded RDF term base retains a namespace ending in <code class="docutils literal notranslate"><span class="pre">#</span></code> or <code class="docutils literal notranslate"><span class="pre">/</span></code> and
+otherwise appends <code class="docutils literal notranslate"><span class="pre">#</span></code>. Source property names and JSON/XML wire names remain
+unchanged. Model validation reports <code class="docutils literal notranslate"><span class="pre">COGS-VAL-PROP-008</span></code> if distinct source
+names collapse to one camelCase RDF property term. For a manually connected
+model that bypasses DTO validation, DCTAP reports <code class="docutils literal notranslate"><span class="pre">DCT1001</span></code> before publication
+and leaves any existing target untouched. No legacy PascalCase model
+<code class="docutils literal notranslate"><span class="pre">propertyID</span></code> aliases are emitted.</p>
+<p>The conformance suite checks shape linkage, node/datatype compatibility,
+cardinality booleans, supported constraints, and <code class="docutils literal notranslate"><span class="pre">valueShape</span></code> resolution.
+That repository profile check is not independent DCTAP certification.</p>
 </section>
 <section id="ordered-collections">
 <h2>Ordered collections<a class="headerlink" href="#ordered-collections" title="Link to this heading">#</a></h2>
-<p>Before DCTAP generation, the CLI calls <code class="docutils literal notranslate"><span class="pre">CreateOrderedEnumerables</span></code> so ordered
-multi-value properties are represented consistently in the built model.</p>
+<p>DCTAP cannot represent list ordering. The publisher emits <code class="docutils literal notranslate"><span class="pre">DCT2006</span></code> for an
+ordered property and never mutates the canonical model or synthesizes helper
+types.</p>
 </section>
 <section id="related-pages">
 <h2>Related pages<a class="headerlink" href="#related-pages" title="Link to this heading">#</a></h2>
@@ -478,7 +548,7 @@ multi-value properties are represented consistently in the built model.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

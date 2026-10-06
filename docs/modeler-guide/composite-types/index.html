@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Composite Types &#8212; COGS 1.0 documentation</title>
+    <title>Composite Types &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'modeler-guide/composite-types';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="Item Types" href="../item-types/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -132,9 +132,23 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -225,9 +239,23 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -356,13 +384,19 @@ to describe your type.</p>
 <p>The <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em><span class="pre">/</span><em><span class="pre">TypeName</span></em><span class="pre">.csv</span></code> file
 describes the properties of the type. Be sure to replace
 <em>TypeName</em> with the name of the type.</p>
-<p>The CSV file contains the following columns.</p>
+<p>The CSV is required for every concrete composite. An empty abstract composite
+may omit it. Header names are exact, case-sensitive, and unique.</p>
 <dl>
-<dt>Name</dt><dd><p>The name of the property.</p>
+<dt>Name</dt><dd><p>An XML NCName beginning with an uppercase Unicode letter. Names must remain
+distinct after case, Unicode, and generated-language normalization.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>An type can include a property with the same name as a property in another type.
-However, the data types of the properties must be the same.</p>
+<p>Unrelated types may reuse a property name. A composite’s complete
+effective property set, including inherited fields, may not contain a
+name or generated-language collision. Exact reused names must declare
+one exact datatype. Distinct names anywhere in the model must not
+collapse to one word-aware camelCase RDF term, such as <code class="docutils literal notranslate"><span class="pre">URLValue</span></code> and
+<code class="docutils literal notranslate"><span class="pre">UrlValue</span></code> both becoming <code class="docutils literal notranslate"><span class="pre">urlValue</span></code>.</p>
 </div>
 </dd>
 <dt>DataType</dt><dd><p>The data type of the property. The data type can be one of:</p>
@@ -372,12 +406,23 @@ However, the data types of the properties must be the same.</p>
 <li><p>The name of an item type</p></li>
 </ul>
 </dd>
-<dt>MinCardinality</dt><dd><p>The minimum number of occurrences of the property that an instance can include. Use <cite>0</cite>
-to mark the property as optional. Use <cite>1</cite> to mark the property as required.</p>
+<dt>MinCardinality</dt><dd><p>The minimum number of occurrences. Use a canonical nonnegative integer;
+blank means <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 </dd>
-<dt>MaxCardinality</dt><dd><p>The maximum number of occurrences of the property that an instance can include. Use <cite>1</cite>
-if the property can only appear a single time. Use <cite>n</cite> to allow an unlimited number of
-occurrences.</p>
+<dt>MaxCardinality</dt><dd><p>The maximum number of occurrences. Use lowercase <code class="docutils literal notranslate"><span class="pre">n</span></code> for unbounded;
+blank means <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+</dd>
+<dt>Ordered</dt><dd><p>Blank or <code class="docutils literal notranslate"><span class="pre">false</span></code> means false; <code class="docutils literal notranslate"><span class="pre">true</span></code> preserves list order and requires
+a maximum greater than one or unbounded. The words are case-insensitive;
+canonical output is lowercase.</p>
+</dd>
+<dt>AllowSubtypes</dt><dd><p>Valid when <code class="docutils literal notranslate"><span class="pre">DataType</span></code> is an item or composite. Blank or <code class="docutils literal notranslate"><span class="pre">false</span></code> permits
+only the exact declared type; <code class="docutils literal notranslate"><span class="pre">true</span></code> permits the declared concrete type or
+concrete assignable descendants at this property only. An abstract declared type is always
+treated as subtype-enabled, with a warning when <code class="docutils literal notranslate"><span class="pre">true</span></code> was not written
+explicitly. The words are case-insensitive. Explicit <code class="docutils literal notranslate"><span class="pre">true</span></code> produces
+<code class="docutils literal notranslate"><span class="pre">COGS-VAL-SUB-003</span></code> when no other type extends the declaration; the flag
+remains valid but currently permits no additional concrete type.</p>
 </dd>
 <dt>Description</dt><dd><p>The description of the property. This is included in the generated documentation, and as
 comments or annotations in many of the other publishers.</p>
@@ -385,17 +430,39 @@ comments or annotations in many of the other publishers.</p>
 <dt>MinLength, MaxLength, Enumeration, Pattern, MinInclusive, MinExclusive, MaxInclusive, MaxExclusive</dt><dd><p>Used to restrict the allowed values of properties of simple, primitive types as described
 in <a class="reference internal" href="../primitive-types/"><span class="doc">Primitive Types</span></a>.</p>
 </dd>
-<dt>DeprecatedNamespace, DeprecatedElementOrAttribute, DeprecatedChoiceGroup</dt><dd><p>Deprecated. Used only for DDI 3.x backward compatibility.</p>
+<dt>DeprecatedNamespace, DeprecatedElementOrAttribute, DeprecatedChoiceGroup</dt><dd><p>Opaque historical tracking values retained in the CSV. COGS does not
+validate or publish them, and rewrite operations preserve their text.</p>
 </dd>
 </dl>
 </section>
 <section id="extends">
-<h2>extends.*<a class="headerlink" href="#extends" title="Link to this heading">#</a></h2>
-<p>The <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em><span class="pre">/extends.</span><em><span class="pre">BaseTypeName</span></em></code> file acts as
+<h2>Extends.*<a class="headerlink" href="#extends" title="Link to this heading">#</a></h2>
+<p>The <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/CompositeTypes/</span><em><span class="pre">TypeName</span></em><span class="pre">/Extends.</span><em><span class="pre">BaseTypeName</span></em></code> file acts as
 a marker to indicate that the type derives from another type. Derived
 types inherit all properties from their parent type. Be sure to replace
 <em>BaseTypeName</em> with the name of another type.</p>
 <p>This file is optional; it is only needed if the type derives from another type.</p>
+<p>The parent must be an existing exact-case composite and inheritance must be
+acyclic. Canonical marker keywords are <code class="docutils literal notranslate"><span class="pre">Abstract</span></code>, <code class="docutils literal notranslate"><span class="pre">Primitive</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">Extends.</span></code>; other keyword casing is accepted with a warning and can be
+normalized by <code class="docutils literal notranslate"><span class="pre">rewrite</span> <span class="pre">--upgrade-cogs-2</span></code>. <code class="docutils literal notranslate"><span class="pre">Abstract</span></code> prevents direct
+instances, and COGS warns when an abstract composite has no concrete descendant.
+<code class="docutils literal notranslate"><span class="pre">Primitive</span></code> is permitted only here: it is a value-object annotation for
+projection publishers and does not change the composite’s JSON or XML shape.
+<code class="docutils literal notranslate"><span class="pre">This</span></code> and <code class="docutils literal notranslate"><span class="pre">Any</span></code> are retired and invalid in COGS 2.</p>
+<p>Every composite type should be reachable from at least one concrete item.
+Reachability follows inherited properties and recursively nested composites.
+An exact composite property reaches only its declared concrete type and
+ancestors, while <code class="docutils literal notranslate"><span class="pre">AllowSubtypes=true</span></code> reaches every concrete assignable
+descendant and its ancestors. Validation emits warning
+<code class="docutils literal notranslate"><span class="pre">COGS-VAL-TYPE-002</span></code> for each composite outside that instance graph, including
+disconnected recursive groups and unused <code class="docutils literal notranslate"><span class="pre">Primitive</span></code> composites. An abstract
+composite with no concrete descendants receives only the more specific
+<code class="docutils literal notranslate"><span class="pre">COGS-VAL-INH-007</span></code> warning.</p>
+<p>Cardinalities use canonical nonnegative integers, with blank minimum <code class="docutils literal notranslate"><span class="pre">0</span></code> and
+blank maximum <code class="docutils literal notranslate"><span class="pre">n</span></code>. Flags accept only blank, <code class="docutils literal notranslate"><span class="pre">false</span></code>, or <code class="docutils literal notranslate"><span class="pre">true</span></code>
+case-insensitively. See
+<a class="reference internal" href="../../specification/model-format/"><span class="doc">Model Format</span></a> for the complete CSV and facet grammar.</p>
 </section>
 </section>
 
@@ -448,7 +515,7 @@ types inherit all properties from their parent type. Be sure to replace
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readme-markdown">readme.markdown</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typename-csv"><em>TypeName</em>.csv</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extends">extends.*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extends">Extends.*</a></li>
 </ul>
   </nav></div>
 
@@ -486,7 +553,7 @@ types inherit all properties from their parent type. Be sure to replace
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

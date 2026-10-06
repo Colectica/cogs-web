@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>publish-dot &#8212; COGS 1.0 documentation</title>
+    <title>publish-dot &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,17 +39,17 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/command-line/publish-dot';</script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
-    <link rel="next" title="publish-GraphQL" href="../publish-graphql/" />
+    <link rel="next" title="publish-graphql" href="../publish-graphql/" />
     <link rel="prev" title="publish-dctap" href="../publish-dctap/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rewrite/">rewrite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-xsd/">publish-xsd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../generation/">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/uml/">UML Generation</a></li>
@@ -371,7 +406,9 @@
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Generates graph(s) showing connections between <a class="reference external" href="../../../modeler-guide/item-types/index.html">Item types</a> and,
 optionally, <a class="reference external" href="../../../modeler-guide/composite-types/index.html">Composite types</a> in the model.</p>
-<p>Requires that <a class="reference external" href="../../installation/dotnet/index.html">dotnet</a> and <a class="reference external" href="../../installation/graphviz/index.html">Graphviz</a> are installed.</p>
+<p>Requires that <a class="reference external" href="../../installation/dotnet/index.html">dotnet</a> is installed.
+Raw DOT output does not require Graphviz; rendered formats do. Missing Graphviz
+for a rendered format, or an invoked Graphviz process that fails, is an error.</p>
 </section>
 <section id="command-line-arguments">
 <h2>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Link to this heading">#</a></h2>
@@ -403,9 +440,10 @@ optionally, <a class="reference external" href="../../../modeler-guide/composite
 <div><p>If the <code class="docutils literal notranslate"><span class="pre">[TargetLocation]</span></code> is not empty, erase all files in the folder before generation.</p>
 </div></blockquote>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-l|--location</span></code></p>
+<li><p><code class="docutils literal notranslate"><span class="pre">--dot</span> <span class="pre">PATH</span></code></p>
 <blockquote>
-<div><p>The directory where the dot.exe file is located–only needed if not using normative and not running on Windows.</p>
+<div><p>Path to the Graphviz <code class="docutils literal notranslate"><span class="pre">dot</span></code> executable. If omitted, discovery checks
+<code class="docutils literal notranslate"><span class="pre">COGS_DOT</span></code> and then <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.</p>
 </div></blockquote>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-f|--format</span></code></p>
@@ -420,17 +458,24 @@ optionally, <a class="reference external" href="../../../modeler-guide/composite
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-s|--single</span></code></p>
 <blockquote>
-<div><p>Generates a separate graph for every single item type (default is one graph for each topic). Cannot be used with <code class="docutils literal notranslate"><span class="pre">-a</span></code>.</p>
+<div><p>Generates a local graph for every item and composite type, showing declared
+direct incoming and outgoing links. Neighboring items are not expanded, and
+inherited properties and hidden composite paths are not added. The default
+is one graph for each topic. Cannot be used with <code class="docutils literal notranslate"><span class="pre">-a</span></code>.</p>
 </div></blockquote>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-i|--inheritance</span></code></p>
 <blockquote>
-<div><p>Shows inheritance in the generated graph(s).</p>
+<div><p>Shows inheritance in the generated graph(s). Per-type graphs include only
+the focal type’s immediate parent and children, without inherited property
+expansion.</p>
 </div></blockquote>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-c|--composite</span></code></p>
 <blockquote>
-<div><p>Displays composite types and their properties inside item types in the generated graph(s).</p>
+<div><p>Displays composite types and their properties in the generated graph(s).
+Per-type graphs expose only the focal type’s contained composite structure;
+item neighbors remain unexpanded.</p>
 </div></blockquote>
 </li>
 </ul>
@@ -439,17 +484,17 @@ optionally, <a class="reference external" href="../../../modeler-guide/composite
 <h2>Command Line Usage<a class="headerlink" href="#command-line-usage" title="Link to this heading">#</a></h2>
 <p><strong>Format</strong></p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>publish-dot<span class="w"> </span><span class="o">(</span>-h<span class="o">)</span><span class="w"> </span><span class="o">(</span>-o<span class="o">)</span><span class="w"> </span><span class="o">(</span>-l<span class="w"> </span><span class="o">[</span>location<span class="o">])</span><span class="w"> </span><span class="o">(</span>-f<span class="w"> </span><span class="o">[</span>format<span class="o">])</span><span class="w"> </span><span class="o">(</span>-a<span class="o">)</span><span class="w"> </span><span class="o">(</span>-s<span class="o">)</span><span class="w"> </span><span class="o">(</span>-i<span class="o">)</span><span class="w"> </span><span class="o">(</span>-c<span class="o">)</span><span class="w"> </span><span class="o">[</span>CogsLocation<span class="o">]</span><span class="w"> </span><span class="o">[</span>TargetLocation<span class="o">]</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs<span class="w"> </span>publish-dot<span class="w"> </span><span class="o">(</span>-h<span class="o">)</span><span class="w"> </span><span class="o">(</span>-o<span class="o">)</span><span class="w"> </span><span class="o">[</span>--dot<span class="w"> </span>PATH<span class="o">]</span><span class="w"> </span><span class="o">(</span>-f<span class="w"> </span><span class="o">[</span>format<span class="o">])</span><span class="w"> </span><span class="o">(</span>-a<span class="o">)</span><span class="w"> </span><span class="o">(</span>-s<span class="o">)</span><span class="w"> </span><span class="o">(</span>-i<span class="o">)</span><span class="w"> </span><span class="o">(</span>-c<span class="o">)</span><span class="w"> </span><span class="o">[</span>CogsLocation<span class="o">]</span><span class="w"> </span><span class="o">[</span>TargetLocation<span class="o">]</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p><strong>Examples</strong></p>
 <blockquote>
 <div><p>A few examples of how the command line arguments and flags can be used together.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>publish-dot<span class="w"> </span>-h
-$<span class="w"> </span>publish-dot<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
-$<span class="w"> </span>publish-dot<span class="w"> </span>-o<span class="w"> </span>-a<span class="w"> </span>-i<span class="w"> </span>-c<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
-$<span class="w"> </span>publish-dot<span class="w"> </span>-o<span class="w"> </span>-l<span class="w"> </span>MyGraphvizDotDirectory<span class="w"> </span>-f<span class="w"> </span>jpg<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs<span class="w"> </span>publish-dot<span class="w"> </span>-h
+$<span class="w"> </span>cogs<span class="w"> </span>publish-dot<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
+$<span class="w"> </span>cogs<span class="w"> </span>publish-dot<span class="w"> </span>-o<span class="w"> </span>-a<span class="w"> </span>-i<span class="w"> </span>-c<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
+$<span class="w"> </span>cogs<span class="w"> </span>publish-dot<span class="w"> </span>-o<span class="w"> </span>--dot<span class="w"> </span>/opt/graphviz/bin/dot<span class="w"> </span>-f<span class="w"> </span>jpg<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
 </pre></div>
 </div>
 </div></blockquote>
@@ -480,7 +525,7 @@ $<span class="w"> </span>publish-dot<span class="w"> </span>-o<span class="w"> <
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">publish-GraphQL</p>
+        <p class="prev-next-title">publish-graphql</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -544,7 +589,7 @@ $<span class="w"> </span>publish-dot<span class="w"> </span>-o<span class="w"> <
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

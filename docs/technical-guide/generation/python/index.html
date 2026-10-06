@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python Generation &#8212; COGS 2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/generation/python';</script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <link rel="next" title="TypeScript Generation" href="../typescript/" />
+    <link rel="prev" title="C# Generation" href="../csharp/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">COGS 2.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modeler-guide/">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modeler-guide/">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../installation/">Installing COGS</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/dotnet/">dotnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/graphviz/">Graphviz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/sphinx/">Sphinx</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../command-line/">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/generated-reference/">CLI descriptor reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/cogs-new/">cogs-new</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/rewrite/">rewrite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-cs/">publish-cs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dctap/">publish-dctap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dot/">publish-dot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-graphql</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-json/">publish-json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-linkml/">publish-linkml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-ts/">publish-ts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-sphinx/">publish-sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-uml/">publish-uml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-xsd/">publish-xsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate-instance/">validate-instance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../native-types/">Native types and migration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../csharp/">C# Generation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../typescript/">TypeScript Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../json/">JSON Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xsd/">XML Schema Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uml/">UML Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dot/">dot Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinx/">Sphinx Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../owl/">OWL Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graphql/">GraphQL Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linkml/">LinkML Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dctap/">DCTAP Generation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../continuous-integration/">Continuous Integration</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../" class="nav-link">Technical Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../" class="nav-link">Generation</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Python Generation</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="python-generation">
+<h1>Python Generation<a class="headerlink" href="#python-generation" title="Link to this heading">#</a></h1>
+<p>The <a class="reference internal" href="../../command-line/publish-py/"><span class="doc">publish-py</span></a> command generates a typed
+Python 3.11+ package. Its default <code class="docutils literal notranslate"><span class="pre">--flavor</span> <span class="pre">python</span></code> uses only the standard
+library; <code class="docutils literal notranslate"><span class="pre">--flavor</span> <span class="pre">pydantic</span></code> generates real Pydantic v2 <code class="docutils literal notranslate"><span class="pre">BaseModel</span></code> classes
+and declares <code class="docutils literal notranslate"><span class="pre">pydantic&gt;=2.12,&lt;3</span></code> as a package dependency.</p>
+<section id="model-mapping">
+<h2>Model mapping<a class="headerlink" href="#model-mapping" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Item and composite type names remain PascalCase class names.</p></li>
+<li><p>Property names become snake_case attributes. Their exact COGS names are kept
+as serialization metadata for JSON and XML.</p></li>
+<li><p>COGS inheritance becomes Python class inheritance, and abstract model types
+cannot be instantiated from serialized data.</p></li>
+<li><p>Ordered and repeated properties use Python lists.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ItemContainer</span></code> and all model/value/helper classes are exported from the
+package root.</p></li>
+</ul>
+</section>
+<section id="primitive-mappings">
+<h2>Primitive mappings<a class="headerlink" href="#primitive-mappings" title="Link to this heading">#</a></h2>
+<p>Strings/URIs use <code class="docutils literal notranslate"><span class="pre">str</span></code>, integer families use range-checked <code class="docutils literal notranslate"><span class="pre">int</span></code>, and
+decimal uses standard-library <code class="docutils literal notranslate"><span class="pre">decimal.Decimal</span></code>. Float/double use native
+<code class="docutils literal notranslate"><span class="pre">float</span></code> with binary32/binary64 conversion respectively. Scalars use
+<code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> (UTC), <code class="docutils literal notranslate"><span class="pre">datetime.date</span></code>, <code class="docutils literal notranslate"><span class="pre">datetime.time</span></code> and
+<code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code> under the shared native profiles. See
+<a class="reference internal" href="../native-types/"><span class="doc">Native types and migration</span></a> for limits and migration examples.</p>
+<p>Partial Gregorian, LangString and CogsDate helpers remain structured values.
+Gregorian years retain the nonzero signed 32-bit range and optional timezone.</p>
+</section>
+<section id="pydantic-flavor">
+<h2>Pydantic flavor<a class="headerlink" href="#pydantic-flavor" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">CogsValue</span></code>, <code class="docutils literal notranslate"><span class="pre">CogsItem</span></code>, <code class="docutils literal notranslate"><span class="pre">ItemContainer</span></code>, and every generated item/composite
+class inherit from Pydantic <code class="docutils literal notranslate"><span class="pre">BaseModel</span></code>. Structured primitive helpers remain
+dataclasses in both flavors. Pass already constructed helper instances to
+native Pydantic fields; validation preserves those instances rather than
+reconstructing them. Models use strict types, forbidden extra fields,
+assignment validation, and finite floating-point values. Singleton fields
+default to <code class="docutils literal notranslate"><span class="pre">None</span></code> and repeated fields have independent list defaults so
+reference placeholders can be populated. Forward declarations and recursive
+composites are resolved after all model classes have been generated.
+Native field descriptions and schema annotations retain the exact COGS
+property descriptions, including inherited fields; no wire-name aliases are
+introduced.</p>
+<p>Native <code class="docutils literal notranslate"><span class="pre">model_validate</span></code>, <code class="docutils literal notranslate"><span class="pre">model_dump</span></code>, <code class="docutils literal notranslate"><span class="pre">model_dump_json</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">model_json_schema</span></code> operate on Python field data with snake_case names, not
+the COGS wire format. Nested concrete subtype fields are retained in native
+dumps and existing nested model instances retain their identity. Native dumps
+expand nested values, including item references, rather than implementing the
+COGS identity graph; cyclic graphs may therefore be unsuitable for native
+dumping. Native Pydantic schemas do not replace COGS JSON Schema or XSD.</p>
+<p>Use the COGS methods below for lossless JSON/XML, concrete-type discriminators,
+and graphs with item references. Their behavior is shared by both flavors.
+COGS schemas and instance validation still own cardinality, facets, identity,
+and the wire-format rules. Property names that collide with Pydantic APIs or
+the <code class="docutils literal notranslate"><span class="pre">model_</span></code> namespace are rejected before output is replaced.</p>
+</section>
+<section id="serialization">
+<h2>Serialization<a class="headerlink" href="#serialization" title="Link to this heading">#</a></h2>
+<p>Generated values provide <code class="docutils literal notranslate"><span class="pre">to_dict</span></code>/<code class="docutils literal notranslate"><span class="pre">from_dict</span></code>, <code class="docutils literal notranslate"><span class="pre">to_json</span></code>/<code class="docutils literal notranslate"><span class="pre">from_json</span></code>,
+<code class="docutils literal notranslate"><span class="pre">to_element</span></code>/<code class="docutils literal notranslate"><span class="pre">from_element</span></code>, and <code class="docutils literal notranslate"><span class="pre">to_xml</span></code>/<code class="docutils literal notranslate"><span class="pre">from_xml</span></code>.
+<code class="docutils literal notranslate"><span class="pre">ItemContainer</span></code> additionally provides path-or-stream <code class="docutils literal notranslate"><span class="pre">load_*</span></code>/<code class="docutils literal notranslate"><span class="pre">dump_*</span></code>
+helpers.</p>
+<p>Both flavors expose <code class="docutils literal notranslate"><span class="pre">is_defined</span></code> on items to distinguish full definitions from
+unresolved external-reference placeholders. Its internal state is excluded
+from COGS serialization; in the dataclass flavor it is also excluded from
+constructor arguments, representations, and equality comparisons.</p>
+<p>JSON uses the flat COGS contract: <code class="docutils literal notranslate"><span class="pre">items</span></code>, optional
+<code class="docutils literal notranslate"><span class="pre">topLevelReferences</span></code>, <code class="docutils literal notranslate"><span class="pre">$type</span></code> discriminators, and identification-only item
+references. A custom JSON writer preserves <code class="docutils literal notranslate"><span class="pre">Decimal</span></code> values as JSON numbers.</p>
+<p>XML uses the model’s qualified namespace, schema element order,
+<code class="docutils literal notranslate"><span class="pre">TypeOfObject</span></code> item references, <code class="docutils literal notranslate"><span class="pre">xml:lang</span></code> for language strings, and
+<code class="docutils literal notranslate"><span class="pre">xsi:type</span></code> for allowed reusable datatype substitutions. Parsing constructs a
+per-container identity map, so repeated and forward references resolve to the
+same Python object. String/path parsing captures in-scope namespace mappings;
+direct <code class="docutils literal notranslate"><span class="pre">from_element</span></code> calls accept an optional <code class="docutils literal notranslate"><span class="pre">namespaces</span></code> mapping so a
+qualified <code class="docutils literal notranslate"><span class="pre">xsi:type</span></code> can be resolved without reparsing the source document.
+All XML writer APIs add the unqualified <code class="docutils literal notranslate"><span class="pre">isReference=&quot;true&quot;</span></code> attribute to
+top-level and item-property references. Readers accept <code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, and
+legacy absence, but reject false, qualified, or unknown reference attributes
+and markers on full items. No model field is generated for the marker.</p>
+<p>The runtime rejects duplicate or unknown JSON fields, missing or empty identity
+components, invalid discriminators, duplicate item definitions, and malformed
+primitive lexical values. XML parsing also enforces qualified names, allowed
+attributes, element order/contiguity, and mixed-content rules. Cardinality,
+enumeration, pattern, length, and model-specific bounds remain the
+responsibility of the JSON Schema and XML Schema generated by COGS.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../csharp/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">C# Generation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../typescript/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">TypeScript Generation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-mapping">Model mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-mappings">Primitive mappings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pydantic-flavor">Pydantic flavor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serialization">Serialization</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/technical-guide/generation/python.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

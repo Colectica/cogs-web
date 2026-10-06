@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Command Line &#8212; COGS 1.0 documentation</title>
+    <title>Command Line &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,17 +39,17 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/command-line/index';</script>
     <link rel="index" title="Index" href="../../genindex/" />
     <link rel="search" title="Search" href="../../search/" />
-    <link rel="next" title="cogs-new" href="cogs-new/" />
+    <link rel="next" title="CLI descriptor reference" href="generated-reference/" />
     <link rel="prev" title="Sphinx" href="../installation/sphinx/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rewrite/">rewrite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-xsd/">publish-xsd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../generation/">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generation/native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../generation/csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generation/python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generation/typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../generation/json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../generation/xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../generation/uml/">UML Generation</a></li>
@@ -364,8 +399,137 @@
                   
   <section id="command-line">
 <h1>Command Line<a class="headerlink" href="#command-line" title="Link to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code>, <code class="docutils literal notranslate"><span class="pre">validate-instance</span></code>, and every <code class="docutils literal notranslate"><span class="pre">publish-*</span></code> command read
+<code class="docutils literal notranslate"><span class="pre">CogsVersion</span></code> first and then use the same directory reader, semantic
+validation, and model-builder pipeline. Reader or validation errors stop the
+command before it writes output. Publishers do not repair malformed input or
+parse CSVs on their own. <code class="docutils literal notranslate"><span class="pre">cogs-new</span></code> creates a COGS 2 model; <code class="docutils literal notranslate"><span class="pre">rewrite</span>
+<span class="pre">--upgrade-cogs-2</span></code> is the explicit legacy migration entry point.</p>
+<p>For commands with a target directory, the source and target must be disjoint.
+The target cannot equal, contain, or be an ancestor of the source after paths
+and links are resolved. <code class="docutils literal notranslate"><span class="pre">--overwrite</span></code> permits replacing an otherwise safe
+target only; it never permits deleting model input. Generate each target into
+its own directory.</p>
+<p>JSON Schema, XSD, C#, Python, and TypeScript are authoritative instance
+targets. UML/XMI is the authoritative structural model output, with the
+explicitly diagnosed <code class="docutils literal notranslate"><span class="pre">PROJ2601</span></code> property-local subtype exception. OWL/RDF is
+emitted as W3C Turtle and is the authoritative ontology and class-semantics
+output, with <code class="docutils literal notranslate"><span class="pre">OWL2002</span></code> and <code class="docutils literal notranslate"><span class="pre">OWL2003</span></code> as its authority exceptions. LinkML,
+DCTAP, GraphQL, DOT, and Sphinx are projections and may report approximated or
+unsupported features.</p>
+<section id="exit-codes">
+<h2>Exit codes<a class="headerlink" href="#exit-codes" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">0</span></code></dt><dd><p>Success, including success with nonfatal publisher warnings.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">2</span></code></dt><dd><p>Command-line usage or option error.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">100</span></code></dt><dd><p>Modeled input, validation, instance, or publication error.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">101</span></code></dt><dd><p>Unexpected internal failure.</p>
+</dd>
+</dl>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="generated-reference/">CLI descriptor reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#cogs-new">cogs-new</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#arguments">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#publish-cs">publish-cs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id1">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id2">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id3">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#publish-dctap">publish-dctap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id4">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id5">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id6">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#publish-dot">publish-dot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id7">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id8">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id9">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#publish-graphql">publish-graphql</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id10">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id11">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id12">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#publish-json">publish-json</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id13">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id14">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id15">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#publish-linkml">publish-linkml</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id16">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id17">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id18">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#publish-owl">publish-owl</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id19">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id20">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id21">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#publish-py">publish-py</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id22">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id23">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id24">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#publish-sphinx">publish-sphinx</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id25">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id26">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id27">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#publish-ts">publish-ts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id28">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id29">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id30">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#publish-uml">publish-uml</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id31">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id32">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id33">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#publish-xsd">publish-xsd</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id34">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id35">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id36">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#rewrite">rewrite</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id37">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id38">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id39">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#validate">validate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id40">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id41">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id42">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated-reference/#validate-instance">validate-instance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id43">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id44">Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated-reference/#id45">Options</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="cogs-new/">cogs-new</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="cogs-new/#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cogs-new/#command-line-arguments">Command Line Arguments</a></li>
@@ -384,7 +548,8 @@
 <li class="toctree-l2"><a class="reference internal" href="publish-cs/#command-line-arguments">Command Line Arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-cs/#command-line-flags">Command Line Flags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-cs/#command-line-usage">Command Line Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="publish-cs/#primitive-type-mappings-to-c">Primitive Type Mappings to C#</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-cs/#cogs-2-primitive-contract">COGS 2 primitive contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-cs/#legacy-c-api-reference">Legacy C# API reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-cs/#custom-primitive-types-in-c">Custom Primitive Types in C#</a></li>
 </ul>
 </li>
@@ -402,7 +567,7 @@
 <li class="toctree-l2"><a class="reference internal" href="publish-dot/#command-line-usage">Command Line Usage</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="publish-graphql/">publish-GraphQL</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="publish-graphql/">publish-graphql</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="publish-graphql/#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-graphql/#command-line-arguments">Command Line Arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-graphql/#command-line-flags">Command Line Flags</a></li>
@@ -430,6 +595,22 @@
 <li class="toctree-l2"><a class="reference internal" href="publish-owl/#command-line-usage">Command Line Usage</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="publish-py/">publish-py</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="publish-py/#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-py/#command-line-arguments">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-py/#command-line-flags">Command Line Flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-py/#command-line-usage">Command Line Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-py/#generated-files">Generated Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="publish-ts/">publish-ts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="publish-ts/#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-ts/#command-line-arguments">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-ts/#command-line-flags">Command Line Flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-ts/#command-line-usage">Command Line Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-ts/#generated-files">Generated Files</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="publish-sphinx/">publish-sphinx</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="publish-sphinx/#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-sphinx/#command-line-arguments">Command Line Arguments</a></li>
@@ -450,18 +631,29 @@
 <li class="toctree-l2"><a class="reference internal" href="publish-xsd/#command-line-flags">Command Line Flags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-xsd/#command-line-usage">Command Line Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="publish-xsd/#primitive-type-mappings-to-xml">Primitive Type Mappings to XML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publish-xsd/#reference-schema-components">Reference Schema Components</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="validate/">validate</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="validate/#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="validate/#command-line-arguments">Command Line Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="validate/#command-line-flags">Command Line Flags</a></li>
-<li class="toctree-l2"><a class="reference internal" href="validate/#command-line-usage">Command Line Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="validate/#validation-tests">Validation Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validate/#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validate/#flags">Flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validate/#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validate/#cogs-2-validation-coverage">COGS 2 validation coverage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="validate-instance/">validate-instance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="validate-instance/#arguments">Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validate-instance/#flags">Flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validate-instance/#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validate-instance/#json-validation">JSON validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validate-instance/#xml-validation">XML validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validate-instance/#scope">Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validate-instance/#see-also">See also</a></li>
 </ul>
 </li>
 </ul>
 </div>
+</section>
 </section>
 
 
@@ -484,11 +676,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="cogs-new/"
+       href="generated-reference/"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">cogs-new</p>
+        <p class="prev-next-title">CLI descriptor reference</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -502,6 +694,18 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exit-codes">Exit codes</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div role="note" aria-label="source link">
@@ -537,7 +741,7 @@
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

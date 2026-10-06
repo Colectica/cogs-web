@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>COGS &#8212; COGS 1.0 documentation</title>
+    <title>COGS &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="_static/documentation_options.js?v=94e0f085"></script>
+    <script src="_static/documentation_options.js?v=ee564b6a"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
@@ -48,7 +48,7 @@
     <link rel="next" title="Quick Start" href="quick-start/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -110,7 +110,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -132,8 +132,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -227,8 +241,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -304,24 +332,20 @@ development, allowing you to publish sophisticated models in a variety of format
 <strong>ease of collaboration</strong> and <strong>low technical barriers</strong> for participation.</p>
 <section id="output-formats">
 <h2>Output Formats<a class="headerlink" href="#output-formats" title="Link to this heading">#</a></h2>
-<p>Publishable formats include:</p>
-<ul class="simple">
-<li><p>XML Schema</p></li>
-<li><p>OWL 2 (RDF Schema)</p></li>
-<li><p>OMG’s UML Normative XMI 2.4.2</p></li>
-<li><p>OMG’s UML XMI 2.5 with Diagrams and Diagram Exchange</p></li>
-<li><p>Sphinx HTML documentation and visualizations</p></li>
-<li><p>JSON Schema</p></li>
-<li><p>C# class library</p></li>
-<li><p>SVG and dot visualizations</p></li>
-<li><p>GraphQL schema language</p></li>
-<li><p>LinkML</p></li>
-<li><p>DCTAP</p></li>
-</ul>
-<p>Upcoming formats include:</p>
-<ul class="simple">
-<li><p>Class libraries for other languages</p></li>
-</ul>
+<p>XML Schema, JSON Schema, and the generated C#, Python, and TypeScript libraries
+are the authoritative instance targets. They share the strict JSON/XML contract
+defined in the <a class="reference internal" href="specification/"><span class="doc">COGS 2 specification</span></a>.</p>
+<p>UML/XMI is the authoritative structural model output, with the explicitly
+diagnosed <code class="docutils literal notranslate"><span class="pre">PROJ2601</span></code> exception for property-local subtype exclusion. It is
+not an instance-validation schema.</p>
+<p>OWL/RDF is emitted as W3C Turtle in <code class="docutils literal notranslate"><span class="pre">&lt;Settings.Slug&gt;.ttl</span></code> and is the
+authoritative ontology and class-semantics output, with <code class="docutils literal notranslate"><span class="pre">OWL2002</span></code> and
+<code class="docutils literal notranslate"><span class="pre">OWL2003</span></code> as its explicit authority exceptions. It is not an
+instance-validation, lexical-facet, or ordered-collection authority.</p>
+<p>LinkML, DCTAP, GraphQL, Graphviz/DOT, and Sphinx are projections. They may
+preserve, approximate, or explicitly reject individual modeling features and
+must not be treated as alternate wire-format authorities. ShEx and SHACL are
+not current COGS publishers.</p>
 </section>
 <section id="quick-start">
 <h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h2>
@@ -362,7 +386,7 @@ of the system.</p>
 </section>
 <section id="platforms">
 <h2>Platforms<a class="headerlink" href="#platforms" title="Link to this heading">#</a></h2>
-<p>COGS runs on Windows, Linux, and macOS on the .NET Core platform.</p>
+<p>COGS runs on Windows, Linux, and macOS on .NET 10.</p>
 <p><a class="reference external" href="https://www.microsoft.com/net/core">https://www.microsoft.com/net/core</a></p>
 </section>
 <section id="legal-and-licensing">
@@ -454,7 +478,7 @@ of the system.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

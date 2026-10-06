@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Identification &#8212; COGS 1.0 documentation</title>
+    <title>Identification &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,17 +39,17 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'modeler-guide/identification';</script>
     <link rel="index" title="Index" href="../../genindex/" />
     <link rel="search" title="Search" href="../../search/" />
-    <link rel="next" title="Technical Guide" href="../../technical-guide/" />
+    <link rel="next" title="Migrating to COGS 2" href="../../migration/" />
     <link rel="prev" title="Primitive Types" href="../primitive-types/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -132,9 +132,23 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -225,9 +239,23 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -335,14 +363,27 @@
                   
   <section id="identification">
 <h1>Identification<a class="headerlink" href="#identification" title="Link to this heading">#</a></h1>
-<p>All instances of <a class="reference internal" href="../item-types/"><span class="doc">Item Types</span></a> are uniquely identified using properties as
-specified in the <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/Settings/Identification.csv</span></code> file. Each
-of these properties are included as properties in all item types.</p>
+<p>All instances of <a class="reference internal" href="../item-types/"><span class="doc">Item Types</span></a> are uniquely identified using the ordered
+compound key in <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/Settings/Identification.csv</span></code>. The file
+is required and must contain at least one row. Each property is included in
+every root item type and inherited by its descendants.</p>
 <p>The columns of the <code class="file docutils literal notranslate"><span class="pre">Identification.csv</span></code> file are the same as the columns in
 the <a class="reference internal" href="../item-types/"><span class="doc">Item Types</span></a> properties CSV.</p>
 <p>An optional <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/Settings/Identification.Mixin.csv</span></code> file can
 be used to add additional identification properties. Those mixin properties are
-also reflected in generated references and generated C# helper methods.</p>
+also part of the compound key and every generated reference.</p>
+<p>COGS 2 identification fields are deliberately narrow. Every field must use
+<code class="docutils literal notranslate"><span class="pre">string</span></code> or <code class="docutils literal notranslate"><span class="pre">anyURI</span></code>, must be required and singular (<code class="docutils literal notranslate"><span class="pre">1..1</span></code>), must not be
+ordered or allow subtypes, and must have a unique name in the effective item
+property set. Every item and reference must supply a nonempty lexical value for
+every field. The logical key is the concrete item type followed by all values
+from both files in declaration order. URI strings are compared as serialized;
+COGS does not normalize them before reference lookup.</p>
+<p>JSON references contain only <code class="docutils literal notranslate"><span class="pre">$type</span></code> and all identification properties. XML
+references contain all identification elements followed by <code class="docutils literal notranslate"><span class="pre">TypeOfObject</span></code>.
+Forward and repeated references to the same key resolve to the same object
+inside an item container.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">DcTerms</span></code> macro is not permitted in either identification file.</p>
 </section>
 
 
@@ -365,11 +406,11 @@ also reflected in generated references and generated C# helper methods.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../technical-guide/"
+       href="../../migration/"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Technical Guide</p>
+        <p class="prev-next-title">Migrating to COGS 2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -418,7 +459,7 @@ also reflected in generated references and generated C# helper methods.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

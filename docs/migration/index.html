@@ -1,0 +1,676 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Migrating to COGS 2 &#8212; COGS 2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=ee564b6a"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'migration/index';</script>
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Technical Guide" href="../technical-guide/" />
+    <link rel="prev" title="Identification" href="../modeler-guide/identification/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">COGS 2.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../modeler-guide/">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Migrating to COGS 2
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../technical-guide/">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../modeler-guide/">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Migrating to COGS 2
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../technical-guide/">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Migrating to COGS 2</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="migrating-to-cogs-2">
+<h1>Migrating to COGS 2<a class="headerlink" href="#migrating-to-cogs-2" title="Link to this heading">#</a></h1>
+<p>COGS 2 makes previously implicit or target-dependent conventions explicit.
+Migration is therefore a review, not just a mechanical CSV rewrite.</p>
+<section id="before-migration">
+<h2>Before migration<a class="headerlink" href="#before-migration" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Put the complete model under version control and make a backup. Never point
+an overwrite target at the source model or one of its ancestors.</p></li>
+<li><p>Validate and publish the existing model with the tool version it currently
+uses. Preserve its JSON Schema, XSD, representative JSON/XML instances, and
+generated documentation as comparison evidence.</p></li>
+<li><p>Inventory use of <code class="docutils literal notranslate"><span class="pre">This</span></code>, <code class="docutils literal notranslate"><span class="pre">Any</span></code>, <code class="docutils literal notranslate"><span class="pre">Primitive</span></code>, <code class="docutils literal notranslate"><span class="pre">DcTerms</span></code>, blank or
+non-canonical flags/cardinalities, enumeration values that were intended to
+contain whitespace, and target-specific primitive values.</p></li>
+</ol>
+</section>
+<section id="model-directory-changes">
+<h2>Model-directory changes<a class="headerlink" href="#model-directory-changes" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Add the unique <code class="docutils literal notranslate"><span class="pre">CogsVersion,2.0</span></code> setting. Also add all required setting
+keys. <code class="docutils literal notranslate"><span class="pre">Description</span></code>, <code class="docutils literal notranslate"><span class="pre">Author</span></code>, and <code class="docutils literal notranslate"><span class="pre">Copyright</span></code> may have empty values;
+the other required values may not.</p></li>
+<li><p>Normalize every convention path to exact case: <code class="docutils literal notranslate"><span class="pre">Settings</span></code>, <code class="docutils literal notranslate"><span class="pre">ItemTypes</span></code>,
+<code class="docutils literal notranslate"><span class="pre">CompositeTypes</span></code>, optional <code class="docutils literal notranslate"><span class="pre">Topics</span></code> and <code class="docutils literal notranslate"><span class="pre">Articles</span></code>,
+<code class="docutils literal notranslate"><span class="pre">readme.markdown</span></code>, <code class="docutils literal notranslate"><span class="pre">Abstract</span></code>, <code class="docutils literal notranslate"><span class="pre">Primitive</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">Extends.ParentType</span></code>. Add a same-name CSV for each concrete type. An empty
+abstract type alone may omit its CSV. The upgrade command mechanically
+normalizes recognized case-insensitive <code class="docutils literal notranslate"><span class="pre">Abstract</span></code>, <code class="docutils literal notranslate"><span class="pre">Primitive</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">Extends.&lt;Parent&gt;</span></code> marker keywords. Parent type casing and other directory
+and file-name decisions remain explicit.</p></li>
+<li><p>Make every identity property <code class="docutils literal notranslate"><span class="pre">string</span></code> or <code class="docutils literal notranslate"><span class="pre">anyURI</span></code> and scalar <code class="docutils literal notranslate"><span class="pre">1..1</span></code>.
+Retain all identity fields from both identification files and check for
+collisions with inherited/local properties.</p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">This</span></code> and <code class="docutils literal notranslate"><span class="pre">Any</span></code> with an explicit datatype. Remove <code class="docutils literal notranslate"><span class="pre">Primitive</span></code>
+from item types; on a composite it is only a value-object annotation and
+does not alter serialization.</p></li>
+<li><p>Keep a Dublin Core macro only as the exact
+<code class="docutils literal notranslate"><span class="pre">DcTerms,dcTerms,0,1</span></code> row with every later cell blank. Review the expanded
+properties as part of the effective model.</p></li>
+<li><p>Canonicalize cardinalities. Blank means <code class="docutils literal notranslate"><span class="pre">0</span></code> for minimum and <code class="docutils literal notranslate"><span class="pre">n</span></code> for
+maximum; otherwise use an unsigned canonical integer or lowercase <code class="docutils literal notranslate"><span class="pre">n</span></code>.
+Flags accept blank, <code class="docutils literal notranslate"><span class="pre">false</span></code>, or <code class="docutils literal notranslate"><span class="pre">true</span></code> case-insensitively; normalize
+nonblank values to lowercase canonical output.</p></li>
+<li><p>Keep whitespace-delimited enumerations as written. COGS 2 retains this
+authoring format, so each token remains one value and no CSV rewrite is
+required. A value intended to contain whitespace cannot be represented by
+the enumeration cell and requires an explicit model-level alternative.</p></li>
+<li><p>Rewrite patterns to the portable COGS 2 subset. Anchors, shorthand classes,
+lookarounds, backreferences, special groups, inline flags, and Unicode
+categories require an explicit model-level replacement, often an
+enumeration or application rule.</p></li>
+</ol>
+</section>
+<section id="wire-value-review">
+<h2>Wire-value review<a class="headerlink" href="#wire-value-review" title="Link to this heading">#</a></h2>
+<p>COGS 2 uses the native interchange profile in
+<a class="reference internal" href="../specification/model-format/"><span class="doc">Model Format</span></a>. Regenerate clients and validate stored
+instances before replacing them; values outside this profile require an
+explicit migration. See <a class="reference internal" href="../technical-guide/generation/native-types/"><span class="doc">Native types and migration</span></a> for
+the generated API mappings and migration examples.</p>
+<p>Instance integers must fit within -9007199254740991 through 9007199254740991,
+intersected with each datatype’s existing sign and Int32 restrictions. Modeled
+cardinalities remain arbitrary-size. Integers and decimals remain JSON numbers.
+A decimal must be exactly representable by System.Decimal and retain its exact
+mathematical decimal value through ordinary JavaScript parsing and
+<code class="docutils literal notranslate"><span class="pre">JSON.stringify</span></code>. JSON exponent forms and equivalent trailing zeros are
+accepted, but values requiring rounding are rejected. Range and scale alone
+do not establish decimal eligibility.</p>
+<p><code class="docutils literal notranslate"><span class="pre">float</span></code> and <code class="docutils literal notranslate"><span class="pre">double</span></code> use finite binary32 and binary64 values respectively,
+with their corresponding rounding rules and support for subnormals. Overflow
+and non-finite values are rejected; underflow to zero is allowed, and all
+floating zeros canonicalize to positive zero.</p>
+<p>Temporal values use these restricted domains:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dateTime</span></code> requires a timezone offset within plus or minus 14:00. Both the
+local lexical year and the resulting UTC year must be in 0001–9999, and the
+value must have whole-millisecond precision. Writers normalize to UTC with
+a <code class="docutils literal notranslate"><span class="pre">Z</span></code> suffix. <code class="docutils literal notranslate"><span class="pre">24:00:00</span></code> denotes the following midnight if the resulting
+UTC instant remains in range.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date</span></code> is a local date in years 0001–9999 without a timezone.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time</span></code> is local, without a timezone, at whole-microsecond precision.
+<code class="docutils literal notranslate"><span class="pre">24:00:00</span></code> canonicalizes to <code class="docutils literal notranslate"><span class="pre">00:00:00</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">duration</span></code> represents elapsed whole milliseconds from -922337203685477
+through 922337203685477. Negative values and fractional seconds such as
+<code class="docutils literal notranslate"><span class="pre">PT1.5S</span></code> remain valid. Year and month components are rejected even when
+zero; submillisecond values are rejected instead of truncated. A calendar
+duration such as <code class="docutils literal notranslate"><span class="pre">P1M</span></code> needs an explicit model or application decision to
+determine an elapsed value.</p></li>
+</ul>
+<p>Additional fractional trailing zeros are allowed when the temporal value
+still meets its precision limit. Partial Gregorian values retain their XSD
+domains and optional timezones, with nonzero signed 32-bit years only in
+<code class="docutils literal notranslate"><span class="pre">gYearMonth</span></code> and <code class="docutils literal notranslate"><span class="pre">gYear</span></code>. JSON represents the five Gregorian partial-date
+types as closed PascalCase component objects; XML and RDF retain their XSD
+lexical values. Existing JSON Gregorian strings must therefore be migrated to
+<code class="docutils literal notranslate"><span class="pre">Year</span></code>/<code class="docutils literal notranslate"><span class="pre">Month</span></code>/<code class="docutils literal notranslate"><span class="pre">Day</span></code>/optional <code class="docutils literal notranslate"><span class="pre">Timezone</span></code> objects. <code class="docutils literal notranslate"><span class="pre">cogsDate</span></code> still
+requires exactly one PascalCase arm, with component objects in its Gregorian
+arms and the corresponding native profile applied to every arm.</p>
+<p>Standard JSON Schema formats remain annotations. Format assertion can reject
+valid COGS values, including local times, negative durations and end-of-day
+spellings. Use <code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">validate-instance</span></code> to apply the schema plus the numeric,
+temporal and other COGS checks; schema acceptance alone is insufficient.</p>
+<p>The JSON Schema <code class="docutils literal notranslate"><span class="pre">anyURI</span></code> definition now uses the standard annotation-only
+<code class="docutils literal notranslate"><span class="pre">uri</span></code> format and no regex pattern. COGS still accepts relative as well as
+absolute RFC 3986 URI references through its authoritative validator and
+generated runtimes. Optional third-party format assertion can reject relative
+values; no model or instance rewrite is otherwise required.</p>
+</section>
+<section id="generated-schema-inventory">
+<h2>Generated-schema inventory<a class="headerlink" href="#generated-schema-inventory" title="Link to this heading">#</a></h2>
+<p>COGS 2 emits only model-defined JSON Schema definitions reachable from concrete
+item effective properties, while retaining every concrete item definition,
+the ancestors required by emitted inheritance chains, every built-in primitive
+definition, and the global top-level <code class="docutils literal notranslate"><span class="pre">Reference</span></code>. Derived model definitions
+now use <code class="docutils literal notranslate"><span class="pre">allOf</span></code> to reference their parent and contain only local properties.
+Final item and composite boundaries use Draft 2020-12
+<code class="docutils literal notranslate"><span class="pre">unevaluatedProperties:</span> <span class="pre">false</span></code> so the instance contract remains closed.
+Schema validators and code-generation tools must therefore support Draft
+2020-12’s unevaluated vocabulary.</p>
+<p>Property-local tagged and reference restrictions are inline. Schema tooling
+should follow the model-type and global <code class="docutils literal notranslate"><span class="pre">Reference</span></code> links plus their adjacent
+<code class="docutils literal notranslate"><span class="pre">$type</span></code> restrictions. No model CSV or JSON instance rewrite is required.</p>
+<p>The generated XSD now factors reference identity elements into the public
+global <code class="docutils literal notranslate"><span class="pre">IdentificationGroup</span></code>. Schema-inspection tools that expected identity
+elements to be repeated inline in every reference type must follow the group
+reference instead. The resulting XML child sequence is unchanged.</p>
+<p>Reference types also gain an optional unqualified <code class="docutils literal notranslate"><span class="pre">isReference</span></code> attribute
+with fixed boolean value <code class="docutils literal notranslate"><span class="pre">true</span></code>. Existing unmarked XML remains valid and
+requires no rewrite. Newly generated C#, Python, and TypeScript libraries emit
+<code class="docutils literal notranslate"><span class="pre">isReference=&quot;true&quot;</span></code> on every reference; consumers may use that marker to
+query new documents without treating it as a model property.</p>
+</section>
+<section id="rdf-term-migration">
+<h2>RDF term migration<a class="headerlink" href="#rdf-term-migration" title="Link to this heading">#</a></h2>
+<p>COGS 2 uses one RDF naming contract across OWL, generated C# RDF graphs,
+DCTAP, and LinkML. Class, shape, range, and <code class="docutils literal notranslate"><span class="pre">rdf:type</span></code> terms retain their
+exact PascalCase COGS type names. Model property predicates change to
+word-aware camelCase. Common conversions include <code class="docutils literal notranslate"><span class="pre">ID</span></code> → <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">Shade</span></code> →
+<code class="docutils literal notranslate"><span class="pre">shade</span></code>, <code class="docutils literal notranslate"><span class="pre">URLValue</span></code> → <code class="docutils literal notranslate"><span class="pre">urlValue</span></code>, <code class="docutils literal notranslate"><span class="pre">XMLPrefix</span></code> → <code class="docutils literal notranslate"><span class="pre">xmlPrefix</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">DDIMaintenanceAgencyID</span></code> → <code class="docutils literal notranslate"><span class="pre">ddiMaintenanceAgencyId</span></code>. A namespace ending in
+<code class="docutils literal notranslate"><span class="pre">#</span></code> or <code class="docutils literal notranslate"><span class="pre">/</span></code> is retained as the RDF term base; otherwise <code class="docutils literal notranslate"><span class="pre">#</span></code> is appended.</p>
+<p>This is an intentional breaking IRI change for property terms. Update SPARQL
+queries, RDF mappings, stored linked data, DCTAP consumers, LinkML integrations,
+and code that examines <code class="docutils literal notranslate"><span class="pre">MakeRdfGraph()</span></code> predicates. COGS emits no legacy
+PascalCase predicate aliases or compatibility mode. Generated C# instance
+subjects now default below <code class="docutils literal notranslate"><span class="pre">&lt;termBase&gt;instance/</span></code> with the complete structured
+reference identifier URI-escaped before it is appended.</p>
+<p>Primitive RDF objects are now emitted with their full XSD datatype IRIs.
+<code class="docutils literal notranslate"><span class="pre">cogsDate</span></code> changes from an object/value-node projection to a datatype union;
+each instance value is a literal typed with its active XSD arm. Update RDF
+queries and shapes that expected a <code class="docutils literal notranslate"><span class="pre">CogsDate</span></code> object node.</p>
+<p>No CSV rewrite or additional <code class="docutils literal notranslate"><span class="pre">CogsVersion</span></code> change is required. COGS source
+property names, generated-language members, and JSON/XML wire names remain
+unchanged. Validation reports <code class="docutils literal notranslate"><span class="pre">COGS-VAL-PROP-008</span></code> when two distinct source
+names would collapse to one RDF term; rename one source property deliberately
+before publishing rather than treating the terms as aliases.</p>
+</section>
+<section id="verification">
+<h2>Verification<a class="headerlink" href="#verification" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">validate</span></code> and resolve every error; do not rely on a publisher to
+repair or ignore a model problem.</p></li>
+<li><p>Regenerate JSON Schema, XSD, C#, Python, and TypeScript into separate empty
+target directories. Compile/import every generated library.</p></li>
+<li><p>Validate representative old instances with <code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">validate-instance</span></code> to
+apply the COGS 2 schemas and supplementary native-profile checks. Record
+deliberate migration transforms for rejected values.</p></li>
+<li><p>Round-trip JSON to XML and back through at least two generated languages,
+validating every intermediate and checking compound reference identity.</p></li>
+<li><p>Regenerate projection targets and inspect their capability warnings. A
+successful lossy projection is not evidence that the core instance contract
+is preserved.</p></li>
+</ol>
+<p>Use <code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">rewrite</span> <span class="pre">--upgrade-cogs-2</span> <span class="pre">&lt;model&gt;</span></code> for the mechanical subset: adding
+the format row when unambiguous and normalizing SemVer, cardinality, flags, and
+recognized marker-file casing. A noncanonical marker such as
+<code class="docutils literal notranslate"><span class="pre">extends.&lt;Parent&gt;</span></code> is renamed to <code class="docutils literal notranslate"><span class="pre">Extends.&lt;Parent&gt;</span></code> without changing the
+parent name or marker contents.
+Inside a Git worktree, tracked marker changes use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mv</span> <span class="pre">-f</span></code> so case-only
+renames are recorded correctly on Windows and remain staged in Git’s index.
+Git discovery checks <code class="docutils literal notranslate"><span class="pre">COGS_GIT</span></code> and then <code class="docutils literal notranslate"><span class="pre">git</span></code> on <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Untracked
+markers use a case-safe filesystem rename and remain untracked. If Git cannot
+operate on a detected checkout, <code class="docutils literal notranslate"><span class="pre">MIG2011</span></code> aborts the transaction without
+partial source or index changes.
+Settings changes and any necessary property-file changes are staged and
+committed transactionally. Enumeration cells are never transformed, and a
+property CSV that needs no cardinality or flag normalization remains
+byte-for-byte unchanged. The command aborts without writes when a semantic
+decision is required. It must not infer replacements for retired pseudo-types,
+identity semantics, portable regexes, or value-space changes.</p>
+</section>
+<section id="native-scalar-api-migration">
+<h2>Native scalar API migration<a class="headerlink" href="#native-scalar-api-migration" title="Link to this heading">#</a></h2>
+<p>The release uses a narrower native interchange profile than earlier 2.0
+prereleases. Follow <a class="reference internal" href="../technical-guide/generation/native-types/"><span class="doc">Native types and migration</span></a> for the
+25-type matrix, limits, examples and validation procedure. JSON/XML shapes
+and identification spelling are preserved.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../modeler-guide/identification/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Identification</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../technical-guide/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Technical Guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-migration">Before migration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-directory-changes">Model-directory changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wire-value-review">Wire-value review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generated-schema-inventory">Generated-schema inventory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rdf-term-migration">RDF term migration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">Verification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#native-scalar-api-migration">Native scalar API migration</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/migration/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

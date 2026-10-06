@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>OWL Generation &#8212; COGS 1.0 documentation</title>
+    <title>OWL Generation &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/generation/owl';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="Sphinx Generation" href="../sphinx/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../command-line/">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/rewrite/">rewrite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-xsd/">publish-xsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../uml/">UML Generation</a></li>
@@ -368,21 +403,243 @@
   <section id="owl-generation">
 <h1>OWL Generation<a class="headerlink" href="#owl-generation" title="Link to this heading">#</a></h1>
 <p>The <a class="reference internal" href="../../command-line/publish-owl/"><span class="doc">publish-owl</span></a> command generates OWL/RDF
-from a COGS model.</p>
+from a COGS model. It writes the graph as standards-compliant W3C Turtle to one
+UTF-8 file named <code class="docutils literal notranslate"><span class="pre">&lt;Settings.Slug&gt;.ttl</span></code> (media type <code class="docutils literal notranslate"><span class="pre">text/turtle</span></code>). RDF/XML
+and a compatibility <code class="docutils literal notranslate"><span class="pre">.owl</span></code> copy are not generated.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>OWL/RDF is the authoritative COGS ontology and class-semantics output, with
+the two explicit authority exceptions documented under <code class="docutils literal notranslate"><span class="pre">OWL2002</span></code> and
+<code class="docutils literal notranslate"><span class="pre">OWL2003</span></code> below. It is not a JSON/XML serialization or instance-validation
+schema. Collection order and unsupported lexical facets remain within the
+generated JSON Schema and XSD instance contracts.</p>
+</div>
+<p>The canonical capability list and diagnostic ranges are in
+<a class="reference internal" href="../../../specification/publishers/"><span class="doc">Publisher Conformance and Projections</span></a>.</p>
 <section id="mapping">
 <h2>Mapping<a class="headerlink" href="#mapping" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>item types and composite types map to classes</p></li>
-<li><p>relationships to items map to object properties</p></li>
-<li><p>primitive-valued properties map to datatype properties</p></li>
+<li><p>item types and composite types map to classes whose RDF local names retain
+the exact PascalCase COGS type name, with <code class="docutils literal notranslate"><span class="pre">rdfs:subClassOf</span></code> preserving COGS
+inheritance</p></li>
+<li><p>every exact property name maps to one shared camelCase property IRI; no
+owning-class prefix is added, and its <code class="docutils literal notranslate"><span class="pre">rdfs:label</span></code> retains the exact COGS
+property name</p></li>
+<li><p>relationships map to object properties and primitive-valued properties map
+to datatype properties; <code class="docutils literal notranslate"><span class="pre">langString</span></code> maps to <code class="docutils literal notranslate"><span class="pre">rdf:langString</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cogsDate</span></code> maps to a datatype union of <code class="docutils literal notranslate"><span class="pre">xsd:dateTime</span></code>, <code class="docutils literal notranslate"><span class="pre">xsd:date</span></code>,
+<code class="docutils literal notranslate"><span class="pre">xsd:gYearMonth</span></code>, <code class="docutils literal notranslate"><span class="pre">xsd:gYear</span></code>, and <code class="docutils literal notranslate"><span class="pre">xsd:duration</span></code>; each instance
+literal uses its active arm’s XSD datatype</p></li>
+<li><p>each local property declaration maps to an <code class="docutils literal notranslate"><span class="pre">owl:allValuesFrom</span></code> restriction,
+and cardinalities map to separate qualified OWL restrictions, attached to
+the owning class through <code class="docutils literal notranslate"><span class="pre">rdfs:subClassOf</span></code></p></li>
+<li><p>root item identification fields map to <code class="docutils literal notranslate"><span class="pre">owl:hasKey</span></code></p></li>
+<li><p>supported lexical facets map to OWL datatype restrictions; an enumeration
+combined with other supported facets becomes a data-range intersection</p></li>
 <li><p>namespace and version metadata come from model settings unless overridden</p></li>
 </ul>
 </section>
-<section id="ordered-collections">
-<h2>Ordered collections<a class="headerlink" href="#ordered-collections" title="Link to this heading">#</a></h2>
-<p>Before OWL generation, the CLI synthesizes ordered-slot support with
-<code class="docutils literal notranslate"><span class="pre">CreateOrderedEnumerables</span></code> so ordered multi-value properties can be modeled in
-the generated output.</p>
+<section id="calendar-datatype-domains">
+<h2>Calendar datatype domains<a class="headerlink" href="#calendar-datatype-domains" title="Link to this heading">#</a></h2>
+<p>OWL ranges retain the native XSD datatype IRIs and RDF instances use typed XSD
+literals. COGS limits the calendar year of <code class="docutils literal notranslate"><span class="pre">dateTime</span></code>, <code class="docutils literal notranslate"><span class="pre">date</span></code>,
+<code class="docutils literal notranslate"><span class="pre">gYearMonth</span></code>, and <code class="docutils literal notranslate"><span class="pre">gYear</span></code> to a nonzero signed 32-bit integer. OWL 2 DL
+cannot express that local component restriction uniformly for these XSD
+datatypes, so generated runtimes and COGS instance validation enforce it.
+This is an instance lexical-domain boundary, not an additional exception to
+OWL’s authority over the modeled ontology and class semantics.</p>
+</section>
+<section id="rdf-term-naming">
+<h2>RDF term naming<a class="headerlink" href="#rdf-term-naming" title="Link to this heading">#</a></h2>
+<p>COGS uses one naming contract anywhere a publisher emits or identifies an RDF
+model term. Class terms retain the exact COGS type name, so <code class="docutils literal notranslate"><span class="pre">Recipe</span></code> maps to
+<code class="docutils literal notranslate"><span class="pre">&lt;https://example.org/model#Recipe&gt;</span></code>. Property terms use word-aware camelCase,
+so <code class="docutils literal notranslate"><span class="pre">Shade</span></code> maps to <code class="docutils literal notranslate"><span class="pre">&lt;https://example.org/model#shade&gt;</span></code>. Acronym boundaries
+are handled as words: <code class="docutils literal notranslate"><span class="pre">ID</span></code> becomes <code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">URLValue</span></code> becomes <code class="docutils literal notranslate"><span class="pre">urlValue</span></code>,
+<code class="docutils literal notranslate"><span class="pre">XMLPrefix</span></code> becomes <code class="docutils literal notranslate"><span class="pre">xmlPrefix</span></code>, and <code class="docutils literal notranslate"><span class="pre">DDIMaintenanceAgencyID</span></code> becomes
+<code class="docutils literal notranslate"><span class="pre">ddiMaintenanceAgencyId</span></code>. Separators are word boundaries, so <code class="docutils literal notranslate"><span class="pre">Display-Name</span></code>
+becomes <code class="docutils literal notranslate"><span class="pre">displayName</span></code>. COGS does not append language-keyword escapes to RDF
+terms.</p>
+<p>The effective RDF term base retains a namespace that already ends in <code class="docutils literal notranslate"><span class="pre">#</span></code> or
+<code class="docutils literal notranslate"><span class="pre">/</span></code>; otherwise COGS appends <code class="docutils literal notranslate"><span class="pre">#</span></code>. The command’s namespace override follows
+the same rule. This convention affects RDF terms only. Exact JSON and XML wire
+names, generated class names, and source CSV names remain unchanged.</p>
+<p>Distinct COGS names are not aliases merely because they camelize alike. Normal
+DTO validation reports <code class="docutils literal notranslate"><span class="pre">COGS-VAL-PROP-008</span></code> when, for example, <code class="docutils literal notranslate"><span class="pre">URLValue</span></code>
+and <code class="docutils literal notranslate"><span class="pre">UrlValue</span></code> would both produce <code class="docutils literal notranslate"><span class="pre">urlValue</span></code> anywhere in identification,
+an identification mixin, an item, or a composite. Direct OWL publication of a
+manually connected model repeats this guard as <code class="docutils literal notranslate"><span class="pre">OWL1002</span></code> before opening the
+publication transaction. No legacy PascalCase property aliases are emitted.</p>
+</section>
+<section id="shared-properties-and-local-descriptions">
+<h2>Shared properties and local descriptions<a class="headerlink" href="#shared-properties-and-local-descriptions" title="Link to this heading">#</a></h2>
+<p>A camelCase property IRI is declared once and reused by every class that
+declares that exact COGS property name. COGS validates that all such uses have
+the same exact datatype, so the shared term remains either one object property
+or one datatype property. The publisher visits owners by ordinal COGS type name
+and each owner’s locally declared properties in source order. The first
+occurrence supplies the shared property’s type, exact-name <code class="docutils literal notranslate"><span class="pre">rdfs:label</span></code>, base
+<code class="docutils literal notranslate"><span class="pre">rdfs:range</span></code>, and exact nonblank <code class="docutils literal notranslate"><span class="pre">rdfs:comment</span></code>. If that first description
+is blank, the shared property has no global comment; a later description does
+not replace it.</p>
+<p>Normal model validation reports <code class="docutils literal notranslate"><span class="pre">COGS-VAL-PROP-007</span></code> when an exact property
+name is reused with a different datatype across item types, composite types,
+<code class="docutils literal notranslate"><span class="pre">Identification.csv</span></code>, or <code class="docutils literal notranslate"><span class="pre">Identification.Mixin.csv</span></code>. It reports
+<code class="docutils literal notranslate"><span class="pre">COGS-VAL-PROP-008</span></code> when distinct exact names would collapse to the same
+camelCase RDF term. Descriptions, cardinalities, ordering, facets, and
+<code class="docutils literal notranslate"><span class="pre">AllowSubtypes</span></code> may differ because they remain class-local. Direct library
+callers can construct a connected model without running DTO validation, so OWL
+publication repeats the datatype and object/datatype-kind check as <code class="docutils literal notranslate"><span class="pre">OWL1001</span></code>
+and the RDF-term collision check as <code class="docutils literal notranslate"><span class="pre">OWL1002</span></code>. Either preflight error produces
+no artifact and leaves an existing target untouched.</p>
+<p>The shared property has no global <code class="docutils literal notranslate"><span class="pre">rdfs:domain</span></code>. In RDFS, multiple domain
+axioms are intersecting constraints: a resource using the property would be
+inferred to belong to every stated domain. COGS instead records each use on its
+owning class. For every locally declared property, that class receives an
+<code class="docutils literal notranslate"><span class="pre">rdfs:subClassOf</span></code> <code class="docutils literal notranslate"><span class="pre">owl:Restriction</span></code> whose <code class="docutils literal notranslate"><span class="pre">owl:onProperty</span></code> is the shared
+IRI and whose <code class="docutils literal notranslate"><span class="pre">owl:allValuesFrom</span></code> retains that declaration’s range and
+supported facets. The restriction receives the exact nonblank <code class="docutils literal notranslate"><span class="pre">Description</span></code>
+from that class’s property row as its <code class="docutils literal notranslate"><span class="pre">rdfs:comment</span></code>. This preserves differing
+class-specific descriptions without changing the meaning of the shared term.</p>
+<p>Cardinality constraints remain separate qualified restrictions and do not
+repeat the description. A class may therefore have several
+<code class="docutils literal notranslate"><span class="pre">rdfs:subClassOf</span></code> restriction objects; Turtle can abbreviate those objects
+with commas, but they are not an RDF collection or <code class="docutils literal notranslate"><span class="pre">rdf:List</span></code>. Descendants
+inherit their parents’ restrictions through normal class inheritance, so the
+publisher does not copy inherited property declarations onto descendant
+classes.</p>
+</section>
+<section id="turtle-presentation-and-semantic-repeatability">
+<h2>Turtle presentation and semantic repeatability<a class="headerlink" href="#turtle-presentation-and-semantic-repeatability" title="Link to this heading">#</a></h2>
+<p>Restrictions are anonymous RDF resources. The Turtle writer places them inline
+among the owning class’s <code class="docutils literal notranslate"><span class="pre">rdfs:subClassOf</span></code> values, keeping the constraint next
+to the class it describes. For example, a local range and a separate
+cardinality constraint can be read directly from one class definition:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="nt">Recipe</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span>
+        <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Restriction</span> <span class="p">;</span>
+          <span class="nn">owl</span><span class="p">:</span><span class="nt">onProperty</span> <span class="p">:</span><span class="nt">shade</span> <span class="p">;</span>
+          <span class="nn">owl</span><span class="p">:</span><span class="nt">allValuesFrom</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">;</span>
+          <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Shade used by this recipe.&quot;</span> <span class="p">]</span> <span class="p">,</span>
+        <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Restriction</span> <span class="p">;</span>
+          <span class="nn">owl</span><span class="p">:</span><span class="nt">onProperty</span> <span class="p">:</span><span class="nt">shade</span> <span class="p">;</span>
+          <span class="nn">owl</span><span class="p">:</span><span class="nt">onDataRange</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">;</span>
+          <span class="nn">owl</span><span class="p">:</span><span class="nt">qualifiedCardinality</span> <span class="mi">1</span> <span class="p">]</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>COGS generates the same standards-compliant semantic RDF graph on every run.
+An RDF blank-node label is local serialization notation rather than the
+identity of a restriction. Prefix aliases, triple order, and Turtle formatting
+likewise do not change the graph. The regeneration gate therefore parses both
+Turtle artifacts and requires strict RDF graph isomorphism. It checks ground
+triples exactly, partitions anonymous-node triples into blank-node-connected
+components, and matches those components with dotNetRDF <code class="docutils literal notranslate"><span class="pre">Graph.Equals</span></code>. This
+avoids a pathological whole-graph search for large ontologies with many
+independent restrictions without weakening equality. A changed IRI, literal,
+datatype, language tag, restriction comment, cardinality, or blank-node
+subgraph fails that comparison even when the Turtle text remains syntactically
+valid. Non-Turtle generated artifacts continue to be compared byte-for-byte.</p>
+</section>
+<section id="owl2002-property-local-subtype-exclusion">
+<h2><code class="docutils literal notranslate"><span class="pre">OWL2002</span></code>: property-local subtype exclusion<a class="headerlink" href="#owl2002-property-local-subtype-exclusion" title="Link to this heading">#</a></h2>
+<p>COGS applies <code class="docutils literal notranslate"><span class="pre">AllowSubtypes</span></code> to each property. A property that declares a
+concrete item or composite base with <code class="docutils literal notranslate"><span class="pre">AllowSubtypes</span></code> blank or <code class="docutils literal notranslate"><span class="pre">false</span></code>
+accepts exactly that declared type even when the base has descendants. The
+descendants remain valid types elsewhere in the model; the exclusion applies
+only at that property.</p>
+<p>An OWL object-property range of a base class also accepts instances of its
+subclasses. A qualified cardinality restriction on that same base class does
+not make the class exact. Closing the property to the base itself would require
+negative or complement axioms over a currently known descendant set, which is
+not the open-world, extensible class contract emitted by COGS. The publisher
+therefore retains the authoritative declared range and emits <code class="docutils literal notranslate"><span class="pre">OWL2002</span></code> to
+identify the one local rule it cannot enforce.</p>
+<p>For example, DDI Lifecycle declares the following property (columns not
+relevant to the example are omitted):</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id1">
+<caption><span class="caption-text">DDI <code class="docutils literal notranslate"><span class="pre">WeightingMethodology</span></code> example</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 34.0%" />
+<col style="width: 24.0%" />
+<col style="width: 18.0%" />
+<col style="width: 24.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Cardinality</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">AllowSubtypes</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TypeOfWeightingMethodology</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">CodeValueType</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0..1</span></code></p></td>
+<td><p>blank (<code class="docutils literal notranslate"><span class="pre">false</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">CodeValueType</span></code> has concrete descendants including <code class="docutils literal notranslate"><span class="pre">CountryCodeType</span></code>,
+<code class="docutils literal notranslate"><span class="pre">KindOfDataType</span></code>, and <code class="docutils literal notranslate"><span class="pre">ContentDateOffsetType</span></code>. COGS accepts exactly
+<code class="docutils literal notranslate"><span class="pre">CodeValueType</span></code> at
+<code class="docutils literal notranslate"><span class="pre">WeightingMethodology.TypeOfWeightingMethodology</span></code>. The OWL range is
+<code class="docutils literal notranslate"><span class="pre">CodeValueType</span></code>, so normal subclass semantics also admit those descendants.</p>
+<p>When the exact controlled-vocabulary value is intended, leave
+<code class="docutils literal notranslate"><span class="pre">AllowSubtypes</span></code> blank or <code class="docutils literal notranslate"><span class="pre">false</span></code> and retain the warning as the explicit OWL
+exception. Set <code class="docutils literal notranslate"><span class="pre">AllowSubtypes=true</span></code> only when descendant values are genuinely
+valid; do not broaden the COGS model merely to silence <code class="docutils literal notranslate"><span class="pre">OWL2002</span></code>. JSON Schema,
+XSD, and the generated runtimes continue to enforce the property-local rule.</p>
+</section>
+<section id="owl2003-abstract-direct-instances">
+<h2><code class="docutils literal notranslate"><span class="pre">OWL2003</span></code>: abstract direct instances<a class="headerlink" href="#owl2003-abstract-direct-instances" title="Link to this heading">#</a></h2>
+<p>COGS abstract item and composite types cannot be instance discriminators. OWL
+has no native abstract-class modifier: declaring a resource as an <code class="docutils literal notranslate"><span class="pre">owl:Class</span></code>
+and giving it subclasses does not require every member to be known as a member
+of one of those subclasses. Under open-world semantics, more information or
+additional subclasses may always exist.</p>
+<p>DDI Lifecycle illustrates this with the abstract item <code class="docutils literal notranslate"><span class="pre">Agent</span></code>. It is the base
+class for the concrete items <code class="docutils literal notranslate"><span class="pre">Individual</span></code> and <code class="docutils literal notranslate"><span class="pre">Organization</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Agent (Abstract)
+|-- Individual
+`-- Organization
+</pre></div>
+</div>
+<p>COGS forbids a full item whose discriminator is <code class="docutils literal notranslate"><span class="pre">Agent</span></code>. OWL correctly states
+that every <code class="docutils literal notranslate"><span class="pre">Individual</span></code> and <code class="docutils literal notranslate"><span class="pre">Organization</span></code> is an <code class="docutils literal notranslate"><span class="pre">Agent</span></code>, but it cannot
+enforce that every <code class="docutils literal notranslate"><span class="pre">Agent</span></code> is known to be one of those current concrete
+descendants without closing the class to a fixed union. The publisher preserves
+the class and inheritance axioms and emits <code class="docutils literal notranslate"><span class="pre">OWL2003</span></code> for this exception.</p>
+<p>Do not remove <code class="docutils literal notranslate"><span class="pre">Abstract</span></code> merely to silence the warning. <code class="docutils literal notranslate"><span class="pre">OWL2003</span></code> records an
+expected difference between the closed COGS instance rule and OWL’s open-world
+class semantics; it does not indicate a malformed model or failed publication.</p>
+</section>
+<section id="authority-boundary-and-other-diagnostics">
+<h2>Authority boundary and other diagnostics<a class="headerlink" href="#authority-boundary-and-other-diagnostics" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">OWL2002</span></code> and <code class="docutils literal notranslate"><span class="pre">OWL2003</span></code> are the only exceptions within the authoritative
+COGS ontology and class-semantics contract. Other OWL diagnostics mark behavior
+outside that authority boundary or a syntax-only adjustment:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">OWL2001</span></code> reports ordered COGS collections. OWL class and property semantics
+are set-based and do not carry list order; JSON and XML retain authoritative
+occurrence order.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OWL2004</span></code> reports COGS lexical facets that cannot be expressed portably on
+<code class="docutils literal notranslate"><span class="pre">rdf:langString</span></code>. JSON Schema and XSD remain authoritative for those
+instance values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OWL2005</span></code> reports an RDF prefix collision and the replacement syntax alias.
+Prefixes do not affect the expanded model IRIs or ontology semantics.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OWL2006</span></code> reports a bound on a COGS temporal, duration, or Gregorian type
+outside OWL 2’s built-in datatype map. The publisher retains the declared
+datatype and JSON Schema/XSD retain the bound.</p></li>
+</ul>
+<p>These warnings remain source-located and do not modify the validated COGS
+model.</p>
+<p>The conformance suite uses dotNetRDF’s W3C Turtle parser and pinned OWLAPI to
+parse generated Turtle and require OWL 2 DL profile membership. This is a
+syntax/profile gate, not an OWL reasoner.
+OWLAPI’s occurrence-cardinality API is machine-integer-sized, so the gate
+lexically verifies a larger COGS cardinality without claiming that OWLAPI can
+round-trip that value.</p>
 </section>
 <section id="related-pages">
 <h2>Related pages<a class="headerlink" href="#related-pages" title="Link to this heading">#</a></h2>
@@ -390,6 +647,12 @@ the generated output.</p>
 <li><p><a class="reference internal" href="../../command-line/publish-owl/"><span class="doc">publish-owl</span></a></p></li>
 <li><p><a class="reference internal" href="../../../modeler-guide/settings/"><span class="doc">Settings</span></a></p></li>
 </ul>
+</section>
+<section id="native-scalar-restrictions">
+<h2>Native scalar restrictions<a class="headerlink" href="#native-scalar-restrictions" title="Link to this heading">#</a></h2>
+<p>Local datatype ranges include safe-integer limits. <code class="docutils literal notranslate"><span class="pre">OWL2007</span></code> discloses
+that decimal interchange stability and temporal precision require COGS
+validation. These lexical constraints remain outside OWL class authority.</p>
 </section>
 </section>
 
@@ -441,8 +704,15 @@ the generated output.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping">Mapping</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordered-collections">Ordered collections</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calendar-datatype-domains">Calendar datatype domains</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rdf-term-naming">RDF term naming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-properties-and-local-descriptions">Shared properties and local descriptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turtle-presentation-and-semantic-repeatability">Turtle presentation and semantic repeatability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#owl2002-property-local-subtype-exclusion"><code class="docutils literal notranslate"><span class="pre">OWL2002</span></code>: property-local subtype exclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#owl2003-abstract-direct-instances"><code class="docutils literal notranslate"><span class="pre">OWL2003</span></code>: abstract direct instances</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authority-boundary-and-other-diagnostics">Authority boundary and other diagnostics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-pages">Related pages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#native-scalar-restrictions">Native scalar restrictions</a></li>
 </ul>
   </nav></div>
 
@@ -480,7 +750,7 @@ the generated output.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

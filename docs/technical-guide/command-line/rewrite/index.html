@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>rewrite &#8212; COGS 1.0 documentation</title>
+    <title>rewrite &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,17 +39,17 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/command-line/rewrite';</script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
-    <link rel="next" title="validate" href="../validate/" />
+    <link rel="next" title="publish-cs" href="../publish-cs/" />
     <link rel="prev" title="cogs-new" href="../cogs-new/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cogs-new/">cogs-new</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">rewrite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../validate/">validate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-xsd/">publish-xsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../generation/">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/uml/">UML Generation</a></li>
@@ -369,7 +404,14 @@
 <h1>rewrite<a class="headerlink" href="#rewrite" title="Link to this heading">#</a></h1>
 <p>Rewrite a model directory to the current on-disk CSV format.</p>
 <p>This command is useful when an existing model predates the current on-disk
-conventions and you want the source files normalized before continuing work.</p>
+conventions and you want the source files normalized before continuing work.
+It is not a general semantic COGS 2 migration tool. It cannot safely infer a
+replacement for <code class="docutils literal notranslate"><span class="pre">This</span></code>/<code class="docutils literal notranslate"><span class="pre">Any</span></code>, identification semantics, portable regexes,
+or changed primitive representations. Follow
+<a class="reference internal" href="../../../migration/"><span class="doc">Migrating to COGS 2</span></a> first and keep the model under version control.</p>
+<p>The rewrite is transactional: a read or validation error leaves the source
+unchanged. The command must never use the source or an ancestor as a temporary
+publisher target.</p>
 <section id="arguments">
 <h2>Arguments<a class="headerlink" href="#arguments" title="Link to this heading">#</a></h2>
 <dl class="simple">
@@ -382,11 +424,40 @@ conventions and you want the source files normalized before continuing work.</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">-?</span></code>, <code class="docutils literal notranslate"><span class="pre">-h</span></code>, <code class="docutils literal notranslate"><span class="pre">--help</span></code></dt><dd><p>Show command help.</p>
 </dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--upgrade-cogs-2</span></code></dt><dd><p>Attempt only mechanical migration: add <code class="docutils literal notranslate"><span class="pre">CogsVersion</span></code> when the legacy
+input is otherwise unambiguous and canonicalize SemVer, cardinality, and
+flags. Recognized case-insensitive <code class="docutils literal notranslate"><span class="pre">Abstract</span></code>, <code class="docutils literal notranslate"><span class="pre">Primitive</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">Extends.&lt;Parent&gt;</span></code> marker files are renamed to their canonical casing.
+Enumeration cells are never transformed. Settings and only those property
+files that need cardinality or flag normalization are staged for the
+transactional commit; unaffected property files remain byte-for-byte
+unchanged. If a semantic decision is required, report diagnostics and leave
+every source byte unchanged.</p>
+</dd>
 </dl>
+<p>When the model is inside a Git worktree, the upgrader discovers Git through
+<code class="docutils literal notranslate"><span class="pre">COGS_GIT</span></code> and then the <code class="docutils literal notranslate"><span class="pre">git</span></code> command on <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Tracked marker files are
+renamed with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mv</span> <span class="pre">-f</span></code>, including case-only changes on Windows, so the
+canonical name is recorded in Git’s index. These marker renames remain staged;
+CSV rewrites remain unstaged. Untracked marker files use the same case-safe
+filesystem rename used outside Git and remain untracked.</p>
+<p>Git discovery and marker tracking are checked before any source file is
+replaced. If a checkout is present but Git cannot be used, or a tracked rename
+fails, diagnostic <code class="docutils literal notranslate"><span class="pre">MIG2011</span></code> aborts the upgrade. Any earlier Git or filesystem
+rename is reversed and any replaced CSV is restored. <code class="docutils literal notranslate"><span class="pre">COGS_GIT</span></code> must name a
+Git executable, not a shell command with arguments.</p>
+<p>Rewrite transactions stage and replace only the COGS settings, identification,
+item-type, and composite-type CSV files plus recognized marker files. They do
+not directly copy, move, or replace the surrounding model directory,
+repository metadata such as <code class="docutils literal notranslate"><span class="pre">.git</span></code>, authored documentation, or unrelated
+files. The deliberate repository-metadata effect is the staged index rename
+performed by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mv</span> <span class="pre">-f</span></code>. A replacement or marker-rename failure restores
+every earlier change before the command reports an error.</p>
 </section>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cogs rewrite MyModel</span>
+<span class="go">cogs rewrite --upgrade-cogs-2 LegacyModel</span>
 </pre></div>
 </div>
 </section>
@@ -412,11 +483,11 @@ conventions and you want the source files normalized before continuing work.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../validate/"
+       href="../publish-cs/"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">validate</p>
+        <p class="prev-next-title">publish-cs</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -479,7 +550,7 @@ conventions and you want the source files normalized before continuing work.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

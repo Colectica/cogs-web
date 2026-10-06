@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>cogs-new &#8212; COGS 1.0 documentation</title>
+    <title>cogs-new &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,17 +39,17 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/command-line/cogs-new';</script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
     <link rel="next" title="rewrite" href="../rewrite/" />
-    <link rel="prev" title="Command Line" href="../" />
+    <link rel="prev" title="CLI descriptor reference" href="../generated-reference/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rewrite/">rewrite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-xsd/">publish-xsd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../generation/">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/uml/">UML Generation</a></li>
@@ -374,19 +409,11 @@
 </section>
 <section id="command-line-arguments">
 <h2>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Link to this heading">#</a></h2>
-<p>Required inputs for the cogs-new command (must be specified in order).</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">[CogsLocation]</span></code></p>
-<blockquote>
-<div><p>The location of the folder containing the model.</p>
-</div></blockquote>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[TargetLocation]</span></code></p>
-<blockquote>
-<div><p>The location of the folder where the output will be created.</p>
-</div></blockquote>
-</li>
-</ul>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">targetLocation</span></code></dt><dd><p>The one required positional argument. COGS creates the new model in this
+directory. The COGS 1 two-directory form is rejected.</p>
+</dd>
+</dl>
 </section>
 <section id="command-line-flags">
 <h2>Command Line Flags<a class="headerlink" href="#command-line-flags" title="Link to this heading">#</a></h2>
@@ -399,7 +426,8 @@
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></p>
 <blockquote>
-<div><p>If the <code class="docutils literal notranslate"><span class="pre">[TargetLocation]</span></code> is not empty, erase all files in the folder before generation.</p>
+<div><p>Transactionally replace an existing target directory. This does not permit
+targeting an input model, filesystem root, or overlapping path.</p>
 </div></blockquote>
 </li>
 </ul>
@@ -408,19 +436,25 @@
 <h2>Command Line Usage<a class="headerlink" href="#command-line-usage" title="Link to this heading">#</a></h2>
 <p><strong>Format</strong></p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs-new<span class="w"> </span><span class="o">(</span>-h<span class="o">)</span><span class="w"> </span><span class="o">(</span>-o<span class="o">)</span><span class="w"> </span><span class="o">[</span>CogsLocation<span class="o">]</span><span class="w"> </span><span class="o">[</span>TargetLocation<span class="o">]</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs<span class="w"> </span>cogs-new<span class="w"> </span><span class="o">(</span>-h<span class="o">)</span><span class="w"> </span><span class="o">(</span>-o<span class="o">)</span><span class="w"> </span>targetLocation
 </pre></div>
 </div>
 </div></blockquote>
 <p><strong>Examples</strong></p>
 <blockquote>
 <div><p>A few examples of how the command line arguments and flags can be used together.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs-new<span class="w"> </span>-h
-$<span class="w"> </span>cogs-new<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
-$<span class="w"> </span>cogs-new<span class="w"> </span>-o<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs<span class="w"> </span>cogs-new<span class="w"> </span>-h
+$<span class="w"> </span>cogs<span class="w"> </span>cogs-new<span class="w"> </span>MyModel
+$<span class="w"> </span>cogs<span class="w"> </span>cogs-new<span class="w"> </span>--overwrite<span class="w"> </span>MyModel
 </pre></div>
 </div>
 </div></blockquote>
+<p>The generated skeleton contains a valid <code class="docutils literal notranslate"><span class="pre">CogsVersion,2.0</span></code> settings file,
+required identification, an abstract <code class="docutils literal notranslate"><span class="pre">ItemOne</span></code> base, an
+<code class="docutils literal notranslate"><span class="pre">ItemTwo/Extends.ItemOne</span></code> descendant, a <code class="docutils literal notranslate"><span class="pre">CompositeOne/Primitive</span></code> value
+object, another concrete composite, and an optional sample topic. The exact
+canonical marker spellings are therefore visible in a new model, which can be
+passed directly to <code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">validate</span></code> and every publisher.</p>
 </section>
 </section>
 
@@ -435,12 +469,12 @@ $<span class="w"> </span>cogs-new<span class="w"> </span>-o<span class="w"> </sp
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../"
+       href="../generated-reference/"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Command Line</p>
+        <p class="prev-next-title">CLI descriptor reference</p>
       </div>
     </a>
     <a class="right-next"
@@ -512,7 +546,7 @@ $<span class="w"> </span>cogs-new<span class="w"> </span>-o<span class="w"> </sp
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

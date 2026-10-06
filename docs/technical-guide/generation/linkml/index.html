@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>LinkML Generation &#8212; COGS 1.0 documentation</title>
+    <title>LinkML Generation &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/generation/linkml';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="GraphQL Generation" href="../graphql/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../command-line/">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/rewrite/">rewrite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-xsd/">publish-xsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../uml/">UML Generation</a></li>
@@ -369,18 +404,63 @@
 <h1>LinkML Generation<a class="headerlink" href="#linkml-generation" title="Link to this heading">#</a></h1>
 <p>The <a class="reference internal" href="../../command-line/publish-linkml/"><span class="doc">publish-linkml</span></a> command generates a
 LinkML YAML schema from a COGS model.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>LinkML is a projection. The command emits stable warnings for property-local
+subtype exclusion and facets that LinkML cannot express exactly; the
+generated JSON Schema and XSD remain authoritative for instances.</p>
+</div>
+<p>The canonical preserved/approximated list and diagnostic ranges are in
+<a class="reference internal" href="../../../specification/publishers/"><span class="doc">Publisher Conformance and Projections</span></a>.</p>
 <section id="mapping">
 <h2>Mapping<a class="headerlink" href="#mapping" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>item types and reusable datatypes are translated into LinkML classes and slots</p></li>
-<li><p>namespace information comes from model settings unless overridden</p></li>
-<li><p>the emitted model name defaults to the COGS <code class="docutils literal notranslate"><span class="pre">ShortTitle</span></code></p></li>
+<li><p>item and composite types become PascalCase classes and ranges with
+inheritance and abstractness</p></li>
+<li><p>global slot keys use the shared word-aware camelCase RDF property name, and
+each slot has an explicit <code class="docutils literal notranslate"><span class="pre">slot_uri</span></code> using the model prefix</p></li>
+<li><p>root item identification tuples become LinkML unique keys that reference the
+same camelCase global slots</p></li>
+<li><p>cardinality, ordered lists, and supported facets are represented in
+class-specific slot usage</p></li>
+<li><p>every COGS builtin maps either to an imported LinkML builtin or an explicitly
+declared COGS alias, including integer, Gregorian, language, URI,
+<code class="docutils literal notranslate"><span class="pre">langString</span></code>, duration, and <code class="docutils literal notranslate"><span class="pre">cogsDate</span></code> types</p></li>
+<li><p>aliases use LinkML’s <code class="docutils literal notranslate"><span class="pre">uri</span></code> field; <code class="docutils literal notranslate"><span class="pre">duration</span></code>, <code class="docutils literal notranslate"><span class="pre">dateTime</span></code>, <code class="docutils literal notranslate"><span class="pre">date</span></code>,
+and the Gregorian values remain lexical <code class="docutils literal notranslate"><span class="pre">string</span></code> aliases with their native
+XSD datatype URIs, while <code class="docutils literal notranslate"><span class="pre">anyURI</span></code> derives from LinkML <code class="docutils literal notranslate"><span class="pre">uri</span></code></p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">dateTime</span></code>, <code class="docutils literal notranslate"><span class="pre">date</span></code>, <code class="docutils literal notranslate"><span class="pre">gYearMonth</span></code>, and <code class="docutils literal notranslate"><span class="pre">gYear</span></code> aliases document
+their native profiles; partial Gregorian years retain the nonzero signed
+32-bit domain. Decimal interchange and temporal precision require COGS
+validation.</p></li>
+<li><p>COGS <code class="docutils literal notranslate"><span class="pre">int</span></code> derives from <code class="docutils literal notranslate"><span class="pre">xsd:integer</span></code> with exact signed 32-bit bounds,
+because LinkML rejects <code class="docutils literal notranslate"><span class="pre">xsd:int</span></code> as a type URI</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cogsDate</span></code> is a valid string-rooted union of the supported lexical arms</p></li>
+<li><p>the model prefix maps to an RDF term base that retains a trailing <code class="docutils literal notranslate"><span class="pre">#</span></code> or
+<code class="docutils literal notranslate"><span class="pre">/</span></code> and otherwise appends <code class="docutils literal notranslate"><span class="pre">#</span></code>; namespace information comes from model
+settings unless overridden</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--name</span></code> controls the emitted schema name (with a warning if LinkML-safe
+normalization is required)</p></li>
 </ul>
+<p>For example, the COGS class <code class="docutils literal notranslate"><span class="pre">Recipe</span></code> remains the LinkML class and range
+<code class="docutils literal notranslate"><span class="pre">Recipe</span></code>, while its properties <code class="docutils literal notranslate"><span class="pre">Shade</span></code>, <code class="docutils literal notranslate"><span class="pre">URLValue</span></code>, and <code class="docutils literal notranslate"><span class="pre">ID</span></code> become the
+global slots <code class="docutils literal notranslate"><span class="pre">shade</span></code>, <code class="docutils literal notranslate"><span class="pre">urlValue</span></code>, and <code class="docutils literal notranslate"><span class="pre">id</span></code> with corresponding
+<code class="docutils literal notranslate"><span class="pre">slot_uri</span></code> values such as <code class="docutils literal notranslate"><span class="pre">model:shade</span></code>. Class <code class="docutils literal notranslate"><span class="pre">slots</span></code>, <code class="docutils literal notranslate"><span class="pre">slot_usage</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">unique_key_slots</span></code> all reference those same keys. Exact COGS source and
+JSON/XML property names do not change.</p>
+<p>Model validation reports <code class="docutils literal notranslate"><span class="pre">COGS-VAL-PROP-008</span></code> if distinct exact names collapse
+to one RDF slot term. A directly constructed connected model receives
+<code class="docutils literal notranslate"><span class="pre">LNK1001</span></code> before publication and leaves an existing target untouched. No
+legacy PascalCase slot aliases are emitted.</p>
 </section>
 <section id="ordered-collections">
 <h2>Ordered collections<a class="headerlink" href="#ordered-collections" title="Link to this heading">#</a></h2>
-<p>Before LinkML generation, the CLI calls <code class="docutils literal notranslate"><span class="pre">CreateOrderedEnumerables</span></code> so ordered
-multi-value properties can be represented consistently in the built model.</p>
+<p>Repeated slots use LinkML cardinality and ordered-list metadata directly. No
+helper type is injected and the canonical COGS model is not modified.</p>
+<p>The conformance gate runs <code class="docutils literal notranslate"><span class="pre">linkml-lint</span> <span class="pre">--validate</span> <span class="pre">--ignore-warnings</span></code>, then
+<code class="docutils literal notranslate"><span class="pre">gen-python</span> <span class="pre">--validate</span></code> and Python compilation. This verifies LinkML schema
+and generated-code validity; it does not make LinkML authoritative for the
+COGS JSON/XML wire contract.</p>
 </section>
 <section id="related-pages">
 <h2>Related pages<a class="headerlink" href="#related-pages" title="Link to this heading">#</a></h2>
@@ -478,7 +558,7 @@ multi-value properties can be represented consistently in the built model.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

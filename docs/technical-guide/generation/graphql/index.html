@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GraphQL Generation &#8212; COGS 1.0 documentation</title>
+    <title>GraphQL Generation &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/generation/graphql';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="OWL Generation" href="../owl/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../command-line/">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/rewrite/">rewrite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-xsd/">publish-xsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../uml/">UML Generation</a></li>
@@ -367,21 +402,37 @@
                   
   <section id="graphql-generation">
 <h1>GraphQL Generation<a class="headerlink" href="#graphql-generation" title="Link to this heading">#</a></h1>
-<p>The <a class="reference internal" href="../../command-line/publish-graphql/"><span class="doc">publish-GraphQL</span></a> command generates a
+<p>The <a class="reference internal" href="../../command-line/publish-graphql/"><span class="doc">publish-graphql</span></a> command generates a
 GraphQL schema representation of a COGS model.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>GraphQL is an API projection, not an instance serialization target. It may
+approximate identity, facets, ordering, and substitution only when those
+approximations are declared through stable <code class="docutils literal notranslate"><span class="pre">PROJ25xx</span></code> diagnostics and the
+documented capability matrix.</p>
+</div>
+<p>The canonical preserved/approximated list and diagnostic ranges are in
+<a class="reference internal" href="../../../specification/publishers/"><span class="doc">Publisher Conformance and Projections</span></a>.</p>
 <section id="mapping">
 <h2>Mapping<a class="headerlink" href="#mapping" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>item types and composite types map to GraphQL object types</p></li>
-<li><p>primitive properties map to scalar fields</p></li>
-<li><p>relationships map to fields referencing other generated type names</p></li>
-<li><p>list cardinality maps to list-valued fields</p></li>
+<li><p>concrete item and composite types map to GraphQL object types</p></li>
+<li><p>abstract types map to interfaces; concrete bases used polymorphically also
+receive <code class="docutils literal notranslate"><span class="pre">&lt;Type&gt;Assignable</span></code> interfaces</p></li>
+<li><p>all COGS primitive/helper domains have declared GraphQL scalar or object
+types</p></li>
+<li><p>every declared item type receives a lookup field taking all required
+identity components and an <code class="docutils literal notranslate"><span class="pre">all&lt;Type&gt;</span></code> list field on <code class="docutils literal notranslate"><span class="pre">Query</span></code></p></li>
+<li><p>optional singleton fields are nullable; required singletons are nonnull;
+repetitions are nonnull lists of nonnull values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;cogsCardinality</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;cogsFacet</span></code> carry constraints that GraphQL SDL
+cannot enforce without resolver support</p></li>
 </ul>
 </section>
 <section id="related-pages">
 <h2>Related pages<a class="headerlink" href="#related-pages" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../../command-line/publish-graphql/"><span class="doc">publish-GraphQL</span></a></p></li>
+<li><p><a class="reference internal" href="../../command-line/publish-graphql/"><span class="doc">publish-graphql</span></a></p></li>
 <li><p><a class="reference internal" href="../../../modeler-guide/item-types/"><span class="doc">Item Types</span></a></p></li>
 <li><p><a class="reference internal" href="../../../modeler-guide/composite-types/"><span class="doc">Composite Types</span></a></p></li>
 </ul>
@@ -474,7 +525,7 @@ GraphQL schema representation of a COGS model.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

@@ -1,0 +1,760 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Publisher Conformance and Projections &#8212; COGS 2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=ee564b6a"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'specification/publishers';</script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Modeler’s Guide" href="../../modeler-guide/" />
+    <link rel="prev" title="JSON and XML Serialization" href="../serialization/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">COGS 2.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../modeler-guide/">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical-guide/">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../modeler-guide/">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical-guide/">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../model-format/">Model Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../serialization/">JSON and XML Serialization</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Publisher Conformance and Projections</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../" class="nav-link">COGS 2 Specification</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Publisher Conformance and Projections</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="publisher-conformance-and-projections">
+<h1>Publisher Conformance and Projections<a class="headerlink" href="#publisher-conformance-and-projections" title="Link to this heading">#</a></h1>
+<p>Publisher classes consume the same validated <code class="docutils literal notranslate"><span class="pre">CogsModel</span></code>. A publisher MUST
+NOT reinterpret model CSV, fabricate datatypes, mutate the model, or continue
+after reader/validation errors. Its target directory must not be the model
+directory, an ancestor of it, or otherwise overlap it. <code class="docutils literal notranslate"><span class="pre">--overwrite</span></code> never
+relaxes that safety rule.</p>
+<section id="authoritative-targets">
+<h2>Authoritative targets<a class="headerlink" href="#authoritative-targets" title="Link to this heading">#</a></h2>
+<p>JSON Schema, XML Schema, and the generated C#, Python, and TypeScript libraries
+implement the COGS 2 instance contract. They must agree on names, inheritance,
+abstract types, property-local substitutions, cardinality/facets, compound
+identity, namespaces, and primitive values. Conformance requires
+schema-validated JSON/XML round trips across the generated languages; current
+release-gate status is recorded in the correctness audit rather than implied by
+successful source generation.</p>
+<p>JSON Schema uses standard annotation-only <code class="docutils literal notranslate"><span class="pre">duration</span></code>, <code class="docutils literal notranslate"><span class="pre">date-time</span></code>,
+<code class="docutils literal notranslate"><span class="pre">time</span></code>, and <code class="docutils literal notranslate"><span class="pre">date</span></code> formats. <code class="docutils literal notranslate"><span class="pre">anyURI</span></code> uses the standard annotation-only
+<code class="docutils literal notranslate"><span class="pre">uri</span></code> format without a regex pattern. The COGS instance validator remains
+authoritative for the broader XSD lexical spaces, relative URI references, the
+nonzero signed-32-bit calendar-year rule, and extension bounds. Gregorian
+partial dates are component objects in JSON and XSD lexical values in XML/RDF.</p>
+<p>XSD declares the ordered base-and-mixin identity fields once in the global
+<code class="docutils literal notranslate"><span class="pre">IdentificationGroup</span></code> and reuses it in every item-reference type before the
+property-local <code class="docutils literal notranslate"><span class="pre">TypeOfObject</span></code> restriction. Each reference type has an
+optional unqualified <code class="docutils literal notranslate"><span class="pre">isReference</span></code> boolean attribute fixed to <code class="docutils literal notranslate"><span class="pre">true</span></code>.
+Generated-language writers always emit the marker; readers accept legacy
+absence and the true lexemes <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>. Full item definitions are
+never marked, and no generated model member represents the attribute.</p>
+<p>Its <code class="docutils literal notranslate"><span class="pre">$defs</span></code> inventory is dependency-driven rather than a dump of every model
+type. Concrete item definitions, their required inheritance ancestors, and all
+built-in primitive definitions are always present. A composite and its
+required ancestors are emitted only when reachable from concrete-item
+effective properties. Structural item and composite definitions declare local
+properties and use <code class="docutils literal notranslate"><span class="pre">allOf</span></code> for parent inheritance; final wire-object schemas
+use Draft 2020-12 <code class="docutils literal notranslate"><span class="pre">unevaluatedProperties:</span> <span class="pre">false</span></code> to remain closed after
+composition. The global <code class="docutils literal notranslate"><span class="pre">Reference</span></code> definition remains for top-level
+references, and item-valued properties restrict its <code class="docutils literal notranslate"><span class="pre">$type</span></code> inline through
+<code class="docutils literal notranslate"><span class="pre">allOf</span></code> rather than introducing additional schema types.</p>
+<p>UML/XMI is the authoritative structural model output. It preserves COGS
+classes, abstractness, inheritance, properties, associations, multiplicity,
+ordering/uniqueness, primitive definitions, identification, and facet
+constraints. Its single semantic exception is <code class="docutils literal notranslate"><span class="pre">PROJ2601</span></code>: UML association
+typing cannot restrict one property to the declared base class itself while
+excluding all subclasses. This exception is explicit and does not make UML an
+instance-validation schema; JSON Schema and XSD remain authoritative for JSON
+and XML documents.</p>
+<p>OWL/RDF is emitted as W3C Turtle in <code class="docutils literal notranslate"><span class="pre">&lt;Settings.Slug&gt;.ttl</span></code> and is the
+authoritative ontology and class-semantics output. It preserves classes,
+inheritance, shared camelCase property IRIs, class-local <code class="docutils literal notranslate"><span class="pre">owl:allValuesFrom</span></code>
+ranges, object/datatype distinctions, qualified cardinality restrictions,
+supported datatype restrictions, <code class="docutils literal notranslate"><span class="pre">rdf:langString</span></code>, compound <code class="docutils literal notranslate"><span class="pre">owl:hasKey</span></code>,
+the <code class="docutils literal notranslate"><span class="pre">cogsDate</span></code> XSD datatype union, and model IRIs. Class terms retain exact
+PascalCase COGS names. Shared
+properties have no global <code class="docutils literal notranslate"><span class="pre">rdfs:domain</span></code>; owning classes carry their local
+constraints as <code class="docutils literal notranslate"><span class="pre">rdfs:subClassOf</span></code> restrictions. The deterministic first
+occurrence supplies the shared property’s exact-name label and exact optional
+global description, while every <code class="docutils literal notranslate"><span class="pre">owl:allValuesFrom</span></code> restriction carries that
+class declaration’s exact nonblank description. Its two authority exceptions
+are <code class="docutils literal notranslate"><span class="pre">OWL2002</span></code> for property-local subtype exclusion and <code class="docutils literal notranslate"><span class="pre">OWL2003</span></code> for
+prohibition of direct instances of abstract COGS types. OWL is not an
+instance-validation or ordered-collection authority; unsupported lexical
+constraints remain in the schema-plus-COGS instance contract. Native scalar
+limits are described in <a class="reference internal" href="../model-format/"><span class="doc">Model Format</span></a>; OWL emits safe-integer ranges
+and <code class="docutils literal notranslate"><span class="pre">OWL2007</span></code> for native decimal/temporal checks outside OWL authority.
+DCTAP emits <code class="docutils literal notranslate"><span class="pre">DCT2010</span></code> for the native profile that its XSD IRIs cannot enforce.
+LinkML aliases and GraphQL scalar declarations disclose the same boundary.</p>
+<p>The shared-term contract requires one exact datatype for every exact property
+name reused across item types, composite types, identification, and
+identification mixins. DTO validation enforces that invariant with
+<code class="docutils literal notranslate"><span class="pre">COGS-VAL-PROP-007</span></code>. It also rejects distinct exact property names that map
+to the same camelCase RDF term with <code class="docutils literal notranslate"><span class="pre">COGS-VAL-PROP-008</span></code>. OWL publication
+reports <code class="docutils literal notranslate"><span class="pre">OWL1001</span></code> before writing when a manually connected model violates the
+datatype or object/datatype-kind invariant and <code class="docutils literal notranslate"><span class="pre">OWL1002</span></code> for a normalized
+RDF-term collision.</p>
+<p>RDF term naming is common across OWL, generated C# RDF graphs, DCTAP, and
+LinkML. Class, shape, range, and <code class="docutils literal notranslate"><span class="pre">rdf:type</span></code> terms retain the exact PascalCase
+COGS type name. Model property predicates use word-aware camelCase: <code class="docutils literal notranslate"><span class="pre">ID</span></code> →
+<code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">XMLPrefix</span></code> → <code class="docutils literal notranslate"><span class="pre">xmlPrefix</span></code>, <code class="docutils literal notranslate"><span class="pre">URLValue</span></code> → <code class="docutils literal notranslate"><span class="pre">urlValue</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">DDIMaintenanceAgencyID</span></code> → <code class="docutils literal notranslate"><span class="pre">ddiMaintenanceAgencyId</span></code>. A namespace already
+ending in <code class="docutils literal notranslate"><span class="pre">#</span></code> or <code class="docutils literal notranslate"><span class="pre">/</span></code> is the term base; otherwise COGS appends <code class="docutils literal notranslate"><span class="pre">#</span></code>.
+Generated C# emits full class and predicate IRIs and places escaped instance
+subject identifiers below <code class="docutils literal notranslate"><span class="pre">&lt;termBase&gt;instance/</span></code>. DCTAP uses PascalCase
+<code class="docutils literal notranslate"><span class="pre">shapeID</span></code>/<code class="docutils literal notranslate"><span class="pre">valueShape</span></code> terms and camelCase model <code class="docutils literal notranslate"><span class="pre">propertyID</span></code> terms.
+LinkML uses PascalCase classes/ranges and camelCase global slot keys with
+explicit <code class="docutils literal notranslate"><span class="pre">slot_uri</span></code> values. Direct-model collision guards are <code class="docutils literal notranslate"><span class="pre">CSH1001</span></code>,
+<code class="docutils literal notranslate"><span class="pre">DCT1001</span></code>, and <code class="docutils literal notranslate"><span class="pre">LNK1001</span></code> respectively. Exact source, JSON, XML, and
+generated-language names do not change, and no legacy PascalCase RDF property
+aliases are emitted.</p>
+<p>Package metadata preserves the canonical model <code class="docutils literal notranslate"><span class="pre">Version</span></code>. NuGet and npm use
+that SemVer directly. Python maps <code class="docutils literal notranslate"><span class="pre">alpha</span></code>, <code class="docutils literal notranslate"><span class="pre">beta</span></code>, and <code class="docutils literal notranslate"><span class="pre">rc</span></code> prereleases
+directly to PEP 440; another valid SemVer prerelease receives a deterministic
+<code class="docutils literal notranslate"><span class="pre">.dev0</span></code> plus encoded local label. The generated Python metadata records both
+the canonical SemVer and an approximation warning. Package-version translation
+must never change the JSON/XML instance contract or the generated COGS model
+metadata.</p>
+</section>
+<section id="projection-targets">
+<h2>Projection targets<a class="headerlink" href="#projection-targets" title="Link to this heading">#</a></h2>
+<p>LinkML, DCTAP, GraphQL, DOT, and Sphinx are projections. They are not alternate
+authorities for the JSON/XML instance model. Each generated
+artifact MUST carry or accompany a capability report that labels every COGS
+feature as:</p>
+<ul class="simple">
+<li><p>preserved;</p></li>
+<li><p>deliberately approximated;</p></li>
+<li><p>explicitly unsupported; or</p></li>
+<li><p>omitted because it is documentation-only.</p></li>
+</ul>
+<p>Silent loss is non-conforming. If a model uses a feature whose approximation
+would be misleading, the publisher must emit a diagnostic or fail. Consumers
+must not use a projection to infer a wire contract that conflicts with the
+generated schemas.</p>
+</section>
+<section id="publisher-capability-matrix">
+<h2>Publisher capability matrix<a class="headerlink" href="#publisher-capability-matrix" title="Link to this heading">#</a></h2>
+<p>The following matrix is the COGS 2 capability contract for projection targets
+and the documented exceptions or boundaries of authoritative UML and OWL
+outputs. “Preserved” means the target has a native or explicit representation.
+“Approximated” means the publisher emits the named stable diagnostic. JSON
+Schema and XSD remain authoritative for instance validation.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 12.0%" />
+<col style="width: 31.0%" />
+<col style="width: 39.0%" />
+<col style="width: 18.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Target</p></th>
+<th class="head"><p>Preserved</p></th>
+<th class="head"><p>Approximated or unsupported</p></th>
+<th class="head"><p>Diagnostics</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>OWL 2/RDF</p></td>
+<td><p>Authoritative PascalCase classes, inheritance, shared camelCase property
+IRIs without global domains, class-local <code class="docutils literal notranslate"><span class="pre">owl:allValuesFrom</span></code> ranges
+and descriptions, object/datatype distinctions, qualified cardinality
+restrictions, supported datatype restrictions, <code class="docutils literal notranslate"><span class="pre">rdf:langString</span></code>,
+the <code class="docutils literal notranslate"><span class="pre">cogsDate</span></code> XSD datatype union, compound <code class="docutils literal notranslate"><span class="pre">owl:hasKey</span></code>,
+namespaces, and model IRIs.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OWL2002</span></code> and <code class="docutils literal notranslate"><span class="pre">OWL2003</span></code> are the authority exceptions for exact
+property-local subtype exclusion and abstract direct-instance
+prohibition. List order (<code class="docutils literal notranslate"><span class="pre">OWL2001</span></code>) and unsupported lexical facets
+(<code class="docutils literal notranslate"><span class="pre">OWL2004</span></code>/<code class="docutils literal notranslate"><span class="pre">OWL2006</span></code>/<code class="docutils literal notranslate"><span class="pre">OWL2007</span></code>) are outside the OWL authority boundary;
+<code class="docutils literal notranslate"><span class="pre">OWL2005</span></code> is a syntax-only prefix alias.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OWL1001</span></code> (shared-property datatype/kind preflight), <code class="docutils literal notranslate"><span class="pre">OWL1002</span></code>
+(RDF-term collision); <code class="docutils literal notranslate"><span class="pre">OWL2002</span></code>, <code class="docutils literal notranslate"><span class="pre">OWL2003</span></code> (authority exceptions);
+<code class="docutils literal notranslate"><span class="pre">OWL2001</span></code>, <code class="docutils literal notranslate"><span class="pre">OWL2004</span></code>, <code class="docutils literal notranslate"><span class="pre">OWL2006</span></code>, <code class="docutils literal notranslate"><span class="pre">OWL2007</span></code> (outside authority); <code class="docutils literal notranslate"><span class="pre">OWL2005</span></code>
+(syntax only)</p></td>
+</tr>
+<tr class="row-odd"><td><p>LinkML</p></td>
+<td><p>PascalCase classes/ranges, camelCase global slots with explicit
+<code class="docutils literal notranslate"><span class="pre">slot_uri</span></code> terms, inheritance, abstractness, compound unique keys,
+cardinality, ordered lists, supported facets, namespaces, and declared
+aliases for every COGS builtin.</p></td>
+<td><p>Exact property-local subtype exclusion, exclusive bounds, portable
+length facets, and non-string lexical enumerations are omitted with
+warnings when LinkML has no equivalent slot expression.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">LNK1001</span></code> (RDF-term collision); <code class="docutils literal notranslate"><span class="pre">LNK2001</span></code>–<code class="docutils literal notranslate"><span class="pre">LNK2006</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>DCTAP</p></td>
+<td><p>PascalCase declared/effective shapes and value shapes, camelCase model
+<code class="docutils literal notranslate"><span class="pre">propertyID</span></code> terms, cardinality, IRI item nodes, blank-node
+composites, primitive datatypes, explicit <code class="docutils literal notranslate"><span class="pre">dcterms:*</span></code> mappings, and
+<code class="docutils literal notranslate"><span class="pre">rdf:langString</span></code>.</p></td>
+<td><p>Abstractness, property-local subtype exclusion, ordering, the
+<code class="docutils literal notranslate"><span class="pre">cogsDate</span></code> union, comma-bearing picklists,
+exclusive bounds, and competing constraint kinds cannot all fit DCTAP
+cells. Enumeration is preferred over pattern when one constraint must
+be selected.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DCT1001</span></code> (RDF-term collision); <code class="docutils literal notranslate"><span class="pre">DCT2001</span></code>–<code class="docutils literal notranslate"><span class="pre">DCT2010</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>GraphQL</p></td>
+<td><p>Scalar/helper declarations, a query root, abstract interfaces,
+assignable-base interfaces, item lookup/list fields, nullability, and
+COGS cardinality/facet/order directives.</p></td>
+<td><p>Directives are metadata: resolvers must enforce cardinality, facets,
+ordering behavior. An otherwise empty type receives a
+deprecated metadata field because GraphQL requires at least one field.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PROJ2501</span></code>–<code class="docutils literal notranslate"><span class="pre">PROJ2505</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>UML/XMI</p></td>
+<td><p>Authoritative classes, abstractness, inheritance,
+associations/attributes,
+multiplicity, order/uniqueness, primitive definitions, identity
+annotations, and machine-readable facet constraints. Normative mode is
+UML/XMI 2.4.2; EA mode is XMI 2.5.1 with deterministic diagram
+extensions.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PROJ2601</span></code> is the sole semantic exception: UML association typing
+cannot close one property to its declared item or composite base while
+excluding all descendants. <code class="docutils literal notranslate"><span class="pre">PROJ2602</span></code> is an invalid-output-filename
+publication error, not a semantic approximation.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PROJ2601</span></code>; <code class="docutils literal notranslate"><span class="pre">PROJ2602</span></code> (publication error)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Graphviz/DOT</p></td>
+<td><p>Isolated nodes and actual cardinalities. Per-type diagrams preserve
+declared direct incoming/outgoing links, optional immediate inheritance
+edges, and optional contained composite detail. Full-model/topic graphs
+also include inherited and nested/recursive relationships.</p></td>
+<td><p>DOT is a relationship visualization and carries no authoritative
+identity, facet, primitive, namespace, or instance-shape constraints.
+Local diagrams do not expand item neighbors, inherited properties, or
+hidden composite paths. Raw DOT needs no renderer; SVG/PNG/JPEG/PDF
+require Graphviz.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PROJ2701</span></code>–<code class="docutils literal notranslate"><span class="pre">PROJ2705</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Sphinx</p></td>
+<td><p>Type/topic/article inventories, authored MyST Markdown and
+reStructuredText, descriptions, properties, facets, and
+relationships. Article TOCs are exact-case, unique, root-contained
+references to existing <code class="docutils literal notranslate"><span class="pre">.rst</span></code> or <code class="docutils literal notranslate"><span class="pre">.md</span></code> documents. Diagrams are
+included when Graphviz succeeds.</p></td>
+<td><p>Sphinx is documentation rather than a constraint language. If Graphviz
+is absent, one warning is emitted and all diagram markup is omitted; an
+executable that is found but fails is an error. Unsafe article paths,
+links, overlaps, and toctree directive syntax are rejected before the
+target changes.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">COGS-READ-084</span></code>–<code class="docutils literal notranslate"><span class="pre">COGS-READ-089</span></code>,
+<code class="docutils literal notranslate"><span class="pre">COGS-VAL-ARTICLE-001</span></code>–<code class="docutils literal notranslate"><span class="pre">COGS-VAL-ARTICLE-007</span></code>, <code class="docutils literal notranslate"><span class="pre">PROJ2801</span></code>, and
+propagated DOT errors</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="verification-boundary">
+<h2>Verification boundary<a class="headerlink" href="#verification-boundary" title="Link to this heading">#</a></h2>
+<p>Repository unit tests parse W3C Turtle with dotNetRDF, deserialize LinkML YAML and
+DCTAP CSV, build and inspect GraphQL structure, resolve internal UML/XMI
+references, inspect raw DOT, and inspect generated Sphinx sources. The
+generated-runtime conformance probe drives the complete instance corpus through
+C# → Python → TypeScript and the reverse order, alternates JSON/XML, and runs
+<code class="docutils literal notranslate"><span class="pre">validate-instance</span></code> on every emitted boundary while asserting values and
+reference identity. The two-platform conformance workflow additionally runs
+<code class="docutils literal notranslate"><span class="pre">linkml-lint</span></code> and LinkML
+code generation, builds the GraphQL schema with <code class="docutils literal notranslate"><span class="pre">graphql-js</span></code>, invokes
+Graphviz for SVG/PNG/JPEG/PDF projections, and builds generated and repository
+Sphinx projects with <code class="docutils literal notranslate"><span class="pre">-W</span></code>. It also invokes OWLAPI for Turtle parsing and OWL 2
+DL profile membership, the checked-in semantic DCTAP profile validator, and
+the checked-in UML/XMI structure/reference validator.</p>
+<p>Those checks do not claim more than they execute. The current DCTAP gate is a
+repository semantic-profile check, not independent DCTAP certification. The
+OWLAPI gate checks parsing and OWL 2 DL profile membership, not entailment or
+reasoning. Official XMI schema validation and headless Eclipse UML2 import are
+listed as unavailable in <code class="docutils literal notranslate"><span class="pre">conformance/tools.json</span></code>; the checked-in UML/XMI
+validator is authoritative only for the generated COGS structural contract.
+The audit status records whether each configured workflow gate has actually
+completed successfully; merely declaring a command in CI is not evidence that
+it passed. Equivalent Windows and isolated Debian 12 baselines have completed
+the suite, including pinned LinkML 1.9.6/<code class="docutils literal notranslate"><span class="pre">linkml-runtime</span></code> 1.9.5 and Sphinx
+8.2.3/MyST 4.0.1. That Linux evidence is not represented as Ubuntu Noble or as
+a hosted GitHub Actions result; the first hosted matrix run remains a release
+qualification.</p>
+<p>ShEx and SHACL are not current COGS publishers and are not advertised output
+targets. Adding either requires a publisher, CLI command, documentation,
+capability contract, and conformance tests.</p>
+</section>
+<section id="markdown-myst-and-graphviz">
+<h2>Markdown, MyST, and Graphviz<a class="headerlink" href="#markdown-myst-and-graphviz" title="Link to this heading">#</a></h2>
+<p>Authored <code class="docutils literal notranslate"><span class="pre">*.markdown</span></code> content remains Markdown. A Sphinx projection must
+either emit <code class="docutils literal notranslate"><span class="pre">.md</span></code> sources and enable MyST Parser or perform an explicit,
+tested conversion; it must not insert Markdown text into reStructuredText and
+assume equivalent parsing.</p>
+<p>Graphviz is an optional enhancement for Sphinx documentation. If no configured
+or discoverable Graphviz executable is available, <code class="docutils literal notranslate"><span class="pre">publish-sphinx</span></code> warns,
+omits every diagram and every corresponding image/link directive, and still
+emits a self-consistent text-only project. If an explicit or discovered
+Graphviz executable is invoked and returns a failure, generation fails. It must
+not publish broken image references.</p>
+<p><code class="docutils literal notranslate"><span class="pre">publish-dot</span></code> requires Graphviz for rendered formats and reports its absence
+as an error. Raw DOT output does not require rendering. Graphviz exit status and
+stderr are part of command success, binary output is never processed as text,
+and SVG-only post-processing must parse SVG as XML.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../serialization/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">JSON and XML Serialization</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../modeler-guide/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Modeler’s Guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authoritative-targets">Authoritative targets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projection-targets">Projection targets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publisher-capability-matrix">Publisher capability matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-boundary">Verification boundary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-myst-and-graphviz">Markdown, MyST, and Graphviz</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/specification/publishers.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

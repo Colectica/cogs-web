@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CLI descriptor reference &#8212; COGS 2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/command-line/generated-reference';</script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <link rel="next" title="cogs-new" href="../cogs-new/" />
+    <link rel="prev" title="Command Line" href="../" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">COGS 2.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modeler-guide/">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modeler-guide/">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../installation/">Installing COGS</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/dotnet/">dotnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/graphviz/">Graphviz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/sphinx/">Sphinx</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">CLI descriptor reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cogs-new/">cogs-new</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rewrite/">rewrite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-cs/">publish-cs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-dctap/">publish-dctap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-dot/">publish-dot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-graphql</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-json/">publish-json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-linkml/">publish-linkml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-ts/">publish-ts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-sphinx/">publish-sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-uml/">publish-uml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-xsd/">publish-xsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../validate-instance/">validate-instance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../generation/">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/native-types/">Native types and migration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/typescript/">TypeScript Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/json/">JSON Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/xsd/">XML Schema Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/uml/">UML Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/dot/">dot Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/sphinx/">Sphinx Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/owl/">OWL Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/graphql/">GraphQL Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/linkml/">LinkML Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/dctap/">DCTAP Generation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../continuous-integration/">Continuous Integration</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../" class="nav-link">Technical Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../" class="nav-link">Command Line</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">CLI descriptor reference</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="cli-descriptor-reference">
+<h1>CLI descriptor reference<a class="headerlink" href="#cli-descriptor-reference" title="Link to this heading">#</a></h1>
+<p>This reference is generated from the descriptors that configure the COGS
+command-line parser. It is checked in so documentation builds do not need to
+execute the tool, and CI rejects drift between this file and the executable.</p>
+<section id="cogs-new">
+<span id="cli-descriptor-cogs-new"></span><h2>cogs-new<a class="headerlink" href="#cogs-new" title="Link to this heading">#</a></h2>
+<p>Create a model skeleton in a new target directory</p>
+<section id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">cogs-new</span> <span class="pre">targetLocation</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="arguments">
+<h3>Arguments<a class="headerlink" href="#arguments" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">targetLocation</span></code></dt><dd><p>Directory where the model skeleton is generated.</p>
+</dd>
+</dl>
+</section>
+<section id="options">
+<h3>Options<a class="headerlink" href="#options" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></dt><dd><p>If the target directory exists, delete and overwrite the location</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="publish-cs">
+<span id="cli-descriptor-publish-cs"></span><h2>publish-cs<a class="headerlink" href="#publish-cs" title="Link to this heading">#</a></h2>
+<p>Publish a C# class structure from a COGS data model</p>
+<section id="id1">
+<h3>Usage<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">publish-cs</span> <span class="pre">[cogsLocation]</span> <span class="pre">[targetLocation]</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id2">
+<h3>Arguments<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[cogsLocation]</span></code></dt><dd><p>Directory where the COGS datamodel is located.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">[targetLocation]</span></code></dt><dd><p>Directory where the c# schema is generated.</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h3>Options<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-n|--namespace</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>URI of the target XML namespace</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></dt><dd><p>If the target directory exists, delete and overwrite the location</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--csproj</span></code></dt><dd><p>Determines whether to generate a .csproj project file</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--nullable</span></code></dt><dd><p>Determines whether to use C# nullable types</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="publish-dctap">
+<span id="cli-descriptor-publish-dctap"></span><h2>publish-dctap<a class="headerlink" href="#publish-dctap" title="Link to this heading">#</a></h2>
+<p>Publish DCTAP Dublin Core Tabular Application Profile from a COGS data model</p>
+<section id="id4">
+<h3>Usage<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">publish-dctap</span> <span class="pre">[cogsLocation]</span> <span class="pre">[targetLocation]</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id5">
+<h3>Arguments<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[cogsLocation]</span></code></dt><dd><p>Directory where the COGS datamodel is located.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">[targetLocation]</span></code></dt><dd><p>Directory where the DCTAP csv is generated.</p>
+</dd>
+</dl>
+</section>
+<section id="id6">
+<h3>Options<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></dt><dd><p>If the target directory exists, delete and overwrite the location</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="publish-dot">
+<span id="cli-descriptor-publish-dot"></span><h2>publish-dot<a class="headerlink" href="#publish-dot" title="Link to this heading">#</a></h2>
+<p>Publish a dot schema from a COGS data model</p>
+<section id="id7">
+<h3>Usage<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">publish-dot</span> <span class="pre">[cogsLocation]</span> <span class="pre">[targetLocation]</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id8">
+<h3>Arguments<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[cogsLocation]</span></code></dt><dd><p>Directory where the COGS datamodel is located.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">[targetLocation]</span></code></dt><dd><p>Directory where the dot schema is generated.</p>
+</dd>
+</dl>
+</section>
+<section id="id9">
+<h3>Options<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--dot</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>Path to the Graphviz dot executable. Uses COGS_DOT, then PATH when omitted.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></dt><dd><p>If the target directory exists, delete and overwrite the location</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-f|--format</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>Specifies format for output file. Defaults to svg</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-a|--all</span></code></dt><dd><p>generate one graph containing all objects. Cannot be used with -s</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-s|--single</span></code></dt><dd><p>generate a graph for every single item (incoming links and outgoing links). Cannot be used with -a</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-i|--inheritance</span></code></dt><dd><p>allow inheritance in the graph(s)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-c|--composite</span></code></dt><dd><p>show composite types inside item types</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="publish-graphql">
+<span id="cli-descriptor-publish-graphql"></span><h2>publish-graphql<a class="headerlink" href="#publish-graphql" title="Link to this heading">#</a></h2>
+<p>Publish a GraphQL schema from a COGS data model</p>
+<section id="id10">
+<h3>Usage<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">publish-graphql</span> <span class="pre">[cogsLocation]</span> <span class="pre">[targetLocation]</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id11">
+<h3>Arguments<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[cogsLocation]</span></code></dt><dd><p>Directory where the COGS datamodel is located.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">[targetLocation]</span></code></dt><dd><p>Directory where the GraphQL schema is generated.</p>
+</dd>
+</dl>
+</section>
+<section id="id12">
+<h3>Options<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></dt><dd><p>If the target directory exists, replace it transactionally.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="publish-json">
+<span id="cli-descriptor-publish-json"></span><h2>publish-json<a class="headerlink" href="#publish-json" title="Link to this heading">#</a></h2>
+<p>Publish a JSON schema from a COGS data model</p>
+<section id="id13">
+<h3>Usage<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">publish-json</span> <span class="pre">[cogsLocation]</span> <span class="pre">[targetLocation]</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id14">
+<h3>Arguments<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[cogsLocation]</span></code></dt><dd><p>Directory where the COGS datamodel is located.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">[targetLocation]</span></code></dt><dd><p>Directory where the json schema is generated.</p>
+</dd>
+</dl>
+</section>
+<section id="id15">
+<h3>Options<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></dt><dd><p>If the target directory exists, delete and overwrite the location</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--allowAdditionalProperties</span></code></dt><dd><p>Removed in COGS 2.0; generated JSON contracts are closed.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="publish-linkml">
+<span id="cli-descriptor-publish-linkml"></span><h2>publish-linkml<a class="headerlink" href="#publish-linkml" title="Link to this heading">#</a></h2>
+<p>Publish LinkML from a COGS data model</p>
+<section id="id16">
+<h3>Usage<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">publish-linkml</span> <span class="pre">[cogsLocation]</span> <span class="pre">[targetLocation]</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id17">
+<h3>Arguments<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[cogsLocation]</span></code></dt><dd><p>Directory where the COGS datamodel is located.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">[targetLocation]</span></code></dt><dd><p>Directory where the LinkML yaml is generated.</p>
+</dd>
+</dl>
+</section>
+<section id="id18">
+<h3>Options<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-n|--namespace</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>URI of the target XML namespace</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-p|--namespacePrefix</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>Namespace prefix to use for the target namespace</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></dt><dd><p>If the target directory exists, delete and overwrite the location</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--name</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>Name of the model</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="publish-owl">
+<span id="cli-descriptor-publish-owl"></span><h2>publish-owl<a class="headerlink" href="#publish-owl" title="Link to this heading">#</a></h2>
+<p>Publish an authoritative OWL ontology in Turtle from a COGS data model</p>
+<section id="id19">
+<h3>Usage<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">publish-owl</span> <span class="pre">[cogsLocation]</span> <span class="pre">[targetLocation]</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id20">
+<h3>Arguments<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[cogsLocation]</span></code></dt><dd><p>Directory where the COGS datamodel is located.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">[targetLocation]</span></code></dt><dd><p>Directory where the owl schema is generated.</p>
+</dd>
+</dl>
+</section>
+<section id="id21">
+<h3>Options<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></dt><dd><p>If the target directory exists, delete and overwrite the location</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-n|--namespace</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>URI of the target Owl namespace</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-p|--namespacePrefix</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>Namespace prefix to use for the target Owl namespace</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-v|--version</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>Version number for the target Owl namespace</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="publish-py">
+<span id="cli-descriptor-publish-py"></span><h2>publish-py<a class="headerlink" href="#publish-py" title="Link to this heading">#</a></h2>
+<p>Publish a Python package from a COGS data model</p>
+<section id="id22">
+<h3>Usage<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">publish-py</span> <span class="pre">[cogsLocation]</span> <span class="pre">[targetLocation]</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id23">
+<h3>Arguments<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[cogsLocation]</span></code></dt><dd><p>Directory where the COGS datamodel is located.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">[targetLocation]</span></code></dt><dd><p>Directory where the Python package is generated.</p>
+</dd>
+</dl>
+</section>
+<section id="id24">
+<h3>Options<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--flavor</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>Python flavor: python (dependency-free, default) or pydantic (v2)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-n|--namespace</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>URI of the target XML namespace</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></dt><dd><p>If the target directory exists, delete and overwrite the location</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="publish-sphinx">
+<span id="cli-descriptor-publish-sphinx"></span><h2>publish-sphinx<a class="headerlink" href="#publish-sphinx" title="Link to this heading">#</a></h2>
+<p>Publish a Sphinx documentation website from a COGS data model</p>
+<section id="id25">
+<h3>Usage<a class="headerlink" href="#id25" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">publish-sphinx</span> <span class="pre">[cogsLocation]</span> <span class="pre">[targetLocation]</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id26">
+<h3>Arguments<a class="headerlink" href="#id26" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[cogsLocation]</span></code></dt><dd><p>Directory where the COGS datamodel is located.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">[targetLocation]</span></code></dt><dd><p>Directory where the sphinx documentation is generated.</p>
+</dd>
+</dl>
+</section>
+<section id="id27">
+<h3>Options<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--dot</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>Path to the Graphviz dot executable. Uses COGS_DOT, then PATH when omitted.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></dt><dd><p>If the target directory exists, delete and overwrite the location</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="publish-ts">
+<span id="cli-descriptor-publish-ts"></span><h2>publish-ts<a class="headerlink" href="#publish-ts" title="Link to this heading">#</a></h2>
+<p>Publish a TypeScript package from a COGS data model</p>
+<section id="id28">
+<h3>Usage<a class="headerlink" href="#id28" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">publish-ts</span> <span class="pre">[cogsLocation]</span> <span class="pre">[targetLocation]</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id29">
+<h3>Arguments<a class="headerlink" href="#id29" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[cogsLocation]</span></code></dt><dd><p>Directory where the COGS datamodel is located.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">[targetLocation]</span></code></dt><dd><p>Directory where the TypeScript package is generated.</p>
+</dd>
+</dl>
+</section>
+<section id="id30">
+<h3>Options<a class="headerlink" href="#id30" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-n|--namespace</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>URI of the target XML namespace</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></dt><dd><p>If the target directory exists, delete and overwrite the location</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="publish-uml">
+<span id="cli-descriptor-publish-uml"></span><h2>publish-uml<a class="headerlink" href="#publish-uml" title="Link to this heading">#</a></h2>
+<p>Publish an UML schema from a COGS data model</p>
+<section id="id31">
+<h3>Usage<a class="headerlink" href="#id31" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">publish-uml</span> <span class="pre">[cogsLocation]</span> <span class="pre">[targetLocation]</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id32">
+<h3>Arguments<a class="headerlink" href="#id32" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[cogsLocation]</span></code></dt><dd><p>Directory where the COGS datamodel is located.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">[targetLocation]</span></code></dt><dd><p>Directory where the UML schema is generated.</p>
+</dd>
+</dl>
+</section>
+<section id="id33">
+<h3>Options<a class="headerlink" href="#id33" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--dot</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>Path to the Graphviz dot executable. Uses COGS_DOT, then PATH when omitted.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></dt><dd><p>If the target directory exists, delete and overwrite the location</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-m|--mode</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>UML output mode: normative (UML/XMI 2.4.2) or ea (XMI 2.5.1 with diagram extensions).</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="publish-xsd">
+<span id="cli-descriptor-publish-xsd"></span><h2>publish-xsd<a class="headerlink" href="#publish-xsd" title="Link to this heading">#</a></h2>
+<p>Publish an XML schema from a COGS data model</p>
+<section id="id34">
+<h3>Usage<a class="headerlink" href="#id34" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">publish-xsd</span> <span class="pre">[cogsLocation]</span> <span class="pre">[targetLocation]</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id35">
+<h3>Arguments<a class="headerlink" href="#id35" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[cogsLocation]</span></code></dt><dd><p>Directory where the COGS datamodel is located.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">[targetLocation]</span></code></dt><dd><p>Directory where the xsd schema is generated.</p>
+</dd>
+</dl>
+</section>
+<section id="id36">
+<h3>Options<a class="headerlink" href="#id36" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></dt><dd><p>If the target directory exists, delete and overwrite the location</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-n|--namespace</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>URI of the target XML namespace</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-p|--namespacePrefix</span> <span class="pre">&lt;value&gt;</span></code></dt><dd><p>Namespace prefix to use for the target XML namespace</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="rewrite">
+<span id="cli-descriptor-rewrite"></span><h2>rewrite<a class="headerlink" href="#rewrite" title="Link to this heading">#</a></h2>
+<p>Rewrite an on-disk COGS model directory to the current CSV conventions</p>
+<section id="id37">
+<h3>Usage<a class="headerlink" href="#id37" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">rewrite</span> <span class="pre">[cogsLocation]</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id38">
+<h3>Arguments<a class="headerlink" href="#id38" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[cogsLocation]</span></code></dt><dd><p>Directory where the COGS datamodel is located.</p>
+</dd>
+</dl>
+</section>
+<section id="id39">
+<h3>Options<a class="headerlink" href="#id39" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--upgrade-cogs-2</span></code></dt><dd><p>Mechanically migrate an unambiguous legacy model to COGS 2.0; tracked marker case changes use git mv -f.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="validate">
+<span id="cli-descriptor-validate"></span><h2>validate<a class="headerlink" href="#validate" title="Link to this heading">#</a></h2>
+<p>Validate a on disk COGS data model directory</p>
+<section id="id40">
+<h3>Usage<a class="headerlink" href="#id40" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">validate</span> <span class="pre">[cogsLocation]</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id41">
+<h3>Arguments<a class="headerlink" href="#id41" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[cogsLocation]</span></code></dt><dd><p>Directory where the COGS datamodel is located.</p>
+</dd>
+</dl>
+</section>
+<section id="id42">
+<h3>Options<a class="headerlink" href="#id42" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="validate-instance">
+<span id="cli-descriptor-validate-instance"></span><h2>validate-instance<a class="headerlink" href="#validate-instance" title="Link to this heading">#</a></h2>
+<p>Validate a JSON or XML instance against a COGS 2.0 model.</p>
+<section id="id43">
+<h3>Usage<a class="headerlink" href="#id43" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cogs</span> <span class="pre">validate-instance</span> <span class="pre">model</span> <span class="pre">instance</span> <span class="pre">[options]</span></code></p>
+</section>
+<section id="id44">
+<h3>Arguments<a class="headerlink" href="#id44" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">model</span></code></dt><dd><p>Directory containing the COGS model.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">instance</span></code></dt><dd><p>Path to the JSON or XML instance.</p>
+</dd>
+</dl>
+</section>
+<section id="id45">
+<h3>Options<a class="headerlink" href="#id45" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></dt><dd><p>Show help information</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--format</span> <span class="pre">&lt;format&gt;</span></code></dt><dd><p>Instance serialization format: json or xml.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Command Line</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../cogs-new/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">cogs-new</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cogs-new">cogs-new</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#options">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-cs">publish-cs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-dctap">publish-dctap</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-dot">publish-dot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-graphql">publish-graphql</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-json">publish-json</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-linkml">publish-linkml</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-owl">publish-owl</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-py">publish-py</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-sphinx">publish-sphinx</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-ts">publish-ts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-uml">publish-uml</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-xsd">publish-xsd</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id36">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite">rewrite</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id37">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id38">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id39">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validate">validate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id40">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id41">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id42">Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-instance">validate-instance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id43">Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id44">Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id45">Options</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/technical-guide/command-line/generated-reference.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

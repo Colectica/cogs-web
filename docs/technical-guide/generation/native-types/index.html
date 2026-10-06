@@ -1,0 +1,784 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Native types and migration &#8212; COGS 2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/generation/native-types';</script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <link rel="next" title="C# Generation" href="../csharp/" />
+    <link rel="prev" title="Generation" href="../" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">COGS 2.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modeler-guide/">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modeler-guide/">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../installation/">Installing COGS</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/dotnet/">dotnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/graphviz/">Graphviz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/sphinx/">Sphinx</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../command-line/">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/generated-reference/">CLI descriptor reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/cogs-new/">cogs-new</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/rewrite/">rewrite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-cs/">publish-cs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dctap/">publish-dctap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dot/">publish-dot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-graphql</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-json/">publish-json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-linkml/">publish-linkml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-ts/">publish-ts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-sphinx/">publish-sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-uml/">publish-uml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-xsd/">publish-xsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate-instance/">validate-instance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Native types and migration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../typescript/">TypeScript Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../json/">JSON Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xsd/">XML Schema Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uml/">UML Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dot/">dot Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinx/">Sphinx Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../owl/">OWL Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graphql/">GraphQL Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linkml/">LinkML Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dctap/">DCTAP Generation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../continuous-integration/">Continuous Integration</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../" class="nav-link">Technical Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../" class="nav-link">Generation</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Native types and migration</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="native-types-and-migration">
+<h1>Native types and migration<a class="headerlink" href="#native-types-and-migration" title="Link to this heading">#</a></h1>
+<p>The profile uses native scalars where their shared value domain preserves COGS
+meaning. JSON/XML structures, exact wire names and primitive JSON kinds remain
+unchanged. This is a breaking generated API and value-domain change from the
+earlier 2.0 prerelease generators. Regenerate clients and validate stored
+instances before replacing them.</p>
+<p>S is 9007199254740991; D is 922337203685477 milliseconds. The normative
+wire/domain table is in <a class="reference internal" href="../../../specification/model-format/"><span class="doc">Model Format</span></a>.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id1">
+<caption><span class="caption-text">All primitive mappings</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 18.0%" />
+<col style="width: 17.0%" />
+<col style="width: 16.0%" />
+<col style="width: 17.0%" />
+<col style="width: 32.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>COGS</p></th>
+<th class="head"><p>C#</p></th>
+<th class="head"><p>Python (both flavors)</p></th>
+<th class="head"><p>TypeScript</p></th>
+<th class="head"><p>Change and remaining requirement</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td><p>Unchanged.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>XML 1.0 text; scalar lengths; CR preserved.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">language</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>BCP 47 syntax unchanged.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">anyURI</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>C# Uri becomes string; exact RFC 3986 spelling.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td><p>Int32 unchanged; integral exponent forms accepted.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td><p>Signed 64-bit narrows to -S..S.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">unsignedLong</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ulong</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td><p>Unsigned 64-bit narrows to 0..S.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nonNegativeInteger</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td><p>Formerly unbounded; now 0..S.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nonPositiveInteger</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td><p>Formerly unbounded; now -S..0.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">negativeInteger</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td><p>Formerly unbounded; now -S..-1.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">positiveInteger</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td><p>Formerly unbounded; now 1..S.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">decimal</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">decimal</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Decimal</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td><p>Wrapper removed; exact bounded interchange domain.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td><p>Binary32 rounding everywhere; positive zero.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td><p>Binary64; positive zero.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dateTime</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DateTimeOffset</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">datetime</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Date</span></code></p></td>
+<td><p>Wrapper removed; UTC instants at milliseconds.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">date</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DateOnly</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">date</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Wrapper removed; years 0001–9999, no offset.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">time</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TimeOnly</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">time</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Wrapper removed; local microseconds, no offset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">duration</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TimeSpan</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">timedelta</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td><p>Wrapper removed; elapsed milliseconds bounded by D.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gYearMonth</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GYearMonth</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GYearMonth</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GYearMonth</span></code></p></td>
+<td><p>Structured year/month/optional zone retained.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gYear</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GYear</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GYear</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GYear</span></code></p></td>
+<td><p>Structured year/optional zone retained.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gMonthDay</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GMonthDay</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GMonthDay</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GMonthDay</span></code></p></td>
+<td><p>Structured month/day/optional zone retained.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gDay</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GDay</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GDay</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GDay</span></code></p></td>
+<td><p>Structured day/optional zone retained.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gMonth</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GMonth</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GMonth</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GMonth</span></code></p></td>
+<td><p>Structured month/optional zone retained.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cogsDate</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">CogsDate</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">CogsDate</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">CogsDate</span> <span class="pre">union</span></code></p></td>
+<td><p>Five existing arms; native scalar payloads.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">langString</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">LangString</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">LangString</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">LangString</span></code></p></td>
+<td><p>Language/text record retained.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="scalar-migration">
+<h2>Scalar migration<a class="headerlink" href="#scalar-migration" title="Link to this heading">#</a></h2>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">CogsDecimal(&quot;1.25&quot;)</span></code> with <code class="docutils literal notranslate"><span class="pre">1.25m</span></code> in C#, with
+<code class="docutils literal notranslate"><span class="pre">Decimal(&quot;1.25&quot;)</span></code> in Python, and with <code class="docutils literal notranslate"><span class="pre">1.25</span></code> in TypeScript. Delete
+<code class="docutils literal notranslate"><span class="pre">bigint</span></code> suffixes on eligible TypeScript integer literals: <code class="docutils literal notranslate"><span class="pre">42n</span></code> becomes
+<code class="docutils literal notranslate"><span class="pre">42</span></code>. C# arbitrary-integer fields become <code class="docutils literal notranslate"><span class="pre">long</span></code>. An old value such as
+<code class="docutils literal notranslate"><span class="pre">9007199254740993</span></code> must be corrected by its owner or modeled as textual
+information under a separately versioned model; automatic rounding is invalid.</p>
+<p>Replace lexical dateTime wrappers with timezone-aware native instants:
+<code class="docutils literal notranslate"><span class="pre">DateTimeOffset.Parse(&quot;2024-02-29T12:00:00Z&quot;)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">datetime(2024,</span> <span class="pre">2,</span> <span class="pre">29,</span> <span class="pre">12,</span> <span class="pre">tzinfo=timezone.utc)</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Date(&quot;2024-02-29T12:00:00Z&quot;)</span></code>. Local dates use DateOnly/date or the
+TypeScript string <code class="docutils literal notranslate"><span class="pre">&quot;2024-02-29&quot;</span></code>; local times use TimeOnly/time or
+<code class="docutils literal notranslate"><span class="pre">&quot;12:34:56.123456&quot;</span></code>. TypeScript Date is not used for these local values
+because it would invent an instant or discard microseconds.</p>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">CogsDuration(&quot;PT1.5S&quot;)</span></code> with <code class="docutils literal notranslate"><span class="pre">TimeSpan.FromMilliseconds(1500)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">timedelta(milliseconds=1500)</span></code>, or <code class="docutils literal notranslate"><span class="pre">1500</span></code> milliseconds. The wire still
+contains <code class="docutils literal notranslate"><span class="pre">&quot;PT1.5S&quot;</span></code>. Calendar durations such as <code class="docutils literal notranslate"><span class="pre">P1M</span></code> have no context-free
+elapsed equivalent; choose a model-level calendar representation or determine
+an elapsed value using explicit application context. Submillisecond values are
+rejected instead of truncated.</p>
+<p>Partial Gregorian helpers remain because a full date cannot preserve an absent
+year/month/day or an optional timezone. C# and Python CogsDate wrappers now
+contain native scalar arms. TypeScript uses a plain tagged union, for example
+<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">Date:</span> <span class="pre">&quot;2024-02-29&quot;</span> <span class="pre">}</span></code>. LangString remains a two-field record.</p>
+</section>
+<section id="interchange-and-construction">
+<h2>Interchange and construction<a class="headerlink" href="#interchange-and-construction" title="Link to this heading">#</a></h2>
+<p>Accepted numeric values survive ordinary JavaScript parsing and writing with
+their defined COGS value. <code class="docutils literal notranslate"><span class="pre">JSON.stringify(container)</span></code> delegates to the wire
+representation; <code class="docutils literal notranslate"><span class="pre">ItemContainer.fromObject(JSON.parse(text))</span></code> accepts valid
+input. Use <code class="docutils literal notranslate"><span class="pre">fromJson</span></code> on untrusted text: after <code class="docutils literal notranslate"><span class="pre">JSON.parse</span></code> rounds an
+invalid decimal token or overwrites a duplicate key, an object reader cannot
+recover that evidence. The text reader retains tokens long enough to reject
+these cases, including float tokens that would change binary32 value through
+double rounding. Use a stable binary32 spelling for such a JSON input.
+Float decimal spelling may change while its binary32 value is preserved.
+XML continues to accept direct XSD binary32 lexical conversion.</p>
+<p>Python uses a JSON adapter to write Decimal as a number and parse decimal tokens
+exactly. Standard <code class="docutils literal notranslate"><span class="pre">json.dumps</span></code> does not serialize Decimal itself. JavaScript
+arithmetic remains binary floating point; <code class="docutils literal notranslate"><span class="pre">0.1</span> <span class="pre">+</span> <span class="pre">0.2</span></code> is not exact decimal
+addition. Native C#/Python arithmetic can also produce out-of-profile scale or
+precision, which writers reject. COGS never repairs an exactness conflict by
+silent decimal rounding.</p>
+<p>Direct construction and assignment use native language APIs. Pydantic also
+checks strict field types and assignments. Serialization checks primitive
+domains; schema/COGS instance validation enforces model cardinality and facets.
+Native Pydantic dumps and schemas describe Python fields, not the reference
+graph.</p>
+<p>All XML string/path/stream writers preserve carriage returns by character
+references. Identification retains its exact spelling; UTC and other lexical
+canonicalizations apply only to the relevant primitive values.</p>
+</section>
+<section id="migration-procedure">
+<h2>Migration procedure<a class="headerlink" href="#migration-procedure" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Validate source models and stored JSON/XML with the new CLI. Numeric and
+temporal facet values must themselves lie in the new domains.</p></li>
+<li><p>Resolve rejected values explicitly. The corpus under
+<code class="docutils literal notranslate"><span class="pre">conformance/instances/migration</span></code> retains old wide-domain values as
+rejection tests, not successful generation evidence.</p></li>
+<li><p>Regenerate all packages, update native construction/assignment calls, and
+validate every interchange boundary.</p></li>
+<li><p>Compare semantic values, concrete types, ordering and reference identity.
+Decimal trailing zeros, UTC offsets and duration decomposition may change.</p></li>
+</ol>
+</section>
+<section id="platform-basis">
+<h2>Platform basis<a class="headerlink" href="#platform-basis" title="Link to this heading">#</a></h2>
+<p>The profile intersects documented limits from
+<a class="reference external" href="https://docs.python.org/3.11/library/datetime.html">Python 3.11 datetime</a>,
+<a class="reference external" href="https://docs.python.org/3.11/library/decimal.html">Python Decimal</a>,
+<a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types">C# numeric types</a>
+and
+<a class="reference external" href="https://tc39.es/ecma262/multipage/numbers-and-dates.html">ECMAScript numbers and dates</a>.
+The decimal admission rule is stricter than any single platform’s numeric
+range. The duration limit uses TimeSpan’s signed tick range rounded inward to
+whole milliseconds.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Generation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../csharp/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">C# Generation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-migration">Scalar migration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interchange-and-construction">Interchange and construction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migration-procedure">Migration procedure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-basis">Platform basis</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/technical-guide/generation/native-types.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

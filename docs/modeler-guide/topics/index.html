@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Topics &#8212; COGS 1.0 documentation</title>
+    <title>Topics &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'modeler-guide/topics';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="Settings" href="../settings/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -132,9 +132,23 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -225,9 +239,23 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -337,30 +365,35 @@
 <h1>Topics<a class="headerlink" href="#topics" title="Link to this heading">#</a></h1>
 <p>Topics allow you to describe subsets of your model, to make it easier for people
 to learn about your model.</p>
-<p>The Sphinx documentation generator creates a section of documentation for each topic. This
-section includes links to each item type contained in the topic, as well as a diagram
-showing the relationships among the item types.</p>
+<p>The Sphinx documentation generator creates a section for each topic. Topics and
+articles are documentation metadata; they never become JSON/XML instance types.
+When Graphviz is unavailable, generated documentation remains valid and omits
+all diagram markup.</p>
 <section id="topic-index">
 <h2>Topic Index<a class="headerlink" href="#topic-index" title="Link to this heading">#</a></h2>
-<p>To include topics, create a topic index file named <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/Topics/index.txt</span></code>.
-This file should contain the name of one topic per line. Each topic gets its own folder as
-described below.</p>
+<p>The <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/Topics</span></code> directory is optional. If it is present,
+the exact path <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/Topics/index.txt</span></code> is required and may be
+empty. The index contains one exact, unique topic directory name per nonblank
+line.</p>
 </section>
 <section id="individual-topics-definitions">
 <h2>Individual Topics Definitions<a class="headerlink" href="#individual-topics-definitions" title="Link to this heading">#</a></h2>
 <p>A topic is defined in a folder named <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/Topics/</span><em><span class="pre">TopicName</span></em></code>. Be sure
 to replace <em>TopicName</em> with the name of your topic, which should also be included in the
 topic index file.</p>
-<p>Each topic folder contains two files.</p>
+<p>Each topic folder contains the required <code class="docutils literal notranslate"><span class="pre">items.txt</span></code> file and may contain the
+documentation files described below.</p>
 <section id="items-txt">
 <h3>items.txt<a class="headerlink" href="#items-txt" title="Link to this heading">#</a></h3>
-<p><code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/Topics/</span><em><span class="pre">TopicName</span></em><span class="pre">/items.txt</span></code> is a plain text file with the name of
-one item type per line.</p>
+<p><code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/Topics/</span><em><span class="pre">TopicName</span></em><span class="pre">/items.txt</span></code> is a plain text file with
+one exact, unique item type name per nonblank line. Composite, unknown, and
+mis-cased names are errors.</p>
 </section>
 <section id="readme-markdown">
 <h3>readme.markdown<a class="headerlink" href="#readme-markdown" title="Link to this heading">#</a></h3>
-<p>The <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/Topics/</span><em><span class="pre">TopicName</span></em><span class="pre">/readme.markdown</span></code> file contains text
-to describe your topic.</p>
+<p>The optional <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/Topics/</span><em><span class="pre">TopicName</span></em><span class="pre">/readme.markdown</span></code> file
+contains Markdown text to describe your topic. Generated Sphinx projects parse
+it with MyST rather than treating it as reStructuredText.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>See <a class="reference external" href="https://daringfireball.net/projects/markdown/basics">https://daringfireball.net/projects/markdown/basics</a> for a primer on using markdown to format text.</p>
@@ -369,7 +402,8 @@ to describe your topic.</p>
 <section id="articles">
 <h3>Articles/<a class="headerlink" href="#articles" title="Link to this heading">#</a></h3>
 <p>Articles allow you to include extra content in the documentation that is generated for your topic.</p>
-<p>Each article is a reStructuredText file, and is included in the Sphinx documentation.</p>
+<p>Articles may be reStructuredText or MyST Markdown and are included in the
+Sphinx documentation.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>For details on editing reStructuredText, see <a class="reference external" href="http://www.sphinx-doc.org/en/stable/rest.html">http://www.sphinx-doc.org/en/stable/rest.html</a></p>
@@ -378,9 +412,10 @@ to describe your topic.</p>
 </section>
 <section id="toc-txt">
 <h2>toc.txt<a class="headerlink" href="#toc-txt" title="Link to this heading">#</a></h2>
-<p>To include an article on the topics page,
-you can include the name of the article in the <code class="file docutils literal notranslate"><em><span class="pre">topicDirectory</span></em><span class="pre">/toc.txt</span></code> file.
-This file contains one path per line.</p>
+<p>To include an article on the topics page, include its path in
+<code class="file docutils literal notranslate"><em><span class="pre">topicDirectory</span></em><span class="pre">/toc.txt</span></code>. This file contains one relative, normalized
+path per nonblank line. Paths must remain inside the topic’s <code class="docutils literal notranslate"><span class="pre">Articles</span></code>
+directory, resolve with exact case, and not be duplicated.</p>
 </section>
 <section id="example-layout">
 <h2>Example Layout<a class="headerlink" href="#example-layout" title="Link to this heading">#</a></h2>
@@ -494,7 +529,7 @@ This file contains one path per line.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

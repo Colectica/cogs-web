@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>publish-GraphQL &#8212; COGS 1.0 documentation</title>
+    <title>publish-graphql &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/command-line/publish-graphql';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="publish-dot" href="../publish-dot/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rewrite/">rewrite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dot/">publish-dot</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">publish-GraphQL</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-xsd/">publish-xsd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../generation/">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/uml/">UML Generation</a></li>
@@ -348,7 +383,7 @@
     
     <li class="breadcrumb-item"><a href="../" class="nav-link">Command Line</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">publish-GraphQL</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">publish-graphql</span></li>
   </ul>
 </nav>
 </div>
@@ -366,16 +401,21 @@
                 <article class="bd-article">
                   
   <section id="publish-graphql">
-<h1>publish-GraphQL<a class="headerlink" href="#publish-graphql" title="Link to this heading">#</a></h1>
+<h1>publish-graphql<a class="headerlink" href="#publish-graphql" title="Link to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>Generate a JSON file that contains a schema that defines the given model in GraphQL.
-All types and properties are defined independently and linked together by referencing the type names.</p>
+<p>Generate GraphQL Schema Definition Language (SDL) as an API projection of the
+model. The output is text SDL, not JSON and not a COGS instance schema. Its
+<code class="docutils literal notranslate"><span class="pre">PROJ25xx</span></code> diagnostics identify approximations, and the generation guide
+records preserved and unsupported COGS features.</p>
+<p>The canonical command is lowercase <code class="docutils literal notranslate"><span class="pre">publish-graphql</span></code>. The old
+<code class="docutils literal notranslate"><span class="pre">publish-GraphQL</span></code> spelling is a hidden, deprecated alias that emits
+<code class="docutils literal notranslate"><span class="pre">CLI2002</span></code>.</p>
 <p>Requires that <a class="reference external" href="../../installation/dotnet/index.html">dotnet</a> is installed.</p>
 </section>
 <section id="command-line-arguments">
 <h2>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Link to this heading">#</a></h2>
-<p>Required inputs for the publish-GraphQL command (must be specified in order).</p>
+<p>Required inputs for the <code class="docutils literal notranslate"><span class="pre">publish-graphql</span></code> command (must be specified in order).</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">[CogsLocation]</span></code></p>
 <blockquote>
@@ -391,11 +431,11 @@ All types and properties are defined independently and linked together by refere
 </section>
 <section id="command-line-flags">
 <h2>Command Line Flags<a class="headerlink" href="#command-line-flags" title="Link to this heading">#</a></h2>
-<p>Optional inputs for the publish-GraphQL command.</p>
+<p>Optional inputs for the <code class="docutils literal notranslate"><span class="pre">publish-graphql</span></code> command.</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></p>
 <blockquote>
-<div><p>Displays all possible command arguments and flags for the publish-GraphQL command.</p>
+<div><p>Displays all possible command arguments and flags for the command.</p>
 </div></blockquote>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-o|--overwrite</span></code></p>
@@ -409,16 +449,16 @@ All types and properties are defined independently and linked together by refere
 <h2>Command Line Usage<a class="headerlink" href="#command-line-usage" title="Link to this heading">#</a></h2>
 <p><strong>Format</strong></p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>publish-GraphQL<span class="w"> </span><span class="o">(</span>-h<span class="o">)</span><span class="w"> </span><span class="o">(</span>-o<span class="o">)</span><span class="w"> </span><span class="o">[</span>CogsLocation<span class="o">]</span><span class="w"> </span><span class="o">[</span>TargetLocation<span class="o">]</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs<span class="w"> </span>publish-graphql<span class="w"> </span><span class="o">(</span>-h<span class="o">)</span><span class="w"> </span><span class="o">(</span>-o<span class="o">)</span><span class="w"> </span><span class="o">[</span>CogsLocation<span class="o">]</span><span class="w"> </span><span class="o">[</span>TargetLocation<span class="o">]</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p><strong>Examples</strong></p>
 <blockquote>
 <div><p>A few examples of how the command line arguments and flags can be used together.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>publish-GraphQL<span class="w"> </span>-h
-$<span class="w"> </span>publish-GraphQL<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
-$<span class="w"> </span>publish-GraphQL<span class="w"> </span>-o<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs<span class="w"> </span>publish-graphql<span class="w"> </span>-h
+$<span class="w"> </span>cogs<span class="w"> </span>publish-graphql<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
+$<span class="w"> </span>cogs<span class="w"> </span>publish-graphql<span class="w"> </span>-o<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
 </pre></div>
 </div>
 </div></blockquote>
@@ -513,7 +553,7 @@ $<span class="w"> </span>publish-GraphQL<span class="w"> </span>-o<span class="w
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

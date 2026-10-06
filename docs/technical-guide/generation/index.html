@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Generation &#8212; COGS 1.0 documentation</title>
+    <title>Generation &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,17 +39,17 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/generation/index';</script>
     <link rel="index" title="Index" href="../../genindex/" />
     <link rel="search" title="Search" href="../../search/" />
-    <link rel="next" title="C# Generation" href="csharp/" />
-    <link rel="prev" title="validate" href="../command-line/validate/" />
+    <link rel="next" title="Native types and migration" href="native-types/" />
+    <link rel="prev" title="validate-instance" href="../command-line/validate-instance/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../command-line/">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../command-line/generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/rewrite/">rewrite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../command-line/publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command-line/publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command-line/publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command-line/publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-xsd/">publish-xsd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command-line/validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uml/">UML Generation</a></li>
@@ -364,9 +399,11 @@
                   
   <section id="generation">
 <h1>Generation<a class="headerlink" href="#generation" title="Link to this heading">#</a></h1>
-<p>COGS generation follows the same high-level flow for every publisher:</p>
+<p>COGS 2 generation follows the same high-level flow for every publisher:</p>
 <ol class="arabic simple">
-<li><p>Read the folders, markdown files, and CSV files that make up the model.</p></li>
+<li><p>Read and require the model’s <code class="docutils literal notranslate"><span class="pre">CogsVersion</span></code> before interpreting its
+versioned conventions.</p></li>
+<li><p>Read the folders, Markdown files, and CSV files that make up the model.</p></li>
 <li><p>Check the model for naming, datatype, inheritance, and other modeling errors.</p></li>
 <li><p>Resolve the model into a connected in-memory form with inherited properties,
 relationships, and datatype references worked out.</p></li>
@@ -375,32 +412,73 @@ format.</p></li>
 </ol>
 <p>The pages in this section describe how COGS concepts map into each generated
 format.</p>
+<p>No publisher may skip those stages, continue after an error, mutate the shared
+model, or reinterpret source CSV. Source and target paths must not overlap,
+including through canonical paths or links.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>JSON Schema, XSD, C#, Python, and TypeScript implement the authoritative
+instance contract. UML/XMI is the authoritative structural model output,
+with <code class="docutils literal notranslate"><span class="pre">PROJ2601</span></code> as its sole semantic exception; it is not an instance
+schema. OWL/RDF is emitted as W3C Turtle and is the authoritative ontology
+and class-semantics output, with <code class="docutils literal notranslate"><span class="pre">OWL2002</span></code> and <code class="docutils literal notranslate"><span class="pre">OWL2003</span></code> as its
+authority exceptions; ordering and unsupported lexical facets remain
+outside its authority. LinkML, DCTAP,
+GraphQL, DOT, and Sphinx are projections. A projection’s successful
+generation does not prove JSON/XML conformance and unsupported semantics
+must be diagnosed rather than silently dropped.</p>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="native-types/">Native types and migration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="native-types/#scalar-migration">Scalar migration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="native-types/#interchange-and-construction">Interchange and construction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="native-types/#migration-procedure">Migration procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="native-types/#platform-basis">Platform basis</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="csharp/">C# Generation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="csharp/#mapping">Mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="csharp/#json-behavior">JSON behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csharp/#rdf-graph-behavior">RDF graph behavior</a></li>
 <li class="toctree-l2"><a class="reference internal" href="csharp/#generated-project-files">Generated project files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="csharp/#related-pages">Related pages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/">Python Generation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/#model-mapping">Model mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/#primitive-mappings">Primitive mappings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/#pydantic-flavor">Pydantic flavor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/#serialization">Serialization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="typescript/">TypeScript Generation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typescript/#model-mapping">Model mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typescript/#primitive-mappings">Primitive mappings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typescript/#serialization">Serialization</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="json/">JSON Generation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="json/#container-shape">Container shape</a></li>
 <li class="toctree-l2"><a class="reference internal" href="json/#references">References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="json/#discriminators">Discriminators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="json/#definition-inventory">Definition inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="json/#formatting">Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="json/#custom-instance-validation">Custom instance validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="json/#related-pages">Related pages</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="xsd/">XML Schema Generation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="xsd/#mapping">Mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xsd/#reference-components">Reference components</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xsd/#namespaces">Namespaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xsd/#related-pages">Related pages</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="uml/">UML Generation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="uml/#mapping">Mapping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uml/#normative-and-non-normative-output">Normative and non-normative output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uml/#proj2601-exact-type-association-exception"><code class="docutils literal notranslate"><span class="pre">PROJ2601</span></code>: exact-type association exception</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uml/#profiles-and-layout">Profiles and layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uml/#related-pages">Related pages</a></li>
 </ul>
 </li>
@@ -418,8 +496,15 @@ format.</p>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="owl/">OWL Generation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="owl/#mapping">Mapping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="owl/#ordered-collections">Ordered collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="owl/#calendar-datatype-domains">Calendar datatype domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="owl/#rdf-term-naming">RDF term naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="owl/#shared-properties-and-local-descriptions">Shared properties and local descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="owl/#turtle-presentation-and-semantic-repeatability">Turtle presentation and semantic repeatability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="owl/#owl2002-property-local-subtype-exclusion"><code class="docutils literal notranslate"><span class="pre">OWL2002</span></code>: property-local subtype exclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="owl/#owl2003-abstract-direct-instances"><code class="docutils literal notranslate"><span class="pre">OWL2003</span></code>: abstract direct instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="owl/#authority-boundary-and-other-diagnostics">Authority boundary and other diagnostics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="owl/#related-pages">Related pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="owl/#native-scalar-restrictions">Native scalar restrictions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="graphql/">GraphQL Generation</a><ul>
@@ -454,20 +539,20 @@ format.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../command-line/validate/"
+       href="../command-line/validate-instance/"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">validate</p>
+        <p class="prev-next-title">validate-instance</p>
       </div>
     </a>
     <a class="right-next"
-       href="csharp/"
+       href="native-types/"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">C# Generation</p>
+        <p class="prev-next-title">Native types and migration</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -516,7 +601,7 @@ format.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

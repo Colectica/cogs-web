@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Continuous Integration &#8212; COGS 1.0 documentation</title>
+    <title>Continuous Integration &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/continuous-integration/index';</script>
@@ -48,7 +48,7 @@
     <link rel="prev" title="DCTAP Generation" href="../generation/dctap/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -110,7 +110,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -132,8 +132,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -225,8 +239,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -272,23 +300,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../command-line/">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../command-line/generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/rewrite/">rewrite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../command-line/publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command-line/publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command-line/publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command-line/publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/publish-xsd/">publish-xsd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../command-line/validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command-line/validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../generation/">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generation/native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../generation/csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generation/python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generation/typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../generation/json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../generation/xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../generation/uml/">UML Generation</a></li>
@@ -370,11 +405,48 @@ changes using a continuous integration system. This allows for a
 transparent development process and fast iterations.</p>
 <p>This repository currently uses GitHub Actions for its own build automation, but
 the same validate-and-publish workflow can be implemented in any CI system.</p>
+<section id="ci-package-versions">
+<h2>CI package versions<a class="headerlink" href="#ci-package-versions" title="Link to this heading">#</a></h2>
+<p>The repository workflow keeps the major and minor version numbers from
+<code class="docutils literal notranslate"><span class="pre">Cogs.Console/Cogs.Console.csproj</span></code> and sets the third number to
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rev-list</span> <span class="pre">--count</span> <span class="pre">HEAD</span></code>. For example, version <code class="docutils literal notranslate"><span class="pre">2.0.0</span></code> with 777 commits
+produces package version <code class="docutils literal notranslate"><span class="pre">2.0.777</span></code>. The checkout includes the full Git history,
+and the workflow passes the same version to both build and pack.</p>
+<p>Rebuilding the same commit produces the same version. Pull-request builds count
+the checked-out merge commit and its history. Local builds continue to use the
+project’s declared version unless a version override is supplied.</p>
+</section>
 <section id="scenario">
 <h2>Scenario<a class="headerlink" href="#scenario" title="Link to this heading">#</a></h2>
 <p>Whenever a change is made to the model, the model should be validated and
 all outputs should automatically be generated and uploaded to a
 staging site where they can be reviewed.</p>
+</section>
+<section id="repository-conformance-matrix">
+<h2>Repository conformance matrix<a class="headerlink" href="#repository-conformance-matrix" title="Link to this heading">#</a></h2>
+<p>COGS itself checks the same conformance corpus on Windows and Linux with .NET
+10, Python 3.11, Node 22, the pinned tools in
+<code class="docutils literal notranslate"><span class="pre">conformance/tools.json</span></code>, and every publisher target. The workflow builds all
+three generated language packages, runs both cross-language runtime orders,
+validates every JSON/XML boundary, exercises projection tools, compares a
+second generation, and checks pinned downstream migration diagnostics. The
+regeneration gate compares non-Turtle artifacts byte-for-byte and parses each
+Turtle pair with dotNetRDF to require strict RDF graph isomorphism. The comparer
+checks ground triples exactly and matches blank-node-connected components with
+<code class="docutils literal notranslate"><span class="pre">Graph.Equals</span></code> so large collections of independent restrictions remain
+practical to compare. Blank-node labels, prefix aliases, statement order, and
+formatting may differ without changing the standards-compliant semantic graph.</p>
+<p>Generated TypeScript installation is platform-specific under npm 10. POSIX
+uses a package <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> for install and build. Windows runs
+<code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">--ignore-scripts</span> <span class="pre">--no-package-lock</span></code> inside the generated package,
+then uses a prefixed build and <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">pack</span> <span class="pre">&lt;package-path&gt;</span> <span class="pre">--dry-run</span></code>. CI hashes
+<code class="docutils literal notranslate"><span class="pre">package.json</span></code> before and after installation and fails if npm rewrites it.
+See <a class="reference internal" href="../command-line/publish-ts/"><span class="doc">publish-ts</span></a> for exact commands.</p>
+<p>Equivalent baseline executions have passed on Windows and an isolated Debian
+12 source copy. Debian is not Ubuntu Noble, and a local baseline is not a
+hosted GitHub Actions result. Release evidence must continue to identify the
+actual operating system and runner instead of inferring it from the configured
+matrix.</p>
 </section>
 <section id="gitlab-and-appveyor-example">
 <h2>GitLab and AppVeyor Example<a class="headerlink" href="#gitlab-and-appveyor-example" title="Link to this heading">#</a></h2>
@@ -446,7 +518,9 @@ where it is immediately available on the Web.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ci-package-versions">CI package versions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario">Scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repository-conformance-matrix">Repository conformance matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gitlab-and-appveyor-example">GitLab and AppVeyor Example</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appveyor-configuration-and-initialization">AppVeyor Configuration and Initialization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-script">Build Script</a></li>
@@ -490,7 +564,7 @@ where it is immediately available on the Web.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

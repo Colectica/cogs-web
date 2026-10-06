@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>publish-xsd &#8212; COGS 1.0 documentation</title>
+    <title>publish-xsd &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/command-line/publish-xsd';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="publish-uml" href="../publish-uml/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rewrite/">rewrite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-uml/">publish-uml</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">publish-xsd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../generation/">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/uml/">UML Generation</a></li>
@@ -404,7 +439,7 @@
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-n|--namespace</span></code></p>
 <blockquote>
-<div><p>Allows the user to specify the XMI of the desired XML namespace.</p>
+<div><p>Overrides the XML namespace URI.</p>
 </div></blockquote>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-p|--namespacePrefix</span></code></p>
@@ -520,6 +555,24 @@ $<span class="w"> </span>cogs<span class="w"> </span>publish-xsd<span class="w">
 </tbody>
 </table>
 </div>
+<p>COGS limits the year component of Date, DateTime, GYear, and GYearMonth to a
+nonzero signed 32-bit integer. The generated XSD retains the native XSD 1.0
+types and documents this additional constraint; use <code class="docutils literal notranslate"><span class="pre">validate-instance</span></code> for
+authoritative enforcement.</p>
+</section>
+<section id="reference-schema-components">
+<h2>Reference Schema Components<a class="headerlink" href="#reference-schema-components" title="Link to this heading">#</a></h2>
+<p>The generated schema exposes a global <code class="docutils literal notranslate"><span class="pre">IdentificationGroup</span></code> containing all
+base and mixin identification elements in their required order. Every
+top-level or property item-reference type reuses that group and follows it
+with its own <code class="docutils literal notranslate"><span class="pre">TypeOfObject</span></code> restriction.</p>
+<p>Reference types also permit an optional, unqualified
+<code class="docutils literal notranslate"><span class="pre">isReference</span></code> attribute of type <code class="docutils literal notranslate"><span class="pre">xs:boolean</span></code> with fixed value <code class="docutils literal notranslate"><span class="pre">true</span></code>.
+Generated runtimes write <code class="docutils literal notranslate"><span class="pre">isReference=&quot;true&quot;</span></code> on every new XML reference,
+while the optional declaration keeps older unmarked XML valid. Full item
+definitions never carry the marker. See
+<a class="reference internal" href="../../generation/xsd/"><span class="doc">XML Schema Generation</span></a> for the complete reader and query
+contract.</p>
 </section>
 </section>
 
@@ -575,6 +628,7 @@ $<span class="w"> </span>cogs<span class="w"> </span>publish-xsd<span class="w">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-flags">Command Line Flags</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-usage">Command Line Usage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-type-mappings-to-xml">Primitive Type Mappings to XML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-schema-components">Reference Schema Components</a></li>
 </ul>
   </nav></div>
 
@@ -612,7 +666,7 @@ $<span class="w"> </span>cogs<span class="w"> </span>publish-xsd<span class="w">
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

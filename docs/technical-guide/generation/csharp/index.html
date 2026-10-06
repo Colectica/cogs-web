@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>C# Generation &#8212; COGS 1.0 documentation</title>
+    <title>C# Generation &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,17 +39,17 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/generation/csharp';</script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
-    <link rel="next" title="JSON Generation" href="../json/" />
-    <link rel="prev" title="Generation" href="../" />
+    <link rel="next" title="Python Generation" href="../python/" />
+    <link rel="prev" title="Native types and migration" href="../native-types/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../command-line/">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/rewrite/">rewrite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-xsd/">publish-xsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../native-types/">Native types and migration</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../uml/">UML Generation</a></li>
@@ -377,20 +412,74 @@ class library from a COGS model.</p>
 <li><p>Root item types implement identifiable behavior using the configured
 identification properties.</p></li>
 <li><p>Composite types become reusable classes used as property types.</p></li>
-<li><p>Primitive COGS types map to built-in .NET types or generated helper types.</p></li>
+<li><p>Primitive COGS types use native <code class="docutils literal notranslate"><span class="pre">decimal</span></code>, <code class="docutils literal notranslate"><span class="pre">DateTimeOffset</span></code>, <code class="docutils literal notranslate"><span class="pre">DateOnly</span></code>,
+<code class="docutils literal notranslate"><span class="pre">TimeOnly</span></code>, <code class="docutils literal notranslate"><span class="pre">TimeSpan</span></code> and bounded native integers. URIs use strings
+to preserve lexical identity.</p></li>
 </ul>
+<p>The complete matrix and compatibility changes are in <a class="reference internal" href="../native-types/"><span class="doc">Native types and migration</span></a>.
+Partial Gregorian helpers, LangString and CogsDate remain structured values.
+All JSON numeric kinds are preserved.</p>
 </section>
 <section id="json-behavior">
 <h2>JSON behavior<a class="headerlink" href="#json-behavior" title="Link to this heading">#</a></h2>
-<p>The generated C# JSON contract matches the current JSON schema contract:</p>
+<p>The generated C# JSON contract uses <code class="docutils literal notranslate"><span class="pre">System.Text.Json</span></code> and matches the
+current JSON Schema contract:</p>
 <ul class="simple">
 <li><p>serialized data uses a flat <code class="docutils literal notranslate"><span class="pre">ItemContainer</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">items</span></code> contains all serialized items</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">topLevelReferences</span></code> contains item references</p></li>
 <li><p>references are simple objects containing <code class="docutils literal notranslate"><span class="pre">$type</span></code> plus identification values</p></li>
-<li><p>reusable substitute datatypes are deserialized through <code class="docutils literal notranslate"><span class="pre">SubstitutionConverter</span></code>
-using <code class="docutils literal notranslate"><span class="pre">$type</span></code></p></li>
+<li><p>reusable substitute datatypes use property-local <code class="docutils literal notranslate"><span class="pre">$type</span></code> dispatch</p></li>
+<li><p>numeric readers and writers enforce the shared safe-integer and exact
+decimal interchange domains</p></li>
+<li><p>duplicate/unknown fields, missing or empty identity components, duplicate
+definitions, malformed values, and incompatible discriminators are rejected</p></li>
 </ul>
+<p><code class="docutils literal notranslate"><span class="pre">ItemContainer</span></code> exposes string, stream, and path JSON/XML load and dump APIs.
+Deserialization creates identified placeholders before populating definitions,
+so forward and repeated references share object identity.</p>
+<p>Every XML writer API emits the unqualified <code class="docutils literal notranslate"><span class="pre">isReference=&quot;true&quot;</span></code> attribute on
+top-level and item-property references. Readers accept the marker when its XSD
+boolean lexical value is <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span></code> and also accept older unmarked XML.
+They reject false, qualified, or unknown reference attributes and reject the
+marker on full item definitions. The marker is not exposed as a C# property.</p>
+</section>
+<section id="rdf-graph-behavior">
+<h2>RDF graph behavior<a class="headerlink" href="#rdf-graph-behavior" title="Link to this heading">#</a></h2>
+<p>Generated C# objects also expose <code class="docutils literal notranslate"><span class="pre">AddTriples</span></code> methods, and
+<code class="docutils literal notranslate"><span class="pre">ItemContainer.MakeRdfGraph()</span></code> builds a dotNetRDF graph for an instance. That
+instance projection follows the same RDF term contract as OWL, DCTAP, and
+LinkML:</p>
+<ul class="simple">
+<li><p>the object of each <code class="docutils literal notranslate"><span class="pre">rdf:type</span></code> triple uses the exact PascalCase COGS class
+term, such as <code class="docutils literal notranslate"><span class="pre">&lt;https://example.org/model#Recipe&gt;</span></code>;</p></li>
+<li><p>predicates use word-aware camelCase terms, such as <code class="docutils literal notranslate"><span class="pre">Shade</span></code> →
+<code class="docutils literal notranslate"><span class="pre">&lt;https://example.org/model#shade&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">URLValue</span></code> →
+<code class="docutils literal notranslate"><span class="pre">&lt;https://example.org/model#urlValue&gt;</span></code>; and</p></li>
+<li><p>a namespace ending in <code class="docutils literal notranslate"><span class="pre">#</span></code> or <code class="docutils literal notranslate"><span class="pre">/</span></code> is retained, while any other namespace
+receives a trailing <code class="docutils literal notranslate"><span class="pre">#</span></code> before its local term.</p></li>
+</ul>
+<p>Identified item subjects default to <code class="docutils literal notranslate"><span class="pre">&lt;termBase&gt;instance/&lt;escaped-reference&gt;</span></code>.
+The complete structured <code class="docutils literal notranslate"><span class="pre">ReferenceId</span></code> is URI-escaped before it is appended,
+so spaces, delimiters, Unicode, and compound identification values cannot turn
+an instance identifier into malformed or ambiguous URI syntax. Callers may
+still replace <code class="docutils literal notranslate"><span class="pre">RdfUriFactory.Prefix</span></code> when their deployment owns a different
+instance-IRI policy.</p>
+<p>Primitive, composite, item-reference, identification, singleton, repeated, and
+inherited properties all use that predicate rule. The generated code uses full
+IRIs rather than treating a textual <code class="docutils literal notranslate"><span class="pre">prefix:term</span></code> as a URI scheme. The model
+namespace is used by default; <code class="docutils literal notranslate"><span class="pre">--namespace</span></code> overrides the XML and RDF term
+namespace together. These RDF names do not change generated C# members or exact
+JSON/XML wire names.</p>
+<p>Primitive RDF objects are invariant typed literals using their full XSD
+datatype IRIs. <code class="docutils literal notranslate"><span class="pre">cogsDate</span></code> selects the XSD datatype of its active arm, while
+<code class="docutils literal notranslate"><span class="pre">langString</span></code> remains an RDF language-tagged literal.</p>
+<p>DTO validation rejects distinct property names that collapse to one predicate
+with <code class="docutils literal notranslate"><span class="pre">COGS-VAL-PROP-008</span></code>. A directly constructed connected model receives the
+equivalent generated-C# preflight error <code class="docutils literal notranslate"><span class="pre">CSH1001</span></code> before its existing target
+can be replaced. No legacy PascalCase predicate aliases are emitted. OWL
+remains the authoritative class-semantics output; this API is the RDF instance
+projection of generated C# objects.</p>
 </section>
 <section id="generated-project-files">
 <h2>Generated project files<a class="headerlink" href="#generated-project-files" title="Link to this heading">#</a></h2>
@@ -424,20 +513,20 @@ tree.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../"
+       href="../native-types/"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Generation</p>
+        <p class="prev-next-title">Native types and migration</p>
       </div>
     </a>
     <a class="right-next"
-       href="../json/"
+       href="../python/"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">JSON Generation</p>
+        <p class="prev-next-title">Python Generation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -462,6 +551,7 @@ tree.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping">Mapping</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-behavior">JSON behavior</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rdf-graph-behavior">RDF graph behavior</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generated-project-files">Generated project files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-pages">Related pages</a></li>
 </ul>
@@ -501,7 +591,7 @@ tree.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

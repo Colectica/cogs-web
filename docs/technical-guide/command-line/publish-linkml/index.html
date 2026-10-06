@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>publish-linkml &#8212; COGS 1.0 documentation</title>
+    <title>publish-linkml &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/command-line/publish-linkml';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="publish-json" href="../publish-json/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rewrite/">rewrite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../validate/">validate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-json/">publish-json</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-xsd/">publish-xsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../generation/">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/uml/">UML Generation</a></li>
@@ -369,7 +404,9 @@
 <h1>publish-linkml<a class="headerlink" href="#publish-linkml" title="Link to this heading">#</a></h1>
 <p>Generate a LinkML schema from a COGS model.</p>
 <p>This publisher maps the COGS model into a LinkML-oriented representation for
-schema exchange and downstream tooling in ecosystems that use LinkML.</p>
+schema exchange and downstream tooling in ecosystems that use LinkML. Classes
+remain PascalCase; global slot keys and their explicit <code class="docutils literal notranslate"><span class="pre">slot_uri</span></code> terms use
+the shared camelCase RDF property convention.</p>
 <section id="arguments">
 <h2>Arguments<a class="headerlink" href="#arguments" title="Link to this heading">#</a></h2>
 <dl class="simple">
@@ -386,15 +423,19 @@ schema exchange and downstream tooling in ecosystems that use LinkML.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-o</span></code>, <code class="docutils literal notranslate"><span class="pre">--overwrite</span></code></dt><dd><p>Overwrite the target directory.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">--namespace</span></code></dt><dd><p>Override the target namespace URI.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-n</span></code>, <code class="docutils literal notranslate"><span class="pre">--namespace</span></code></dt><dd><p>Override the target namespace URI and effective RDF slot-term base.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">--namespacePrefix</span></code></dt><dd><p>Override the target namespace prefix.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-p</span></code>, <code class="docutils literal notranslate"><span class="pre">--namespacePrefix</span></code></dt><dd><p>Override the target namespace prefix.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--name</span></code></dt><dd><p>Override the LinkML schema name. A value that can be represented safely is
+normalized with a <code class="docutils literal notranslate"><span class="pre">LNK2003</span></code> warning; namespace-prefix conflicts likewise
+receive a stable projection warning.</p>
 </dd>
 </dl>
 </section>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cogs publish-linkml --overwrite MyModel output/linkml</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cogs publish-linkml --overwrite --name MySchema MyModel output/linkml</span>
 </pre></div>
 </div>
 </section>
@@ -494,7 +535,7 @@ schema exchange and downstream tooling in ecosystems that use LinkML.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Modeler’s Guide &#8212; COGS 1.0 documentation</title>
+    <title>Modeler’s Guide &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,17 +39,17 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'modeler-guide/index';</script>
     <link rel="index" title="Index" href="../genindex/" />
     <link rel="search" title="Search" href="../search/" />
     <link rel="next" title="Item Types" href="item-types/" />
-    <link rel="prev" title="Docker Quick Start" href="../quick-start/docker-quick-start/" />
+    <link rel="prev" title="Publisher Conformance and Projections" href="../specification/publishers/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -132,9 +132,23 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="#">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -225,9 +239,23 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="#">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -332,8 +360,15 @@
                   
   <section id="modeler-s-guide">
 <h1>Modeler’s Guide<a class="headerlink" href="#modeler-s-guide" title="Link to this heading">#</a></h1>
-<p>With COGS, you can specify your information model in plain text. This section describes the
-text and CSV files that define your model.</p>
+<p>With COGS, you can specify your information model in plain text. This section
+describes the text and CSV files that define your model. COGS conventions are
+case-sensitive contract data, even on Windows. COGS 2 models identify their
+format with <code class="docutils literal notranslate"><span class="pre">CogsVersion,2.0</span></code> in <code class="docutils literal notranslate"><span class="pre">Settings/Settings.csv</span></code>.</p>
+<p>The required top-level directories are <code class="docutils literal notranslate"><span class="pre">Settings</span></code>, <code class="docutils literal notranslate"><span class="pre">ItemTypes</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">CompositeTypes</span></code>. <code class="docutils literal notranslate"><span class="pre">Topics</span></code> and <code class="docutils literal notranslate"><span class="pre">Articles</span></code> are optional. Do not rename,
+pluralize, or change the case of any present convention path. See the normative
+<a class="reference internal" href="../specification/"><span class="doc">COGS 2 specification</span></a> for the complete grammar and
+serialization contract.</p>
 <p>A COGS model consists of the following core components.</p>
 <dl class="simple">
 <dt><a class="reference internal" href="item-types/"><span class="doc">Item Types</span></a></dt><dd><p>Item types are the identified entities in your model. They consist of definitions and
@@ -369,12 +404,12 @@ items in your model.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../quick-start/docker-quick-start/"
+       href="../specification/publishers/"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Docker Quick Start</p>
+        <p class="prev-next-title">Publisher Conformance and Projections</p>
       </div>
     </a>
     <a class="right-next"
@@ -431,7 +466,7 @@ items in your model.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

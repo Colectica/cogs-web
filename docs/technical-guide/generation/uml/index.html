@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>UML Generation &#8212; COGS 1.0 documentation</title>
+    <title>UML Generation &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/generation/uml';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="XML Schema Generation" href="../xsd/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../command-line/">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/rewrite/">rewrite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-xsd/">publish-xsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">UML Generation</a></li>
@@ -369,19 +404,98 @@
 <h1>UML Generation<a class="headerlink" href="#uml-generation" title="Link to this heading">#</a></h1>
 <p>The <a class="reference internal" href="../../command-line/publish-uml/"><span class="doc">publish-uml</span></a> command generates UML/XMI
 output from a COGS model.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>UML/XMI is an authoritative structural representation of a validated COGS
+model, with the single semantic exception documented under <code class="docutils literal notranslate"><span class="pre">PROJ2601</span></code>
+below. UML is not an instance serialization or an instance-validation
+schema: use the generated JSON Schema and XSD to validate JSON and XML
+documents.</p>
+</div>
+<p>The canonical capability list and diagnostic ranges are in
+<a class="reference internal" href="../../../specification/publishers/"><span class="doc">Publisher Conformance and Projections</span></a>.</p>
 <section id="mapping">
 <h2>Mapping<a class="headerlink" href="#mapping" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>item types and composite types map to UML classes</p></li>
 <li><p>inheritance maps to UML generalization</p></li>
 <li><p>properties map to attributes or associations depending on the referenced type</p></li>
-<li><p>multiplicity is derived from COGS cardinality</p></li>
+<li><p>multiplicity, ordering, and uniqueness are derived from COGS properties</p></li>
+<li><p>identification is emitted as machine-readable annotations and facets as UML
+constraints</p></li>
+<li><p>COGS primitives are explicit UML primitive definitions</p></li>
 </ul>
 </section>
-<section id="normative-and-non-normative-output">
-<h2>Normative and non-normative output<a class="headerlink" href="#normative-and-non-normative-output" title="Link to this heading">#</a></h2>
-<p>Normative output targets a strict XMI profile. Non-normative output can include
-graph layout information, which is why Graphviz is only needed in that mode.</p>
+<section id="proj2601-exact-type-association-exception">
+<h2><code class="docutils literal notranslate"><span class="pre">PROJ2601</span></code>: exact-type association exception<a class="headerlink" href="#proj2601-exact-type-association-exception" title="Link to this heading">#</a></h2>
+<p>COGS applies <code class="docutils literal notranslate"><span class="pre">AllowSubtypes</span></code> to each property. When a property declares a
+concrete item or composite type that has descendants and <code class="docutils literal notranslate"><span class="pre">AllowSubtypes</span></code> is
+blank or <code class="docutils literal notranslate"><span class="pre">false</span></code>, that particular property accepts exactly the declared
+type. Descendants remain valid model types and may be accepted by other
+properties; this is therefore a <em>property-local subtype exclusion</em>. An
+abstract declared type is effectively subtype-enabled because it cannot be
+instantiated directly, so that compatibility rule does not produce this
+warning.</p>
+<p>An ordinary UML association end typed by a class also accepts instances of
+that class’s subclasses. UML association typing has no native setting that
+means “this class itself, but none of its subclasses” while retaining the
+inheritance hierarchy elsewhere. The UML publisher consequently targets the
+declared base class and emits <code class="docutils literal notranslate"><span class="pre">PROJ2601</span></code> whenever concrete descendants make
+the difference observable.</p>
+<p>For example, the DDI Lifecycle model declares the following property (columns
+not relevant to the example are omitted):</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id1">
+<caption><span class="caption-text">DDI <code class="docutils literal notranslate"><span class="pre">WeightingMethodology</span></code> example</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 34.0%" />
+<col style="width: 24.0%" />
+<col style="width: 18.0%" />
+<col style="width: 24.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Cardinality</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">AllowSubtypes</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">TypeOfWeightingMethodology</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">CodeValueType</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0..1</span></code></p></td>
+<td><p>blank (<code class="docutils literal notranslate"><span class="pre">false</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">CodeValueType</span></code> has concrete descendants including <code class="docutils literal notranslate"><span class="pre">CountryCodeType</span></code>,
+<code class="docutils literal notranslate"><span class="pre">KindOfDataType</span></code>, and <code class="docutils literal notranslate"><span class="pre">ContentDateOffsetType</span></code>. The contracts therefore
+differ only at this point:</p>
+<ul class="simple">
+<li><p>COGS accepts exactly <code class="docutils literal notranslate"><span class="pre">CodeValueType</span></code> for
+<code class="docutils literal notranslate"><span class="pre">WeightingMethodology.TypeOfWeightingMethodology</span></code>.</p></li>
+<li><p>The UML association is typed as <code class="docutils literal notranslate"><span class="pre">CodeValueType</span></code>, which normal UML
+substitutability also permits its descendants to satisfy.</p></li>
+</ul>
+<p>This warning does not indicate a malformed model or failed UML generation.
+When the exact type is intended, leave <code class="docutils literal notranslate"><span class="pre">AllowSubtypes</span></code> blank or <code class="docutils literal notranslate"><span class="pre">false</span></code> and
+retain the warning as an explicit record of the UML exception. Set
+<code class="docutils literal notranslate"><span class="pre">AllowSubtypes=true</span></code> only when those descendant values are genuinely valid;
+do not broaden the model merely to silence <code class="docutils literal notranslate"><span class="pre">PROJ2601</span></code>. JSON Schema, XSD, and
+the generated C#, Python, and TypeScript runtimes continue to enforce the COGS
+property contract.</p>
+</section>
+<section id="profiles-and-layout">
+<h2>Profiles and layout<a class="headerlink" href="#profiles-and-layout" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">--mode</span> <span class="pre">normative</span></code> writes UML/XMI 2.4.2 without vendor extensions.
+<code class="docutils literal notranslate"><span class="pre">--mode</span> <span class="pre">ea</span></code> writes XMI 2.5.1 plus deterministic Enterprise Architect diagram
+extensions. Graphviz is required only if a selected mode actually asks it to
+lay out a diagram; the current deterministic writers do not invoke it.</p>
+<p>The checked-in semantic validator enforces XMI namespace/version pairing,
+unique and resolvable IDs, classifiers, inheritance, property types,
+multiplicity, associations, constraints, and EA extension references. It is
+not a substitute for an official OMG schema or an Eclipse UML2 loader; those
+tools are not claimed by the current reproducible conformance manifest.</p>
 </section>
 <section id="related-pages">
 <h2>Related pages<a class="headerlink" href="#related-pages" title="Link to this heading">#</a></h2>
@@ -440,7 +554,8 @@ graph layout information, which is why Graphviz is only needed in that mode.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping">Mapping</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normative-and-non-normative-output">Normative and non-normative output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proj2601-exact-type-association-exception"><code class="docutils literal notranslate"><span class="pre">PROJ2601</span></code>: exact-type association exception</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profiles-and-layout">Profiles and layout</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-pages">Related pages</a></li>
 </ul>
   </nav></div>
@@ -479,7 +594,7 @@ graph layout information, which is why Graphviz is only needed in that mode.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

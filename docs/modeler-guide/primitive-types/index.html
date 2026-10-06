@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Primitive Types &#8212; COGS 1.0 documentation</title>
+    <title>Primitive Types &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'modeler-guide/primitive-types';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="Articles" href="../articles/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -132,9 +132,23 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -225,9 +239,23 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -335,241 +363,46 @@
                   
   <section id="primitive-types">
 <h1>Primitive Types<a class="headerlink" href="#primitive-types" title="Link to this heading">#</a></h1>
-<p>COGS provides a number of built-in primitive types you can use to define properties on
-items in your model.</p>
-<section id="simple-types">
-<h2>Simple Types<a class="headerlink" href="#simple-types" title="Link to this heading">#</a></h2>
-<section id="boolean">
-<h3>boolean<a class="headerlink" href="#boolean" title="Link to this heading">#</a></h3>
-<p>Represents Boolean values, which are either true or false.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>none</p>
-</dd>
-</dl>
-</section>
-<section id="string">
-<h3>string<a class="headerlink" href="#string" title="Link to this heading">#</a></h3>
-<p>Represents character strings.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>maxLength, minLength, enumeration, pattern</p>
-</dd>
-</dl>
-</section>
-<section id="id1">
-<h3>boolean<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>Represents Boolean values, which are either true or false.</p>
-</section>
-<section id="decimal">
-<h3>decimal<a class="headerlink" href="#decimal" title="Link to this heading">#</a></h3>
-<p>Represents arbitrary precision numbers.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="float">
-<h3>float<a class="headerlink" href="#float" title="Link to this heading">#</a></h3>
-<p>Represents single-precision 32-bit floating-point numbers.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="double">
-<h3>double<a class="headerlink" href="#double" title="Link to this heading">#</a></h3>
-<p>Represents double-precision 64-bit floating-point numbers.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="duration">
-<h3>duration<a class="headerlink" href="#duration" title="Link to this heading">#</a></h3>
-<p>Represents a duration of time. The pattern for duration is PnYnMnDTnHnMnS,
-where nY represents the number of years, nM the number of months, nD the number
-of days, T the date/time separator, nH the number of hours, nM the number of
-minutes, and nS the number of seconds.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="datetime">
-<h3>dateTime<a class="headerlink" href="#datetime" title="Link to this heading">#</a></h3>
-<p>Represents a specific instance of time. The pattern for dateTime is
-CCYY-MM-DDThh:mm:ss where CC represents the century, YY the year, MM the month,
-and DD the day, preceded by an optional leading negative (-) character to
-indicate a negative number. If the negative character is omitted, positive (+)
-is assumed. The T is the date/time separator and hh, mm, and ss represent hour,
-minute, and second respectively. Additional digits can be used to increase the
-precision of fractional seconds if desired. For example, the format ss.ss…
-with any number of digits after the decimal point is supported. The fractional
-seconds part is optional. This representation may be immediately followed by a
-“Z” to indicate Coordinated Universal Time (UTC) or to indicate the time zone.
-For example, the difference between the local time and Coordinated Universal
-Time, immediately followed by a sign, + or -, followed by the difference from
-UTC represented as hh:mm (minutes is required). If the time zone is included,
-both hours and minutes must be present.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="time">
-<h3>time<a class="headerlink" href="#time" title="Link to this heading">#</a></h3>
-<p>Represents an instance of time that recurs every day. The pattern for time is hh:mm:ss.sss with optional time zone indicator.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="date">
-<h3>date<a class="headerlink" href="#date" title="Link to this heading">#</a></h3>
-<p>Represents a calendar date. The pattern for date is CCYY-MM-DD with optional time zone indicator as allowed for dateTime</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="gyearmonth">
-<h3>gYearMonth<a class="headerlink" href="#gyearmonth" title="Link to this heading">#</a></h3>
-<p>Represents a specific Gregorian month in a specific Gregorian year. A set of one-month long, nonperiodic instances. The pattern for gYearMonth is CCYY-MM with optional time zone indicator.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="gyear">
-<h3>gYear<a class="headerlink" href="#gyear" title="Link to this heading">#</a></h3>
-<p>Represents a Gregorian year. A set of one-year long, nonperiodic instances. The pattern for gYear is CCYY with optional time zone indicator as allowed for dateTime.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="gmonthday">
-<h3>gMonthDay<a class="headerlink" href="#gmonthday" title="Link to this heading">#</a></h3>
-<p>Represents a specific Gregorian date that recurs, specifically a day of the year such as the third of May. A gMonthDay is the set of calendar dates. Specifically, it is a set of one-day long, annually periodic instances. The pattern for gMonthDay is –MM-DD with optional time zone indicator as allowed for date</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="gday">
-<h3>gDay<a class="headerlink" href="#gday" title="Link to this heading">#</a></h3>
-<p>Represents a Gregorian day that recurs, specifically a day of the month such as the fifth day of the month. A gDay is the space of a set of calendar dates. Specifically, it is a set of one-day long, monthly periodic instances. The pattern for gDay is —DD with optional time zone indicator as allowed for date</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="gmonth">
-<h3>gMonth<a class="headerlink" href="#gmonth" title="Link to this heading">#</a></h3>
-<p>Represents a Gregorian month that recurs every year. A gMonth is the space of a set of calendar months. Specifically, it is a set of one-month long, yearly periodic instances. The pattern for gMonth is –MM– with optional time zone indicator as allowed for date.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="anyuri">
-<h3>anyURI<a class="headerlink" href="#anyuri" title="Link to this heading">#</a></h3>
-<p>Represents a URI as defined by RFC 2396. An anyURI value can be absolute or relative, and may have an optional fragment identifier.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>maxLength, minLength</p>
-</dd>
-</dl>
-</section>
-</section>
-<section id="derived-types">
-<h2>Derived Types<a class="headerlink" href="#derived-types" title="Link to this heading">#</a></h2>
-<section id="langstring">
-<h3>langString<a class="headerlink" href="#langstring" title="Link to this heading">#</a></h3>
-<p>Represents a character string and an associated language tag (defined by BCP 47).</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>maxLength, minLength, enumeration, pattern</p>
-</dd>
-</dl>
-</section>
-<section id="language">
-<h3>language<a class="headerlink" href="#language" title="Link to this heading">#</a></h3>
-<p>Represents natural language identifiers (defined by BCP 47).</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>None</p>
-</dd>
-</dl>
-</section>
-<section id="int">
-<h3>int<a class="headerlink" href="#int" title="Link to this heading">#</a></h3>
-<p>Represents an integer with a minimum value of -2147483648 and maximum of 2147483647. This data type is derived from long.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="long">
-<h3>long<a class="headerlink" href="#long" title="Link to this heading">#</a></h3>
-<p>Represents an integer with a minimum value of -9223372036854775808 and maximum of 9223372036854775807. This data type is derived from integer.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="unsignedlong">
-<h3>unsignedLong<a class="headerlink" href="#unsignedlong" title="Link to this heading">#</a></h3>
-<p>Represents an integer with a minimum of zero and maximum of 18446744073709551615. This data type is derived from nonNegativeInteger.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="nonnegativeinteger">
-<h3>nonNegativeInteger<a class="headerlink" href="#nonnegativeinteger" title="Link to this heading">#</a></h3>
-<p>Represents an integer that is greater than or equal to zero. This data type is derived from integer.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="nonpositiveinteger">
-<h3>nonPositiveInteger<a class="headerlink" href="#nonpositiveinteger" title="Link to this heading">#</a></h3>
-<p>Represents an integer that is less than or equal to zero. A
-nonPositiveIntegerconsists of a negative sign (-) and sequence of decimal
-digits. This data type is derived from integer.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="negativeinteger">
-<h3>negativeInteger<a class="headerlink" href="#negativeinteger" title="Link to this heading">#</a></h3>
-<p>Represents an integer that is less than zero. Consists of a negative sign (-)
-and sequence of decimal digits. This data type is derived from
-nonPositiveInteger.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="positiveinteger">
-<h3>positiveInteger<a class="headerlink" href="#positiveinteger" title="Link to this heading">#</a></h3>
-<p>Represents an integer that is greater than zero. This data type is derived from
-nonNegativeInteger.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>minInclusive, minExclusive, maxInclusive, maxExclusive</p>
-</dd>
-</dl>
-</section>
-<section id="cogsdate">
-<h3>cogsDate<a class="headerlink" href="#cogsdate" title="Link to this heading">#</a></h3>
-<p>A union of dateTime, date, gYearMonth, gYear, and duration which allows for the
-use of a date-time combination (YYYY-MM-DDTHH:MM:SS), date (YYYYY-MM-DD),
-year-month (YYYY-MM), year (YYYY), and duration (PnYnMnDnHnMnS) as valid
-values.</p>
-<dl class="simple">
-<dt>Facets</dt><dd><p>None</p>
-</dd>
-</dl>
-</section>
+<p>COGS has 25 case-sensitive primitive names. Model types cannot shadow them.
+<code class="docutils literal notranslate"><span class="pre">dcTerms</span></code> is a source macro, not a runtime primitive; <code class="docutils literal notranslate"><span class="pre">This</span></code> and <code class="docutils literal notranslate"><span class="pre">Any</span></code>
+are retired.</p>
+<p>The complete value-domain and wire table is in
+<a class="reference internal" href="../../specification/model-format/"><span class="doc">Model Format</span></a>. Native language mappings and migration
+examples are in <a class="reference internal" href="../../technical-guide/generation/native-types/"><span class="doc">Native types and migration</span></a>.</p>
+<p>The shared profile keeps ordinary JavaScript JSON interchange practical:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> remains signed 32-bit. Other integer families use the JavaScript
+safe-integer interval intersected with their sign restrictions. Cardinalities
+remain arbitrary-size nonnegative integers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">decimal</span></code> must be exact in System.Decimal and survive <code class="docutils literal notranslate"><span class="pre">JSON.stringify</span></code>
+with the same mathematical decimal value. Ineligible values are rejected.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> uses binary32 rounding; <code class="docutils literal notranslate"><span class="pre">double</span></code> uses binary64. Nonfinite
+values are invalid, and zero has one canonical positive form.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dateTime</span></code> requires a timezone and whole milliseconds; output is UTC.
+<code class="docutils literal notranslate"><span class="pre">date</span></code> is local, without timezone, in years 0001–9999. <code class="docutils literal notranslate"><span class="pre">time</span></code> is local
+without timezone, at microsecond precision.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">duration</span></code> is elapsed whole milliseconds, with no years/months.</p></li>
+<li><p>Partial Gregorian values, <code class="docutils literal notranslate"><span class="pre">cogsDate</span></code> and <code class="docutils literal notranslate"><span class="pre">langString</span></code> retain their
+structured information. Text must be XML-compatible Unicode.</p></li>
+</ul>
+<section id="facets">
+<h2>Facets<a class="headerlink" href="#facets" title="Link to this heading">#</a></h2>
+<p>Facets constrain each value, not a repeated property’s array. Length counts
+Unicode scalar values, so a supplementary character counts as one.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Enumeration</span></code> is a whitespace-delimited list in one CSV cell. Blank means
+no enumeration. For example, <code class="docutils literal notranslate"><span class="pre">small</span> <span class="pre">medium</span> <span class="pre">large</span></code> declares three values.
+Values cannot contain whitespace; there is no internal quoting or escaping.
+Order and casing are preserved. JSON-looking text is split by the same rule.
+Numeric and temporal enumeration compares values, so equivalent spellings are
+not separate choices. Exact identification values are never normalized.</p>
+<p>Patterns use substring matching and the portable subset in the specification:
+literals, dot, simple classes, capturing groups, alternation, and ordinary
+greedy quantifiers. Anchors, lookarounds, backreferences, special groups, flags,
+shorthand classes, Unicode categories, nested classes, class subtraction and
+lazy quantifiers are rejected. Dot excludes the four standard line terminators.
+Escapes cover metacharacters, tab, newline and carriage return.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">validate-instance</span></code> for authoritative validation. Standard schemas alone
+do not implement every native-domain or value-comparison constraint.</p>
 </section>
 </section>
 
@@ -620,38 +453,7 @@ values.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-types">Simple Types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean">boolean</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string">string</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">boolean</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal">decimal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#float">float</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#double">double</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#duration">duration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datetime">dateTime</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time">time</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date">date</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gyearmonth">gYearMonth</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gyear">gYear</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gmonthday">gMonthDay</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gday">gDay</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gmonth">gMonth</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anyuri">anyURI</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derived-types">Derived Types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langstring">langString</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#language">language</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#int">int</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#long">long</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsignedlong">unsignedLong</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonnegativeinteger">nonNegativeInteger</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonpositiveinteger">nonPositiveInteger</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negativeinteger">negativeInteger</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positiveinteger">positiveInteger</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cogsdate">cogsDate</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#facets">Facets</a></li>
 </ul>
   </nav></div>
 
@@ -689,7 +491,7 @@ values.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

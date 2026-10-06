@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Settings &#8212; COGS 1.0 documentation</title>
+    <title>Settings &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'modeler-guide/settings';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="Composite Types" href="../composite-types/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -132,9 +132,23 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -225,9 +239,23 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -340,38 +368,49 @@ title of your model, copyright information, and more.</p>
 <p>Settings are set in a CSV file located at
 <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/Settings/Settings.csv</span></code>.
 This file has two columns: <code class="docutils literal notranslate"><span class="pre">Key</span></code> and <code class="docutils literal notranslate"><span class="pre">Value</span></code>.</p>
-<section id="well-known-settings">
-<h2>Well-known Settings<a class="headerlink" href="#well-known-settings" title="Link to this heading">#</a></h2>
-<p>The following settings should always be included.</p>
+<section id="required-settings">
+<h2>Required settings<a class="headerlink" href="#required-settings" title="Link to this heading">#</a></h2>
+<p>Keys are case-sensitive and may appear only once. The following keys are
+required for COGS 2. <code class="docutils literal notranslate"><span class="pre">Description</span></code>, <code class="docutils literal notranslate"><span class="pre">Author</span></code>, and <code class="docutils literal notranslate"><span class="pre">Copyright</span></code> may have an
+empty value; every other required value must be nonempty.</p>
 <dl class="simple">
+<dt>CogsVersion</dt><dd><p>The model-format version. For this specification the value is exactly
+<code class="docutils literal notranslate"><span class="pre">2.0</span></code>. This is separate from the model’s own <code class="docutils literal notranslate"><span class="pre">Version</span></code>.</p>
+</dd>
 <dt>Title</dt><dd><p>The title of your model. This is included in the generated Sphinx documentation and
 is used by most other publishers.</p>
 </dd>
 <dt>ShortTitle</dt><dd><p>A shorter title or abbreviation for your model. This is used in the Sphinx documentation.</p>
 </dd>
-<dt>Slug</dt><dd><p>A short name for your model, without spaces or hyphens. This is used as the namespace for
-C# code.</p>
+<dt>Slug</dt><dd><p>A stable name matching <code class="docutils literal notranslate"><span class="pre">[a-z][a-z0-9_]*</span></code>. Package publishers derive
+target-specific names from it and reject ambiguous normalizations.</p>
 </dd>
-<dt>Description</dt><dd><p>A short description of your model. This is not currently used, but may be inserted into the
-Sphinx documentation in the future.</p>
+<dt>Description</dt><dd><p>A short description of your model. The value may be empty.</p>
 </dd>
-<dt>Version</dt><dd><p>The version of your model. This is used in the Sphinx documentation.</p>
+<dt>Version</dt><dd><p>The canonical Semantic Versioning 2.0 release of your model, including
+major, minor, and patch. This is not the COGS format version.</p>
 </dd>
-<dt>Author</dt><dd><p>The person, organization, or group responsible for creating the model. This is used in the Sphinx documentation.</p>
+<dt>Author</dt><dd><p>The person, organization, or group responsible for creating the model. The
+value may be empty.</p>
 </dd>
-<dt>Copyright</dt><dd><p>A copyright statement for the model. This is used in the Sphinx documentation.</p>
+<dt>Copyright</dt><dd><p>A copyright statement for the model. The value may be empty.</p>
 </dd>
-<dt>NamespaceUrl</dt><dd><p>The namespace of the model. This is used by the XML Schema and OWL 2 publishers.</p>
+<dt>NamespaceUrl</dt><dd><p>The absolute namespace URI of the model. It is authoritative for XML; some
+projection publishers also use it.</p>
 </dd>
-<dt>NamespacePrefix</dt><dd><p>The namespace prefix to use for the model. This is used by the XML Schema and OWL 2 publishers.</p>
+<dt>NamespacePrefix</dt><dd><p>A nonempty XML NCName other than the reserved names <code class="docutils literal notranslate"><span class="pre">xml</span></code> and <code class="docutils literal notranslate"><span class="pre">xmlns</span></code>.</p>
 </dd>
 </dl>
 </section>
 <section id="additional-settings">
 <h2>Additional Settings<a class="headerlink" href="#additional-settings" title="Link to this heading">#</a></h2>
-<p>You can add additional settings to the <code class="file docutils literal notranslate"><span class="pre">Settings.csv</span></code> file by creating
-additional rows. These settings may not be used by the built-in publishers,
-but it can be a useful way to track information about your model.</p>
+<p>You can add unique extension settings to <code class="file docutils literal notranslate"><span class="pre">Settings.csv</span></code>. A built-in
+publisher uses one only when its documentation says so. Duplicate keys are an
+error; a reader never chooses a first or last value silently.</p>
+<p><code class="docutils literal notranslate"><span class="pre">CSharpNamespace</span></code> is an optional known setting. When present it overrides the
+namespace of generated C# classes and must be a valid C# namespace. Compile the
+generated project as the final target check. Other unique keys are preserved as
+extension metadata.</p>
 </section>
 <section id="identification-settings">
 <h2>Identification Settings<a class="headerlink" href="#identification-settings" title="Link to this heading">#</a></h2>
@@ -383,7 +422,9 @@ identification properties alongside the required set.</p>
 <section id="header-text">
 <h2>Header Text<a class="headerlink" href="#header-text" title="Link to this heading">#</a></h2>
 <p>You can specify header text to be included in outputs creating a file named <code class="file docutils literal notranslate"><em><span class="pre">baseDirectory</span></em><span class="pre">/Settings/HeaderInclude.txt</span></code>.
-Content from this file will be included as a comment on top of all output files that support comments.</p>
+Content from this file will be included as a comment on top of output files
+that support comments.</p>
+<p>See <a class="reference internal" href="../../specification/model-format/"><span class="doc">Model Format</span></a> for the normative setting table.</p>
 </section>
 </section>
 
@@ -434,7 +475,7 @@ Content from this file will be included as a comment on top of all output files 
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#well-known-settings">Well-known Settings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-settings">Required settings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-settings">Additional Settings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identification-settings">Identification Settings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#header-text">Header Text</a></li>
@@ -475,7 +516,7 @@ Content from this file will be included as a comment on top of all output files 
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

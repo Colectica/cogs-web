@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>publish-json &#8212; COGS 1.0 documentation</title>
+    <title>publish-json &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,17 +39,17 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/command-line/publish-json';</script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
     <link rel="next" title="publish-linkml" href="../publish-linkml/" />
-    <link rel="prev" title="publish-GraphQL" href="../publish-graphql/" />
+    <link rel="prev" title="publish-graphql" href="../publish-graphql/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rewrite/">rewrite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-xsd/">publish-xsd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../generation/">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/uml/">UML Generation</a></li>
@@ -369,14 +404,30 @@
 <h1>publish-json<a class="headerlink" href="#publish-json" title="Link to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>Generate a json schema file that defines all <a class="reference external" href="../../../modeler-guide/item-types/index.html">Item types</a>,
-<a class="reference external" href="../../../modeler-guide/composite-types/index.html">Composite types</a>, and
-<a class="reference external" href="../../../modeler-guide/primitive-types/index.html">Primitive types</a> in the model
-as well as defines connections between items.</p>
+<p>Generate a JSON Schema file for the model’s serialized item graph. Every
+concrete <a class="reference external" href="../../../modeler-guide/item-types/index.html">Item type</a> and every
+built-in <a class="reference external" href="../../../modeler-guide/primitive-types/index.html">Primitive type</a>
+has a definition. Model
+<a class="reference external" href="../../../modeler-guide/composite-types/index.html">Composite types</a> are
+included when they are reachable from a concrete item’s effective properties;
+unreachable composites are omitted from the schema’s internal definition
+inventory.</p>
 <p>The generated schema now describes a flat <code class="docutils literal notranslate"><span class="pre">ItemContainer</span></code> with
 <code class="docutils literal notranslate"><span class="pre">topLevelReferences</span></code> and <code class="docutils literal notranslate"><span class="pre">items</span></code>. References are simple objects containing
 <code class="docutils literal notranslate"><span class="pre">$type</span></code> plus the configured identification properties, and item or substitute
-datatype polymorphism is expressed using <code class="docutils literal notranslate"><span class="pre">$type</span></code> discriminators in the schema.</p>
+datatype polymorphism is expressed using <code class="docutils literal notranslate"><span class="pre">$type</span></code> discriminators in the schema.
+The <code class="docutils literal notranslate"><span class="pre">duration</span></code>, <code class="docutils literal notranslate"><span class="pre">dateTime</span></code>, <code class="docutils literal notranslate"><span class="pre">time</span></code>, and <code class="docutils literal notranslate"><span class="pre">date</span></code> definitions use the
+standard Draft 2020-12 <code class="docutils literal notranslate"><span class="pre">duration</span></code>, <code class="docutils literal notranslate"><span class="pre">date-time</span></code>, <code class="docutils literal notranslate"><span class="pre">time</span></code>, and <code class="docutils literal notranslate"><span class="pre">date</span></code>
+format annotations without regex patterns. The Gregorian <code class="docutils literal notranslate"><span class="pre">g*</span></code> definitions
+use closed PascalCase component objects. <code class="docutils literal notranslate"><span class="pre">anyURI</span></code> uses the standard <code class="docutils literal notranslate"><span class="pre">uri</span></code>
+format annotation without a generated regex pattern.
+Property-local tagged and item-reference restrictions are expressed inline
+when reachable rather than as additional schema types. Derived item and
+composite definitions reference their parent with <code class="docutils literal notranslate"><span class="pre">allOf</span></code> and contain only
+locally declared properties. Draft 2020-12 <code class="docutils literal notranslate"><span class="pre">unevaluatedProperties</span></code> closes the
+final item or composite value after inherited and local constraints have been
+evaluated. Item-valued properties compose the global <code class="docutils literal notranslate"><span class="pre">Reference</span></code> with only
+their property-local <code class="docutils literal notranslate"><span class="pre">$type</span></code> restriction.</p>
 <p>Requires that <a class="reference external" href="../../installation/dotnet/index.html">dotnet</a> is installed.</p>
 </section>
 <section id="command-line-arguments">
@@ -409,18 +460,16 @@ datatype polymorphism is expressed using <code class="docutils literal notransla
 <div><p>If the <code class="docutils literal notranslate"><span class="pre">[TargetLocation]</span></code> is not empty, erase all files in the folder before generation.</p>
 </div></blockquote>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-a|--allowAdditionalProperties</span></code></p>
-<blockquote>
-<div><p>Allows properties not defined in the schema to be added to items.</p>
-</div></blockquote>
-</li>
 </ul>
+<p>Generated COGS 2 schemas are always closed. The former
+<code class="docutils literal notranslate"><span class="pre">--allowAdditionalProperties</span></code> option has been removed; supplying it produces
+the targeted <code class="docutils literal notranslate"><span class="pre">CLI2001</span></code> error rather than changing the wire contract.</p>
 </section>
 <section id="command-line-usage">
 <h2>Command Line Usage<a class="headerlink" href="#command-line-usage" title="Link to this heading">#</a></h2>
 <p><strong>Format</strong></p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs<span class="w"> </span>publish-json<span class="w"> </span><span class="o">(</span>-h<span class="o">)</span><span class="w"> </span><span class="o">(</span>-o<span class="o">)</span><span class="w"> </span><span class="o">(</span>-a<span class="o">)</span><span class="w"> </span><span class="o">[</span>CogsLocation<span class="o">]</span><span class="w"> </span><span class="o">[</span>TargetLocation<span class="o">]</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs<span class="w"> </span>publish-json<span class="w"> </span><span class="o">(</span>-h<span class="o">)</span><span class="w"> </span><span class="o">(</span>-o<span class="o">)</span><span class="w"> </span><span class="o">[</span>CogsLocation<span class="o">]</span><span class="w"> </span><span class="o">[</span>TargetLocation<span class="o">]</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -429,12 +478,14 @@ datatype polymorphism is expressed using <code class="docutils literal notransla
 <div><p>A few examples of how the command line arguments and flags can be used together.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs<span class="w"> </span>publish-json<span class="w"> </span>-h
 $<span class="w"> </span>cogs<span class="w"> </span>publish-json<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
-$<span class="w"> </span>cogs<span class="w"> </span>publish-json<span class="w"> </span>-o<span class="w"> </span>-a<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
+$<span class="w"> </span>cogs<span class="w"> </span>publish-json<span class="w"> </span>-o<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
 </pre></div>
 </div>
 </div></blockquote>
 <p>The generated JSON schema file is written in pretty-printed form to make it
-easier to inspect and review.</p>
+easier to inspect and review.
+Format assertion is not enabled: COGS preserves the broader XSD temporal
+lexical spaces and applies those rules through <code class="docutils literal notranslate"><span class="pre">validate-instance</span></code>.</p>
 </section>
 </section>
 
@@ -454,7 +505,7 @@ easier to inspect and review.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">publish-GraphQL</p>
+        <p class="prev-next-title">publish-graphql</p>
       </div>
     </a>
     <a class="right-next"
@@ -526,7 +577,7 @@ easier to inspect and review.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

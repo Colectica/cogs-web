@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>XML Schema Generation &#8212; COGS 1.0 documentation</title>
+    <title>XML Schema Generation &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/generation/xsd';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="JSON Generation" href="../json/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../command-line/">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/rewrite/">rewrite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../command-line/publish-xsd/">publish-xsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../command-line/validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../json/">JSON Generation</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../uml/">UML Generation</a></li>
@@ -378,11 +413,45 @@ Schema (XSD) from a COGS model.</p>
 <li><p>property cardinality maps to element occurrence constraints</p></li>
 <li><p>inheritance maps to XML Schema type extension patterns</p></li>
 </ul>
+<p>The XSD expresses the same cardinalities, facets, abstract restrictions,
+property-local substitutions, and reference assignability as JSON Schema.
+Portable user patterns retain COGS substring-match semantics even though XSD
+regular expressions are implicitly whole-value expressions.
+Date/time/Gregorian and duration values use XSD lexical grammar restricted to the
+native profiles in <a class="reference internal" href="../native-types/"><span class="doc">Native types and migration</span></a>. Named restrictions express safe integer
+ranges, finite floats and native temporal forms. COGS validation additionally
+enforces decimal interchange stability, exact precision and partial Gregorian
+Int32 years. Some .NET XSD checks use UTF-16 lengths/patterns or reject valid
+RFC URI references; authoritative validation corrects those processor
+limitations with independent scalar/value checks.</p>
+</section>
+<section id="reference-components">
+<h2>Reference components<a class="headerlink" href="#reference-components" title="Link to this heading">#</a></h2>
+<p>The schema declares one global <code class="docutils literal notranslate"><span class="pre">IdentificationGroup</span></code>. Its sequence contains
+every field from <code class="docutils literal notranslate"><span class="pre">Identification.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">Identification.Mixin.csv</span></code> in
+declaration order, with the existing datatype, facet, and documentation
+constraints and required <code class="docutils literal notranslate"><span class="pre">1..1</span></code> occurrence. Every item-reference complex
+type begins with a qualified reference to this group and then declares its
+local <code class="docutils literal notranslate"><span class="pre">TypeOfObject</span></code> restriction. Full item types continue to declare their
+identification properties normally; they do not use the group.</p>
+<p>Every reference complex type also permits the unqualified attribute
+<code class="docutils literal notranslate"><span class="pre">isReference</span></code> with XML Schema type <code class="docutils literal notranslate"><span class="pre">xs:boolean</span></code> and fixed value <code class="docutils literal notranslate"><span class="pre">true</span></code>.
+The attribute is optional so XML written by older COGS runtimes remains valid.
+Current C#, Python, and TypeScript writers always emit
+<code class="docutils literal notranslate"><span class="pre">isReference=&quot;true&quot;</span></code> on top-level and property references. This makes newly
+written references directly queryable, for example with
+<code class="docutils literal notranslate"><span class="pre">//*[&#64;isReference='true']</span></code>. Schema-aware readers also accept the equivalent
+XSD boolean lexical form <code class="docutils literal notranslate"><span class="pre">1</span></code>. They reject <code class="docutils literal notranslate"><span class="pre">false</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code>, qualified or
+unknown attributes, and the marker on a full item. <code class="docutils literal notranslate"><span class="pre">isReference</span></code> is wire
+metadata, not a generated model property.</p>
 </section>
 <section id="namespaces">
 <h2>Namespaces<a class="headerlink" href="#namespaces" title="Link to this heading">#</a></h2>
 <p>The publisher uses the model <code class="docutils literal notranslate"><span class="pre">NamespaceUrl</span></code> and <code class="docutils literal notranslate"><span class="pre">NamespacePrefix</span></code> settings
 by default. The command-line options can override these values.</p>
+<p>Use <a class="reference internal" href="../../command-line/validate-instance/"><span class="doc">validate-instance</span></a> to compile and apply
+the generated XSD with DTD/external-entity processing disabled and to add the
+COGS primitive, calendar-year, and duplicate-definition checks.</p>
 </section>
 <section id="related-pages">
 <h2>Related pages<a class="headerlink" href="#related-pages" title="Link to this heading">#</a></h2>
@@ -442,6 +511,7 @@ by default. The command-line options can override these values.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping">Mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-components">Reference components</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#namespaces">Namespaces</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-pages">Related pages</a></li>
 </ul>
@@ -481,7 +551,7 @@ by default. The command-line options can override these values.</p>
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

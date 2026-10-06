@@ -1,0 +1,950 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Model Format &#8212; COGS 2.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=ee564b6a"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'specification/model-format';</script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="JSON and XML Serialization" href="../serialization/" />
+    <link rel="prev" title="COGS 2 Specification" href="../" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">COGS 2.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../modeler-guide/">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical-guide/">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../quick-start/">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../modeler-guide/">
+    Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../migration/">
+    Migrating to COGS 2
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical-guide/">
+    Technical Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Model Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../serialization/">JSON and XML Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../publishers/">Publisher Conformance and Projections</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../" class="nav-link">COGS 2 Specification</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Model Format</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="model-format">
+<h1>Model Format<a class="headerlink" href="#model-format" title="Link to this heading">#</a></h1>
+<section id="filesystem-contract">
+<h2>Filesystem contract<a class="headerlink" href="#filesystem-contract" title="Link to this heading">#</a></h2>
+<p>Paths and names are case-sensitive contract data, including on a
+case-insensitive filesystem. The following top-level directories are required:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Settings</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ItemTypes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CompositeTypes</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Topics</span></code> and <code class="docutils literal notranslate"><span class="pre">Articles</span></code> are optional. When either directory is present,
+its name and all files within it remain subject to the exact-case rules below.
+A validator MUST report a missing or mis-cased required path and MUST NOT
+silently substitute a similarly named path.</p>
+<p>Each concrete item or composite type has a PascalCase directory and a CSV with
+the identical basename, for example
+<code class="docutils literal notranslate"><span class="pre">ItemTypes/Hamburger/Hamburger.csv</span></code>. An empty abstract type MAY omit its CSV;
+all other types MUST have one. A present empty CSV contains the complete header
+and no data rows. Type descriptions use the exact filename
+<code class="docutils literal notranslate"><span class="pre">readme.markdown</span></code>. Other <code class="docutils literal notranslate"><span class="pre">*.markdown</span></code> files are documentation attachments.</p>
+<p>The exact marker filenames are:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Abstract</span></code></dt><dd><p>Marks an item or composite type abstract. Abstract types cannot be instance
+discriminators. Validation emits warning <code class="docutils literal notranslate"><span class="pre">COGS-VAL-INH-007</span></code> when an
+abstract type has no concrete descendant because no instance can satisfy it.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Extends.ParentType</span></code></dt><dd><p>Declares one same-kind parent. A type has at most one such marker.
+Inheritance MUST be acyclic and every parent MUST exist. Effective
+properties, including identification properties, MUST remain unique.</p>
+</dd>
+</dl>
+<p>The capitalized <code class="docutils literal notranslate"><span class="pre">Extends.</span></code> prefix is the canonical COGS 2 spelling. Marker
+keywords are the sole exception to the exact-case filesystem rule: for
+migration compatibility, the reader accepts a single case-insensitive spelling
+of <code class="docutils literal notranslate"><span class="pre">Abstract</span></code>, <code class="docutils literal notranslate"><span class="pre">Primitive</span></code>, or <code class="docutils literal notranslate"><span class="pre">Extends.</span></code>, retains its semantics, and
+emits warning <code class="docutils literal notranslate"><span class="pre">COGS-READ-040</span></code> or <code class="docutils literal notranslate"><span class="pre">COGS-READ-041</span></code>. The parent suffix remains
+an exact-case type name. Multiple case-equivalent or otherwise competing
+markers remain errors. <code class="docutils literal notranslate"><span class="pre">rewrite</span> <span class="pre">--upgrade-cogs-2</span></code> renames noncanonical
+markers to their canonical spelling transactionally.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Primitive</span></code></dt><dd><p>A composite-only annotation declaring that the composite is a value object
+for publishers that distinguish value objects. It does not change its JSON
+or XML shape, does not create a new primitive value space, and is invalid on
+an item type.</p>
+</dd>
+</dl>
+<p>A composite declaration is used when it is reachable from a concrete item’s
+effective properties through zero or more composite-valued property paths.
+Exact properties reach the declared concrete type and its ancestors;
+subtype-enabled properties reach every concrete assignable type and their
+ancestors. The traversal includes inherited properties and protects recursive
+composite paths. Validation emits warning <code class="docutils literal notranslate"><span class="pre">COGS-VAL-TYPE-002</span></code> for every
+unreachable composite, including disconnected recursive groups and composites
+marked <code class="docutils literal notranslate"><span class="pre">Primitive</span></code>. An abstract composite with no concrete descendants
+instead receives only <code class="docutils literal notranslate"><span class="pre">COGS-VAL-INH-007</span></code>, which more specifically explains
+why it cannot participate in an instance.</p>
+<p>Multiple or misspelled marker files are errors; a sole noncanonical keyword
+casing is warning-only. <code class="docutils literal notranslate"><span class="pre">This</span></code> and <code class="docutils literal notranslate"><span class="pre">Any</span></code> are retired COGS 1 pseudo-types
+and are invalid datatype names in a COGS 2 model. A migration must replace each
+occurrence with an explicit item, composite, or primitive datatype.</p>
+</section>
+<section id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Settings/Settings.csv</span></code> is UTF-8 CSV with the exact headers <code class="docutils literal notranslate"><span class="pre">Key,Value</span></code>.
+Keys are case-sensitive and unique. These keys are required:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 78.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Requirement</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CogsVersion</span></code></p></td>
+<td><p>Exactly <code class="docutils literal notranslate"><span class="pre">2.0</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Title</span></code></p></td>
+<td><p>Nonempty human-readable title.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ShortTitle</span></code></p></td>
+<td><p>Nonempty short title or abbreviation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Slug</span></code></p></td>
+<td><p>Exact grammar <code class="docutils literal notranslate"><span class="pre">[a-z][a-z0-9_]*</span></code>. Publishers may normalize it for a
+target package name, but MUST report an ambiguous or colliding
+normalization.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Description</span></code></p></td>
+<td><p>May be empty.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Version</span></code></p></td>
+<td><p>Canonical Semantic Versioning 2.0: major, minor, and patch, with optional
+prerelease and build metadata.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Author</span></code></p></td>
+<td><p>May be empty.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Copyright</span></code></p></td>
+<td><p>May be empty.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NamespaceUrl</span></code></p></td>
+<td><p>Nonempty absolute namespace URI used by XML and semantic projections.
+For RDF terms, a trailing <code class="docutils literal notranslate"><span class="pre">#</span></code> or <code class="docutils literal notranslate"><span class="pre">/</span></code> is retained; otherwise COGS
+appends <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">NamespacePrefix</span></code></p></td>
+<td><p>Nonempty XML NCName other than reserved <code class="docutils literal notranslate"><span class="pre">xml</span></code> or <code class="docutils literal notranslate"><span class="pre">xmlns</span></code>
+(case-insensitive).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Additional unique settings are extension metadata. A publisher MAY consume
+them, but MUST document any effect. <code class="docutils literal notranslate"><span class="pre">CSharpNamespace</span></code> is the one optional
+repository-defined setting and overrides the generated C# namespace when
+present. A conforming C# target must reject a value it cannot emit as a valid
+namespace. <code class="docutils literal notranslate"><span class="pre">HeaderInclude.txt</span></code> is optional literal header material for
+targets that support comments.</p>
+</section>
+<section id="property-csv">
+<h2>Property CSV<a class="headerlink" href="#property-csv" title="Link to this heading">#</a></h2>
+<p>Property CSV files are UTF-8, RFC 4180-style CSV. A header name may occur once;
+missing, duplicate, or unknown headers are errors. Column order is not
+semantic. The complete COGS 2 header is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span><span class="p">,</span><span class="n">DataType</span><span class="p">,</span><span class="n">MinCardinality</span><span class="p">,</span><span class="n">MaxCardinality</span><span class="p">,</span><span class="n">Description</span><span class="p">,</span><span class="n">Ordered</span><span class="p">,</span><span class="n">AllowSubtypes</span><span class="p">,</span><span class="n">MinLength</span><span class="p">,</span><span class="n">MaxLength</span><span class="p">,</span><span class="n">Enumeration</span><span class="p">,</span><span class="n">Pattern</span><span class="p">,</span><span class="n">MinInclusive</span><span class="p">,</span><span class="n">MinExclusive</span><span class="p">,</span><span class="n">MaxInclusive</span><span class="p">,</span><span class="n">MaxExclusive</span><span class="p">,</span><span class="n">DeprecatedNamespace</span><span class="p">,</span><span class="n">DeprecatedElementOrAttribute</span><span class="p">,</span><span class="n">DeprecatedChoiceGroup</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Name</span></code> and model-defined datatype names are XML NCNames whose first Unicode
+scalar is an uppercase letter (the COGS PascalCase convention). Builtin
+datatypes use the exact spelling in the primitive table below. Names are
+compared exactly. A validator also rejects case-insensitive,
+Unicode-normalization, reserved runtime-member, and target-language normalized
+collisions across the type namespace and within each type’s effective property
+set. Across identification, identification mixins, items, and composites,
+distinct property names also must not collapse to the same word-aware
+camelCase RDF term (for example, <code class="docutils literal notranslate"><span class="pre">URLValue</span></code> and <code class="docutils literal notranslate"><span class="pre">UrlValue</span></code> both map to
+<code class="docutils literal notranslate"><span class="pre">urlValue</span></code>). Exact property-name reuse remains valid when every declaration
+uses the same exact datatype. An unknown datatype is an error; readers MUST NOT
+fabricate a primitive type for it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">MinCardinality</span></code> and <code class="docutils literal notranslate"><span class="pre">MaxCardinality</span></code> use canonical, nonnegative decimal
+integers with no sign and no leading zero except the value <code class="docutils literal notranslate"><span class="pre">0</span></code>. A blank
+minimum means <code class="docutils literal notranslate"><span class="pre">0</span></code>; a blank maximum means lowercase <code class="docutils literal notranslate"><span class="pre">n</span></code> (unbounded).
+<code class="docutils literal notranslate"><span class="pre">MaxCardinality</span></code> may otherwise be a canonical integer or exactly <code class="docutils literal notranslate"><span class="pre">n</span></code>.
+For a finite maximum, minimum MUST be no greater than maximum. There is no
+implementation-sized upper limit on a modeled finite cardinality.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Ordered</span></code> and <code class="docutils literal notranslate"><span class="pre">AllowSubtypes</span></code> accept only blank, <code class="docutils literal notranslate"><span class="pre">false</span></code>, or <code class="docutils literal notranslate"><span class="pre">true</span></code>,
+case-insensitively. Blank means <code class="docutils literal notranslate"><span class="pre">false</span></code>; canonical rewrite output is
+lowercase. <code class="docutils literal notranslate"><span class="pre">Ordered=true</span></code> is valid only when the maximum is greater than one
+or unbounded. <code class="docutils literal notranslate"><span class="pre">AllowSubtypes</span></code> is valid for item- and composite-valued
+properties and is a property-local permission. Blank or <code class="docutils literal notranslate"><span class="pre">false</span></code> requires the
+exact declared type; <code class="docutils literal notranslate"><span class="pre">true</span></code> permits the declared concrete type or any concrete
+descendant assignable to it. For item references the flag constrains the required <code class="docutils literal notranslate"><span class="pre">$type</span></code> or
+<code class="docutils literal notranslate"><span class="pre">TypeOfObject</span></code> discriminator. For composite values it also controls use of
+<code class="docutils literal notranslate"><span class="pre">$type</span></code> or <code class="docutils literal notranslate"><span class="pre">xsi:type</span></code>. A property declared with an abstract item or
+composite type cannot use the exact type: if it omits <code class="docutils literal notranslate"><span class="pre">AllowSubtypes=true</span></code>,
+validation emits warning <code class="docutils literal notranslate"><span class="pre">COGS-VAL-SUB-002</span></code> and the built model treats the
+flag as true. When a property explicitly sets <code class="docutils literal notranslate"><span class="pre">AllowSubtypes=true</span></code> but no
+other item or composite type extends its declared type, validation emits
+warning <code class="docutils literal notranslate"><span class="pre">COGS-VAL-SUB-003</span></code> because the flag currently permits no additional
+concrete type. The explicit flag and its tagged wire representation remain in
+effect. The flag is invalid on primitive-valued properties.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Description</span></code> is free text. <code class="docutils literal notranslate"><span class="pre">DeprecatedNamespace</span></code>,
+<code class="docutils literal notranslate"><span class="pre">DeprecatedElementOrAttribute</span></code>, and <code class="docutils literal notranslate"><span class="pre">DeprecatedChoiceGroup</span></code> are opaque
+historical source columns. Readers and rewriters preserve their text, but
+validation, the connected model’s semantics, and every publisher ignore it.
+The columns remain in the canonical CSV header and require no migration.</p>
+</section>
+<section id="identification-and-references">
+<h2>Identification and references<a class="headerlink" href="#identification-and-references" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Settings/Identification.csv</span></code> is required and contains at least one row.
+<code class="docutils literal notranslate"><span class="pre">Settings/Identification.Mixin.csv</span></code> is optional. Both use the property CSV
+header. Every row in both files is part of the compound identity, in file and
+row order, and is injected into every root item type (then inherited normally).</p>
+<p>Each identification property MUST:</p>
+<ul class="simple">
+<li><p>have datatype exactly <code class="docutils literal notranslate"><span class="pre">string</span></code> or <code class="docutils literal notranslate"><span class="pre">anyURI</span></code>;</p></li>
+<li><p>have cardinality exactly <code class="docutils literal notranslate"><span class="pre">1..1</span></code> after blank defaults are applied;</p></li>
+<li><p>have <code class="docutils literal notranslate"><span class="pre">Ordered</span></code> and <code class="docutils literal notranslate"><span class="pre">AllowSubtypes</span></code> false;</p></li>
+<li><p>have a unique name in the complete effective property set; and</p></li>
+<li><p>have a nonempty lexical value in every item or reference, with no
+value-changing normalization at reference resolution time.</p></li>
+</ul>
+<p>An item’s logical key is its concrete item type plus the ordered tuple of all
+identification values. URI identity uses the serialized lexical value; COGS
+does not resolve or normalize relative paths, case, percent escapes, or Unicode
+before comparison. Every JSON and XML reference carries all identity fields.</p>
+</section>
+<section id="dcterms-source-macro">
+<h2><code class="docutils literal notranslate"><span class="pre">dcTerms</span></code> source macro<a class="headerlink" href="#dcterms-source-macro" title="Link to this heading">#</a></h2>
+<p>COGS 2 retains Dublin Core Terms only as an explicit source macro. The only
+valid marker row is the exact four-field tuple:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DcTerms</span><span class="p">,</span><span class="n">dcTerms</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>All remaining cells in that row MUST be blank. The row is case-sensitive, may
+appear at most once in a type property CSV, and is not allowed in an
+identification CSV. During loading it is replaced, at that position, by the
+versioned COGS Dublin Core property table. <code class="docutils literal notranslate"><span class="pre">dcTerms</span></code> is therefore not a
+runtime primitive and MUST NOT appear as a JSON value, XML simple type, or
+generated public type. A validator reports any near-match rather than treating
+it as an ordinary property.</p>
+</section>
+<section id="topics-and-articles">
+<h2>Topics and articles<a class="headerlink" href="#topics-and-articles" title="Link to this heading">#</a></h2>
+<p>When <code class="docutils literal notranslate"><span class="pre">Topics</span></code> is present, <code class="docutils literal notranslate"><span class="pre">Topics/index.txt</span></code> is required and may be empty.
+Each nonblank line names one exact, unique topic directory. A topic has required
+<code class="docutils literal notranslate"><span class="pre">items.txt</span></code> containing exact, unique item type names, optional
+<code class="docutils literal notranslate"><span class="pre">readme.markdown</span></code>, and optional <code class="docutils literal notranslate"><span class="pre">toc.txt</span></code> with a local <code class="docutils literal notranslate"><span class="pre">Articles</span></code>
+subtree. Unknown, composite, or mis-cased entries in <code class="docutils literal notranslate"><span class="pre">items.txt</span></code> are errors.</p>
+<p>Root <code class="docutils literal notranslate"><span class="pre">Articles</span></code> and topic-local <code class="docutils literal notranslate"><span class="pre">Articles</span></code> are optional. A present article
+tree is ordered by its <code class="docutils literal notranslate"><span class="pre">toc.txt</span></code>. Each nonblank entry is a unique, normalized
+relative path that resolves with exact case and remains inside that article
+root. Articles may be reStructuredText or MyST Markdown. Topics, descriptions,
+and articles are documentation-only metadata: they MUST NOT generate runtime
+classes or appear in JSON/XML instances.</p>
+</section>
+<section id="facets">
+<h2>Facets<a class="headerlink" href="#facets" title="Link to this heading">#</a></h2>
+<p>Facets constrain each primitive value of a property, not the containing array.
+They are invalid on item and composite-valued properties. Publishers MUST
+preserve the exact declared facet value and both generated schemas MUST enforce
+the same constraint.</p>
+<p><code class="docutils literal notranslate"><span class="pre">MinLength</span></code> and <code class="docutils literal notranslate"><span class="pre">MaxLength</span></code> are canonical nonnegative integers, with
+minimum no greater than maximum. <code class="docutils literal notranslate"><span class="pre">Enumeration</span></code> is a whitespace-delimited
+list of lexical values in a single CSV cell. A blank cell declares no
+enumeration; otherwise one or more whitespace characters separate nonempty
+values. For example, <code class="docutils literal notranslate"><span class="pre">red</span> <span class="pre">green</span></code> declares the two values <code class="docutils literal notranslate"><span class="pre">red</span></code> and
+<code class="docutils literal notranslate"><span class="pre">green</span></code>. Order and lexical casing are preserved. Enumeration values cannot
+contain whitespace, and the cell has no quoting or escaping syntax beyond the
+CSV format itself. JSON-looking text receives no special treatment: for
+example, <code class="docutils literal notranslate"><span class="pre">[&quot;red&quot;,&quot;green&quot;]</span></code> contains no whitespace and is therefore one
+literal token. Each token is parsed in the declared primitive’s value space
+and values must be unique there.</p>
+<p><code class="docutils literal notranslate"><span class="pre">MinInclusive</span></code> and <code class="docutils literal notranslate"><span class="pre">MinExclusive</span></code> are mutually exclusive, as are
+<code class="docutils literal notranslate"><span class="pre">MaxInclusive</span></code> and <code class="docutils literal notranslate"><span class="pre">MaxExclusive</span></code>. Bounds use the declared primitive’s
+canonical lexical form, must belong to its value space, and must describe a
+nonempty interval. Numeric bounds are not limited to machine integers. XSD
+partial-order comparison is used for temporal and duration bounds; an
+indeterminate comparison does not satisfy a bound.</p>
+<p>Patterns use the portable COGS 2 regular-expression subset. It contains
+literals, dot, simple character classes, capturing groups, alternation, and
+the quantifiers <code class="docutils literal notranslate"><span class="pre">?</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, and <code class="docutils literal notranslate"><span class="pre">{m,n}</span></code>. It rejects anchors,
+lookarounds, backreferences, non-capturing and other special groups, inline
+flags, Unicode categories, and shorthand classes such as <code class="docutils literal notranslate"><span class="pre">\d</span></code>, <code class="docutils literal notranslate"><span class="pre">\w</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">\s</span></code>. Escapes are limited to regex metacharacters and <code class="docutils literal notranslate"><span class="pre">\t</span></code>, <code class="docutils literal notranslate"><span class="pre">\n</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">\r</span></code>. This intentionally narrow grammar is the common subset that JSON
+Schema and XML Schema publishers MUST translate without changing meaning.
+Pattern matching uses substring semantics: a value satisfies the facet when
+some substring matches. The XSD publisher translates the portable expression
+so it has the same substring behavior as JSON Schema.</p>
+</section>
+<section id="primitive-value-spaces">
+<h2>Primitive value spaces<a class="headerlink" href="#primitive-value-spaces" title="Link to this heading">#</a></h2>
+<p>COGS 2 uses the following native interchange profile. JSON kinds and XML
+element structures are unchanged. Implementations MUST reject out-of-domain
+values rather than round an exact decimal or truncate temporal precision.
+Numeric instance limits do not restrict modeled cardinalities.</p>
+<p>Let S = 9007199254740991 (JavaScript’s maximum safe integer), and
+D = 922337203685477 milliseconds (the shared whole-millisecond duration limit).</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 28.0%" />
+<col style="width: 47.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>COGS datatype</p></th>
+<th class="head"><p>JSON representation</p></th>
+<th class="head"><p>Value space</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td><p>boolean</p></td>
+<td><p>true or false</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>string</p></td>
+<td><p>XML 1.0 Unicode characters</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">language</span></code></p></td>
+<td><p>string</p></td>
+<td><p>BCP 47 syntax; no registry lookup</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">anyURI</span></code></p></td>
+<td><p>string</p></td>
+<td><p>RFC 3986 absolute or relative URI reference; no normalization</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>integer number</p></td>
+<td><p>-2147483648 through 2147483647</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p>integer number</p></td>
+<td><p>-S through S</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">unsignedLong</span></code></p></td>
+<td><p>integer number</p></td>
+<td><p>0 through S</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nonNegativeInteger</span></code></p></td>
+<td><p>integer number</p></td>
+<td><p>0 through S</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nonPositiveInteger</span></code></p></td>
+<td><p>integer number</p></td>
+<td><p>-S through 0</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">negativeInteger</span></code></p></td>
+<td><p>integer number</p></td>
+<td><p>-S through -1</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">positiveInteger</span></code></p></td>
+<td><p>integer number</p></td>
+<td><p>1 through S</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">decimal</span></code></p></td>
+<td><p>number</p></td>
+<td><p>Exact System.Decimal values stable under native JavaScript JSON interchange</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p>number</p></td>
+<td><p>Finite IEEE-754 binary32, round to nearest with ties to even</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p>number</p></td>
+<td><p>Finite IEEE-754 binary64, round to nearest with ties to even</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dateTime</span></code></p></td>
+<td><p>string; <code class="docutils literal notranslate"><span class="pre">date-time</span></code> annotation</p></td>
+<td><p>Timezone-required instant; UTC years 0001–9999; whole milliseconds</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">date</span></code></p></td>
+<td><p>string; <code class="docutils literal notranslate"><span class="pre">date</span></code> annotation</p></td>
+<td><p>Local date in years 0001–9999; no timezone</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">time</span></code></p></td>
+<td><p>string; <code class="docutils literal notranslate"><span class="pre">time</span></code> annotation</p></td>
+<td><p>Local time without timezone; whole microseconds</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gYearMonth</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Year</span></code>/<code class="docutils literal notranslate"><span class="pre">Month</span></code>/optional <code class="docutils literal notranslate"><span class="pre">Timezone</span></code> object</p></td>
+<td><p>XSD partial date; nonzero signed 32-bit year</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gYear</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Year</span></code>/optional <code class="docutils literal notranslate"><span class="pre">Timezone</span></code> object</p></td>
+<td><p>XSD partial date; nonzero signed 32-bit year</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gMonthDay</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Month</span></code>/<code class="docutils literal notranslate"><span class="pre">Day</span></code>/optional <code class="docutils literal notranslate"><span class="pre">Timezone</span></code> object</p></td>
+<td><p>XSD partial date</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gDay</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Day</span></code>/optional <code class="docutils literal notranslate"><span class="pre">Timezone</span></code> object</p></td>
+<td><p>XSD day</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gMonth</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Month</span></code>/optional <code class="docutils literal notranslate"><span class="pre">Timezone</span></code> object</p></td>
+<td><p>XSD month</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">duration</span></code></p></td>
+<td><p>string; <code class="docutils literal notranslate"><span class="pre">duration</span></code> annotation</p></td>
+<td><p>Elapsed duration, -D through D whole milliseconds; no years/months</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cogsDate</span></code></p></td>
+<td><p>exactly-one-arm object</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DateTime</span></code>, <code class="docutils literal notranslate"><span class="pre">Date</span></code>, <code class="docutils literal notranslate"><span class="pre">GYearMonth</span></code>, <code class="docutils literal notranslate"><span class="pre">GYear</span></code>, or <code class="docutils literal notranslate"><span class="pre">Duration</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">langString</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{&quot;&#64;language&quot;:</span> <span class="pre">...,</span> <span class="pre">&quot;&#64;value&quot;:</span> <span class="pre">...}</span></code></p></td>
+<td><p>BCP 47 language tag plus XML-compatible text</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Text MUST satisfy the XML 1.0 Char production. Unpaired surrogates, forbidden
+control characters, U+FFFE and U+FFFF are invalid in either format. Lengths
+count Unicode scalar values: one supplementary character has length one.
+Writers MUST entitize carriage returns in XML text to preserve strings and
+identification values across XML line-ending normalization.</p>
+<section id="numeric-values">
+<h3>Numeric values<a class="headerlink" href="#numeric-values" title="Link to this heading">#</a></h3>
+<p>Integer-valued JSON numbers such as <code class="docutils literal notranslate"><span class="pre">1.0</span></code> and <code class="docutils literal notranslate"><span class="pre">1e2</span></code> are accepted when their
+exact mathematical value satisfies the declared domain. XML uses XSD lexical
+grammar, including <code class="docutils literal notranslate"><span class="pre">+001</span></code> and surrounding XML whitespace. Integer writers
+check both sign and range, including directly constructed values.</p>
+<p>A decimal is accepted only if its exact mathematical decimal value can be
+represented as a signed 96-bit coefficient with scale 0–28 (System.Decimal)
+and is unchanged by parsing as a JavaScript number and writing it with ordinary
+<code class="docutils literal notranslate"><span class="pre">JSON.stringify</span></code>. Trailing zeros and JSON exponent notation do not change
+that value. For example <code class="docutils literal notranslate"><span class="pre">0.1</span></code>, <code class="docutils literal notranslate"><span class="pre">1e-28</span></code> and <code class="docutils literal notranslate"><span class="pre">12345.1234500</span></code> are accepted;
+<code class="docutils literal notranslate"><span class="pre">0.10000000000000001</span></code> and <code class="docutils literal notranslate"><span class="pre">1e-29</span></code> are rejected. XML decimal syntax has no
+exponent; <code class="docutils literal notranslate"><span class="pre">+001.2500</span></code>, <code class="docutils literal notranslate"><span class="pre">.5</span></code> and <code class="docutils literal notranslate"><span class="pre">1.</span></code> remain valid. This is an interchange
+domain, not a promise of decimal arithmetic in JavaScript. Range, significant
+digits and scale alone do not establish eligibility. A writer MUST validate
+arithmetic results and MUST NOT silently round a decimal into this domain.</p>
+<p>Float and double use their respective IEEE value spaces, rather than treating
+both as binary64. Conversion preserves subnormals, rounds ties to even, permits
+underflow to zero, and rejects overflow to infinity. NaN and infinities are
+invalid. All floating zeros canonicalize to positive zero. Enumeration and
+bounds compare converted binary values; values that round to the same binary32
+value compare equal. A JSON float token MUST produce that same binary32 value
+after an ordinary binary64 JavaScript parse. Rare decimal tokens whose
+double rounding would change that value are rejected; a stable spelling of
+every finite binary32 value remains available. XML retains XSD’s direct
+binary32 conversion. Writers produce stable JSON spellings.</p>
+</section>
+<section id="temporal-values">
+<h3>Temporal values<a class="headerlink" href="#temporal-values" title="Link to this heading">#</a></h3>
+<p>A dateTime requires a timezone; input offsets are limited to plus or minus
+14:00. Writers normalize the instant to UTC with a <code class="docutils literal notranslate"><span class="pre">Z</span></code> suffix. The local
+lexical year and resulting UTC year must both be in 0001–9999. Fractional
+seconds have at most three significant fractional places; additional trailing
+zeros are permitted. <code class="docutils literal notranslate"><span class="pre">24:00:00</span></code> denotes the following midnight if the
+resulting UTC instant remains in range.</p>
+<p>Dates have no timezone. Local times have at most six significant fractional
+places and no timezone. Time <code class="docutils literal notranslate"><span class="pre">24:00:00</span></code> canonicalizes to <code class="docutils literal notranslate"><span class="pre">00:00:00</span></code>.
+Durations contain only days, hours, minutes and seconds, with optional leading
+minus. Years/months are rejected even when zero. Fractions must represent whole
+milliseconds. Equivalent elapsed forms such as <code class="docutils literal notranslate"><span class="pre">P1D</span></code> and <code class="docutils literal notranslate"><span class="pre">PT24H</span></code> compare
+equal. Serialization may decompose elapsed time differently without changing
+its value; a submillisecond native value is rejected.</p>
+<p>Partial Gregorian values retain their information instead of inventing a full
+date. Years remain nonzero signed 32-bit integers (-2147483648 through
+2147483647); optional timezone offsets retain their lexical form. JSON uses
+closed PascalCase component objects, while XML/RDF use XSD text. These are
+meaningful structured types, not replacements for native scalar types.
+<code class="docutils literal notranslate"><span class="pre">cogsDate</span></code> retains exactly one existing arm and applies the corresponding
+profile. <code class="docutils literal notranslate"><span class="pre">langString</span></code> remains text with required <code class="docutils literal notranslate"><span class="pre">xml:lang</span></code> in XML.</p>
+</section>
+<section id="schema-enforcement">
+<h3>Schema enforcement<a class="headerlink" href="#schema-enforcement" title="Link to this heading">#</a></h3>
+<p>Standard JSON <code class="docutils literal notranslate"><span class="pre">format</span></code> entries remain annotations. Their domains are not
+identical to COGS (for example negative durations, local times, <code class="docutils literal notranslate"><span class="pre">24:00:00</span></code>
+and relative URI references). Format assertion cannot replace COGS validation.</p>
+<p>Schemas enforce structure, cardinality and representable facets. Temporal and
+floating-point enumeration and bounds use value comparisons; JSON Schema
+cannot express these with a finite lexical <code class="docutils literal notranslate"><span class="pre">enum</span></code> or exact binary32 bound.
+They remain in <code class="docutils literal notranslate"><span class="pre">x-cogs-enumeration</span></code> and <code class="docutils literal notranslate"><span class="pre">x-cogs-*</span></code> bound metadata and are
+enforced by <code class="docutils literal notranslate"><span class="pre">validate-instance</span></code>. The same command adds decimal interchange,
+native temporal precision, URI grammar, Unicode and duplicate-definition checks
+to both schema authorities. Raw schema acceptance alone is insufficient.</p>
+<p>Length/pattern apply to string, anyURI, language and langString content.
+Enumeration applies to scalar builtins; langString enumeration constrains its
+content. Bounds apply to numeric and temporal values, not cogsDate. Native
+instants, dates, times and elapsed durations have total value ordering; partial
+Gregorian comparisons retain XSD’s partial-order rule. A validator MUST reject
+inapplicable or contradictory facets.</p>
+<p>Portable patterns use scalar characters, substring matching, and dot excluding
+CR, LF, U+2028 and U+2029. Nested classes, class subtraction and lazy quantifiers
+are outside the subset. The authoritative validator compensates for .NET
+processors that count UTF-16 code units in lengths or patterns.</p>
+<p>See <a class="reference internal" href="../../technical-guide/generation/native-types/"><span class="doc">Native types and migration</span></a> for API mappings and migration.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">COGS 2 Specification</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../serialization/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">JSON and XML Serialization</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem-contract">Filesystem contract</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#settings">Settings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#property-csv">Property CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identification-and-references">Identification and references</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dcterms-source-macro"><code class="docutils literal notranslate"><span class="pre">dcTerms</span></code> source macro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-and-articles">Topics and articles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#facets">Facets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-value-spaces">Primitive value spaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-values">Numeric values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temporal-values">Temporal values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schema-enforcement">Schema enforcement</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/specification/model-format.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

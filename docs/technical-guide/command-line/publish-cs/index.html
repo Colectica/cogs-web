@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>publish-cs &#8212; COGS 1.0 documentation</title>
+    <title>publish-cs &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,7 +39,7 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/command-line/publish-cs';</script>
@@ -49,7 +49,7 @@
     <link rel="prev" title="rewrite" href="../rewrite/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rewrite/">rewrite</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-xsd/">publish-xsd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../validate/">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../generation/">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/uml/">UML Generation</a></li>
@@ -373,7 +408,9 @@
 and <a class="reference external" href="../../../modeler-guide/composite-types/index.html">Composite types</a> in the model.
 The generated classes can be serialized to JSON, populated from JSON, and serialized to XML.
 The generated JSON uses the current flat <code class="docutils literal notranslate"><span class="pre">ItemContainer</span></code> shape and <code class="docutils literal notranslate"><span class="pre">$type</span></code>
-discriminators where polymorphic values are required.</p>
+discriminators where polymorphic values are required. COGS 2 uses strict
+<code class="docutils literal notranslate"><span class="pre">System.Text.Json</span></code> converters; the legacy Newtonsoft-based API is not
+generated.</p>
 <p>Requires that <a class="reference external" href="../../installation/dotnet/index.html">dotnet</a> is installed.</p>
 </section>
 <section id="command-line-arguments">
@@ -408,7 +445,8 @@ discriminators where polymorphic values are required.</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-n|--namespace</span></code></p>
 <blockquote>
-<div><p>Allows the user to specify the XMI of desired XML namespace used in XML creation from generated C# classes.</p>
+<div><p>Overrides the namespace URI used by the generated C# XML APIs and RDF
+graph terms.</p>
 </div></blockquote>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--csproj</span></code></p>
@@ -442,93 +480,49 @@ $<span class="w"> </span>cogs<span class="w"> </span>publish-cs<span class="w"> 
 </div>
 </div></blockquote>
 </section>
-<section id="primitive-type-mappings-to-c">
-<h2>Primitive Type Mappings to C#<a class="headerlink" href="#primitive-type-mappings-to-c" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Primitive Type</p></th>
-<th class="head"><p>C# representation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>AnyURI</p></td>
-<td><p><a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.uri(v=vs.110).aspx?">Uri</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Boolean</p></td>
-<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/bool">bool</a></p></td>
-</tr>
-<tr class="row-even"><td><p>CogsDate</p></td>
-<td><p>Custom <a class="reference internal" href="#cogsdate">CogsDate</a> class</p></td>
-</tr>
-<tr class="row-odd"><td><p>Date</p></td>
-<td><p><a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.datetimeoffset(v=vs.110).aspx">DateTimeOffset</a></p></td>
-</tr>
-<tr class="row-even"><td><p>DateTime</p></td>
-<td><p><a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.datetimeoffset(v=vs.110).aspx">DateTimeOffset</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Decimal</p></td>
-<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/decimal">decimal</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Double</p></td>
-<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/double">double</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Duration</p></td>
-<td><p><a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.timespan(v=vs.110).aspx">TimeSpan</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Float</p></td>
-<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/float">float</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>GDay</p></td>
-<td><p>Custom <a class="reference internal" href="#gday">GDay</a> class</p></td>
-</tr>
-<tr class="row-even"><td><p>GMonth</p></td>
-<td><p>Custom <a class="reference internal" href="#gmonth">GMonth</a> class</p></td>
-</tr>
-<tr class="row-odd"><td><p>GMonthDay</p></td>
-<td><p>Custom <a class="reference internal" href="#gmonthday">GMonthDay</a> class</p></td>
-</tr>
-<tr class="row-even"><td><p>GYear</p></td>
-<td><p>Custom <a class="reference internal" href="#gyear">GYear</a> class</p></td>
-</tr>
-<tr class="row-odd"><td><p>GYearMonth</p></td>
-<td><p>Custom <a class="reference internal" href="#gyearmonth">GYearMonth</a> class</p></td>
-</tr>
-<tr class="row-even"><td><p>Integer</p></td>
-<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/int">int</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Integer</p></td>
-<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/int">int</a></p></td>
-</tr>
-<tr class="row-even"><td><p>Language</p></td>
-<td><p><a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.string(v=vs.110).aspx">String</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Long</p></td>
-<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/long">long</a></p></td>
-</tr>
-<tr class="row-even"><td><p>NegativeInteger</p></td>
-<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/int">int</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>NonNegativeInteger</p></td>
-<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/int">int</a></p></td>
-</tr>
-<tr class="row-even"><td><p>NonPositiveInteger</p></td>
-<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/int">int</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>PositiveInteger</p></td>
-<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/int">int</a></p></td>
-</tr>
-<tr class="row-even"><td><p>String</p></td>
-<td><p><a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.string(v=vs.110).aspx">String</a></p></td>
-</tr>
-<tr class="row-odd"><td><p>Time</p></td>
-<td><p><a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.datetimeoffset(v=vs.110).aspx">DateTimeOffset</a></p></td>
-</tr>
-<tr class="row-even"><td><p>UnsignedLong</p></td>
-<td><p><a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/ulong">ulong</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<section id="cogs-2-primitive-contract">
+<h2>COGS 2 primitive contract<a class="headerlink" href="#cogs-2-primitive-contract" title="Link to this heading">#</a></h2>
+<p>Generated C# APIs must cover the native profiles in
+<a class="reference internal" href="../../../specification/model-format/"><span class="doc">Model Format</span></a>. Scalars use built-in .NET numeric and
+calendar types; URI values use strings. Structured Gregorian, CogsDate and
+LangString helpers remain. See <a class="reference internal" href="../../generation/native-types/"><span class="doc">Native types and migration</span></a>
+for the current API matrix and migration examples.</p>
+</section>
+<section id="legacy-c-api-reference">
+<h2>Legacy C# API reference<a class="headerlink" href="#legacy-c-api-reference" title="Link to this heading">#</a></h2>
+<p>The table and helper notes below describe the pre-COGS 2 generated API and are
+retained for migration reference only. They are not the COGS 2 primitive
+contract; new code should use the generated COGS 2 declarations and the
+normative value-space table linked above.
+===================     =====================
+Primitive Type           C# representation
+===================     =====================
+AnyURI                  <a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.uri(v=vs.110).aspx?">Uri</a>
+Boolean                 <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/bool">bool</a>
+CogsDate                Custom <a class="reference internal" href="#cogsdate">CogsDate</a> class
+Date                    <a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.datetimeoffset(v=vs.110).aspx">DateTimeOffset</a>
+DateTime                <a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.datetimeoffset(v=vs.110).aspx">DateTimeOffset</a>
+Decimal                 <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/decimal">decimal</a>
+Double                  <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/double">double</a>
+Duration                <a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.timespan(v=vs.110).aspx">TimeSpan</a>
+Float                   <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/float">float</a>
+GDay                    Custom <a class="reference internal" href="#gday">GDay</a> class
+GMonth                  Custom <a class="reference internal" href="#gmonth">GMonth</a> class
+GMonthDay               Custom <a class="reference internal" href="#gmonthday">GMonthDay</a> class
+GYear                   Custom <a class="reference internal" href="#gyear">GYear</a> class
+GYearMonth              Custom <a class="reference internal" href="#gyearmonth">GYearMonth</a> class
+Integer                 <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/int">int</a>
+Integer                 <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/int">int</a>
+Language                <a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.string(v=vs.110).aspx">String</a>
+Long                    <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/long">long</a>
+NegativeInteger         <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/int">int</a>
+NonNegativeInteger      <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/int">int</a>
+NonPositiveInteger      <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/int">int</a>
+PositiveInteger         <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/int">int</a>
+String                  <a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.string(v=vs.110).aspx">String</a>
+Time                    <a class="reference external" href="https://msdn.microsoft.com/en-us/library/system.datetimeoffset(v=vs.110).aspx">DateTimeOffset</a>
+UnsignedLong            <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/ulong">ulong</a>
+===================     =====================</p>
 </section>
 <section id="custom-primitive-types-in-c">
 <h2>Custom Primitive Types in C#<a class="headerlink" href="#custom-primitive-types-in-c" title="Link to this heading">#</a></h2>
@@ -812,7 +806,8 @@ $<span class="w"> </span>cogs<span class="w"> </span>publish-cs<span class="w"> 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-arguments">Command Line Arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-flags">Command Line Flags</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-usage">Command Line Usage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-type-mappings-to-c">Primitive Type Mappings to C#</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cogs-2-primitive-contract">COGS 2 primitive contract</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legacy-c-api-reference">Legacy C# API reference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-primitive-types-in-c">Custom Primitive Types in C#</a></li>
 </ul>
   </nav></div>
@@ -851,7 +846,7 @@ $<span class="w"> </span>cogs<span class="w"> </span>publish-cs<span class="w"> 
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>

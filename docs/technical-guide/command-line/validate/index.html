@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>validate &#8212; COGS 1.0 documentation</title>
+    <title>validate &#8212; COGS 2.0 documentation</title>
   
   
   
@@ -39,17 +39,17 @@
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../../_static/documentation_options.js?v=94e0f085"></script>
+    <script src="../../../_static/documentation_options.js?v=ee564b6a"></script>
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'technical-guide/command-line/validate';</script>
     <link rel="index" title="Index" href="../../../genindex/" />
     <link rel="search" title="Search" href="../../../search/" />
-    <link rel="next" title="Generation" href="../../generation/" />
+    <link rel="next" title="validate-instance" href="../validate-instance/" />
     <link rel="prev" title="publish-xsd" href="../publish-xsd/" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.0" />
+  <meta name="docsearch:version" content="2.0" />
   </head>
   
   
@@ -111,7 +111,7 @@
   
   
   
-    <p class="title logo__title">COGS 1.0 documentation</p>
+    <p class="title logo__title">COGS 2.0 documentation</p>
   
 </a></div>
     
@@ -133,8 +133,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -226,8 +240,22 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../specification/">
+    COGS 2 Specification
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../../modeler-guide/">
     Modeler’s Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../migration/">
+    Migrating to COGS 2
   </a>
 </li>
 
@@ -273,23 +301,30 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../">Command Line</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../generated-reference/">CLI descriptor reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cogs-new/">cogs-new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rewrite/">rewrite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-cs/">publish-cs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dctap/">publish-dctap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-dot/">publish-dot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-GraphQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-graphql/">publish-graphql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-json/">publish-json</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-linkml/">publish-linkml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-owl/">publish-owl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-py/">publish-py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../publish-ts/">publish-ts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-sphinx/">publish-sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-uml/">publish-uml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../publish-xsd/">publish-xsd</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">validate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../validate-instance/">validate-instance</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../generation/">Generation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/native-types/">Native types and migration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/csharp/">C# Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/python/">Python Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/typescript/">TypeScript Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/json/">JSON Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/uml/">UML Generation</a></li>
@@ -367,110 +402,62 @@
                   
   <section id="validate">
 <h1>validate<a class="headerlink" href="#validate" title="Link to this heading">#</a></h1>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>Takes the directory of a model and checks that it is a valid model.
-Any errors in the model are printed to the screen along with a description of why the model is invalid.</p>
-<p>Requires that <a class="reference external" href="../../installation/dotnet/index.html">dotnet</a> is installed.</p>
+<p><code class="docutils literal notranslate"><span class="pre">validate</span></code> reads a model according to its required <code class="docutils literal notranslate"><span class="pre">CogsVersion</span></code> and checks
+the complete on-disk and semantic contract without publishing output. Errors
+include a stable diagnostic identifier and source path (and CSV row/column when
+available). Invalid model input is reported as diagnostics, not an unhandled
+exception or a silently fabricated datatype.</p>
+<section id="arguments">
+<h2>Arguments<a class="headerlink" href="#arguments" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">[CogsLocation]</span></code></dt><dd><p>Directory containing the COGS model.</p>
+</dd>
+</dl>
 </section>
-<section id="command-line-arguments">
-<h2>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Link to this heading">#</a></h2>
-<p>Required inputs for the validate command (must be specified in order).</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">[CogsLocation]</span></code></p>
-<blockquote>
-<div><p>The location of the folder containing the model.</p>
-</div></blockquote>
-</li>
-</ul>
+<section id="flags">
+<h2>Flags<a class="headerlink" href="#flags" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-?</span></code>, <code class="docutils literal notranslate"><span class="pre">-h</span></code>, <code class="docutils literal notranslate"><span class="pre">--help</span></code></dt><dd><p>Show command help.</p>
+</dd>
+</dl>
 </section>
-<section id="command-line-flags">
-<h2>Command Line Flags<a class="headerlink" href="#command-line-flags" title="Link to this heading">#</a></h2>
-<p>Optional inputs for the validate command.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">-?|-h|--help</span></code></p>
-<blockquote>
-<div><p>Displays all possible command arguments and flags for the validate command.</p>
-</div></blockquote>
-</li>
-</ul>
-</section>
-<section id="command-line-usage">
-<h2>Command Line Usage<a class="headerlink" href="#command-line-usage" title="Link to this heading">#</a></h2>
-<p><strong>Format</strong></p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs<span class="w"> </span>validate<span class="w"> </span><span class="o">(</span>-h<span class="o">)</span><span class="w"> </span><span class="o">[</span>CogsLocation<span class="o">]</span>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cogs validate MyCogsModelDirectory</span>
 </pre></div>
 </div>
-</div></blockquote>
-<p><strong>Examples</strong></p>
-<blockquote>
-<div><p>A few examples of how the command line arguments and flags can be used together.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs<span class="w"> </span>validate<span class="w"> </span>-h
-$<span class="w"> </span>cogs<span class="w"> </span>validate<span class="w"> </span>MyCogsModelDirectory
-</pre></div>
-</div>
-</div></blockquote>
 </section>
-<section id="validation-tests">
-<h2>Validation Tests<a class="headerlink" href="#validation-tests" title="Link to this heading">#</a></h2>
+<section id="cogs-2-validation-coverage">
+<h2>COGS 2 validation coverage<a class="headerlink" href="#cogs-2-validation-coverage" title="Link to this heading">#</a></h2>
+<p>Validation includes:</p>
 <ul class="simple">
-<li><dl class="simple">
-<dt>CheckSettingsSlugToEnsureNoSpaces</dt><dd><p>Checks if the slug in <a class="reference external" href="../../../modeler-guide/settings/index.html">settings</a>, if provided, is an invalid url containing whitespace.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CheckDataTypesMustBeDefined</dt><dd><p>Checks if any referenced data types are not defined in the model.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CheckDataTypeNamesShouldMatchCase</dt><dd><p>Checks if data types differ only by case.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CheckDataTypeNamesShouldNotConflictWithBuiltins</dt><dd><p>Checks if the model defines data types of the same name as built-in <a class="reference external" href="../../../modeler-guide/primitive-types/index.html">primitive types</a>.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CheckDataTypeNamesShouldBePascalCase</dt><dd><p>Checks if any <a class="reference external" href="../../../modeler-guide/item-types/index.html">item types</a> in the model do not start with a capital letter.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CheckDuplicatePropertiesInSameItem</dt><dd><p>Checks if an <a class="reference external" href="../../../modeler-guide/item-types/index.html">item</a> has more than one property of the same name.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CheckReusedPropertyNamesShouldHaveSameDatatype</dt><dd><p>Checks if two properties of the same name have different data types in the model.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CheckPropertyNamesShouldBePascalCase</dt><dd><p>Checks if any property names in the model do not start with a capital letter.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CheckAbstractDataTypePropertiesMustAllowSubtypes</dt><dd><p>Checks if any referenced data types are abstract, and do not allow subtypes to be used.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CheckOrderedCollectionsMustHaveCardinalityGreaterThanOne</dt><dd><p>Checks if any properties are ordered that they allow for more than one relationship.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>CheckDerivationOfPrimativeTypesNotAllowed</dt><dd><p>Checks if any item types or composit types try to extend a primative type.</p>
-</dd>
-</dl>
-</li>
+<li><p>the required, unique <code class="docutils literal notranslate"><span class="pre">CogsVersion,2.0</span></code> and setting keys;</p></li>
+<li><p>exact path, filename, marker, CSV-header, and naming case conventions;</p></li>
+<li><p>the unified item/composite/builtin namespace and target-name collisions;</p></li>
+<li><p>at least one scalar <code class="docutils literal notranslate"><span class="pre">1..1</span></code> <code class="docutils literal notranslate"><span class="pre">string</span></code>/<code class="docutils literal notranslate"><span class="pre">anyURI</span></code> identity field and the
+complete effective-property namespace;</p></li>
+<li><p>canonical cardinalities, blank defaults, <code class="docutils literal notranslate"><span class="pre">min</span> <span class="pre">&lt;=</span> <span class="pre">max</span></code>, and lowercase flag
+grammar;</p></li>
+<li><p>facet applicability, contradictions, whitespace-delimited enumerations, and
+the portable regular-expression subset;</p></li>
+<li><p>datatype existence, same-kind acyclic inheritance, abstract usage,
+property-local substitution, and recursive relationship safety;</p></li>
+<li><p>exact <code class="docutils literal notranslate"><span class="pre">DcTerms,dcTerms,0,1</span></code> macro use, composite-only <code class="docutils literal notranslate"><span class="pre">Primitive</span></code>, and
+rejection of retired <code class="docutils literal notranslate"><span class="pre">This</span></code> and <code class="docutils literal notranslate"><span class="pre">Any</span></code>;</p></li>
+<li><p>present topic indexes, duplicate entries, and exact item-type membership;
+and</p></li>
+<li><p>namespace, primitive-domain, target-language normalized names, exact reused
+property datatypes, and model-wide camelCase RDF-term collisions.</p></li>
 </ul>
+<p>The normative article-TOC containment and exact-case rules are defined in
+<a class="reference internal" href="../../../specification/model-format/"><span class="doc">Model Format</span></a>. The remediation table in the correctness
+audit records that their focused validator regression is still pending; do not
+treat a successful model validation alone as proof that every authored article
+path is portable across filesystems.</p>
+<p>Successful validation means the model is eligible for publication. Instance
+documents still require validation against the generated JSON Schema or XSD;
+use <a class="reference internal" href="../validate-instance/"><span class="doc">validate-instance</span></a> to apply the schema and COGS extension checks from
+the command line.</p>
 </section>
 </section>
 
@@ -494,11 +481,11 @@ $<span class="w"> </span>cogs<span class="w"> </span>validate<span class="w"> </
       </div>
     </a>
     <a class="right-next"
-       href="../../generation/"
+       href="../validate-instance/"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Generation</p>
+        <p class="prev-next-title">validate-instance</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -521,11 +508,10 @@ $<span class="w"> </span>cogs<span class="w"> </span>validate<span class="w"> </
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-arguments">Command Line Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-flags">Command Line Flags</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-usage">Command Line Usage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-tests">Validation Tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flags">Flags</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cogs-2-validation-coverage">COGS 2 validation coverage</a></li>
 </ul>
   </nav></div>
 
@@ -563,7 +549,7 @@ $<span class="w"> </span>cogs<span class="w"> </span>validate<span class="w"> </
 
   <p class="copyright">
     
-      © Copyright Copyright (c) 2017 Colectica. Licensed under the MIT license..
+      © Copyright Copyright (c) 2026 Colectica. Licensed under the MIT license..
       <br/>
     
   </p>
