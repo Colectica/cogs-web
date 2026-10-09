@@ -325,7 +325,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../generation/csharp/">C# Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/python/">Python Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/typescript/">TypeScript Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../generation/json/">JSON Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../generation/json/">JSON Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/uml/">UML Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../generation/dot/">dot Generation</a></li>
@@ -415,6 +415,11 @@ that runs and fails makes publication fail.</p>
 <code class="docutils literal notranslate"><span class="pre">.rst</span></code> or <code class="docutils literal notranslate"><span class="pre">.md</span></code> files inside their own <code class="docutils literal notranslate"><span class="pre">Articles</span></code> directory. Duplicate
 documents, path traversal, links/reparse points, Sphinx directive syntax, and
 source/target overlap are errors detected before the target is changed.</p>
+<p>Generated HTML defaults to <code class="docutils literal notranslate"><span class="pre">pydata_sphinx_theme</span></code>. The generated project’s
+root <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> includes Sphinx, MyST, and <code class="docutils literal notranslate"><span class="pre">pydata-sphinx-theme</span></code>
+for that default. Install these build dependencies with
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">MyOutputDirectory/requirements.txt</span></code>. See
+<a class="reference internal" href="../../generation/sphinx/"><span class="doc">Sphinx Generation</span></a> for library configuration and themes.</p>
 </section>
 <section id="command-line-arguments">
 <h2>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Link to this heading">#</a></h2>
@@ -453,13 +458,20 @@ source/target overlap are errors detected before the target is changed.</p>
 executable.</p>
 </div></blockquote>
 </li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--theme</span> <span class="pre">NAME</span></code></p>
+<blockquote>
+<div><p>Sphinx HTML theme name, defaulting to <code class="docutils literal notranslate"><span class="pre">pydata_sphinx_theme</span></code>. Any theme
+name is accepted unchanged; install non-default themes separately.
+Generation does not check installed themes. A blank name is a usage error.</p>
+</div></blockquote>
+</li>
 </ul>
 </section>
 <section id="command-line-usage">
 <h2>Command Line Usage<a class="headerlink" href="#command-line-usage" title="Link to this heading">#</a></h2>
 <p><strong>Format</strong></p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs<span class="w"> </span>publish-sphinx<span class="w"> </span><span class="o">(</span>-h<span class="o">)</span><span class="w"> </span><span class="o">(</span>-o<span class="o">)</span><span class="w"> </span><span class="o">[</span>--dot<span class="w"> </span>PATH<span class="o">]</span><span class="w"> </span><span class="o">[</span>CogsLocation<span class="o">]</span><span class="w"> </span><span class="o">[</span>TargetLocation<span class="o">]</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cogs<span class="w"> </span>publish-sphinx<span class="w"> </span><span class="o">(</span>-h<span class="o">)</span><span class="w"> </span><span class="o">(</span>-o<span class="o">)</span><span class="w"> </span><span class="o">[</span>--dot<span class="w"> </span>PATH<span class="o">]</span><span class="w"> </span><span class="o">[</span>--theme<span class="w"> </span>NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>CogsLocation<span class="o">]</span><span class="w"> </span><span class="o">[</span>TargetLocation<span class="o">]</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -470,6 +482,7 @@ executable.</p>
 $<span class="w"> </span>cogs<span class="w"> </span>publish-sphinx<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
 $<span class="w"> </span>cogs<span class="w"> </span>publish-sphinx<span class="w"> </span>-o<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
 $<span class="w"> </span>cogs<span class="w"> </span>publish-sphinx<span class="w"> </span>-o<span class="w"> </span>--dot<span class="w"> </span>/opt/graphviz/bin/dot<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
+$<span class="w"> </span>cogs<span class="w"> </span>publish-sphinx<span class="w"> </span>--theme<span class="w"> </span>alabaster<span class="w"> </span>MyCogsModelDirectory<span class="w"> </span>MyOutputDirectory
 </pre></div>
 </div>
 </div></blockquote>

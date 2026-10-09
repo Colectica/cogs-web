@@ -325,7 +325,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../csharp/">C# Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python/">Python Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../typescript/">TypeScript Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../json/">JSON Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../json/">JSON Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../xsd/">XML Schema Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../uml/">UML Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dot/">dot Generation</a></li>
@@ -434,6 +434,26 @@ this intentionally local diagram view.</p>
 separate Sphinx build step then turns those files into HTML or another
 Sphinx-supported output format. Generated <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> selects English with
 <code class="docutils literal notranslate"><span class="pre">language</span> <span class="pre">=</span> <span class="pre">'en'</span></code> and includes MyST in the generated requirements.</p>
+</section>
+<section id="theme-configuration">
+<h2>Theme configuration<a class="headerlink" href="#theme-configuration" title="Link to this heading">#</a></h2>
+<p>Generated HTML uses the PyData Sphinx theme by default. The Sphinx configuration
+name is <code class="docutils literal notranslate"><span class="pre">pydata_sphinx_theme</span></code>; its Python package is <code class="docutils literal notranslate"><span class="pre">pydata-sphinx-theme</span></code>.
+Select another installed theme with <code class="docutils literal notranslate"><span class="pre">--theme</span> <span class="pre">NAME</span></code>, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cogs</span> <span class="n">publish</span><span class="o">-</span><span class="n">sphinx</span> <span class="n">MyModel</span> <span class="n">MyDocs</span> <span class="o">--</span><span class="n">theme</span> <span class="n">alabaster</span>
+</pre></div>
+</div>
+<p>Library callers can set <code class="docutils literal notranslate"><span class="pre">SphinxPublisher.Theme</span></code> or
+<code class="docutils literal notranslate"><span class="pre">BuildSphinxDocumentation.Theme</span></code>. Both default to <code class="docutils literal notranslate"><span class="pre">pydata_sphinx_theme</span></code>;
+existing <code class="docutils literal notranslate"><span class="pre">Build</span></code> and <code class="docutils literal notranslate"><span class="pre">Publish</span></code> calls need no changes. Theme names retain
+their exact spelling, and blank names are rejected before output changes.</p>
+<p>The generated project’s root <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> lists Sphinx, MyST, and,
+when PyData is selected, <code class="docutils literal notranslate"><span class="pre">pydata-sphinx-theme</span></code>. Install it with
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">MyDocs/requirements.txt</span></code> before building.
+For other themes, install their package separately; COGS does not infer Python
+package names from Sphinx theme names. Generation requires neither Python nor
+an installed theme, and does not install dependencies. Sphinx reports an
+unavailable theme when the generated project is built.</p>
 <p>Sphinx is a documentation projection, not an instance schema. If Graphviz is
 not configured or discoverable, generation warns and emits a consistent
 text-only project with no diagram directives. If a discovered or explicitly
@@ -501,6 +521,7 @@ The canonical preserved/unsupported list and diagnostic ranges are in
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping">Mapping</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-publisher-emits">What the publisher emits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theme-configuration">Theme configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-pages">Related pages</a></li>
 </ul>
   </nav></div>
